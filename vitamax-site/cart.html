@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Your Cart — VitaMAX.MY</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --or:#F15A22;--or-d:#D44818;--or-l:#FFF0E8;--or-m:#FFDDCC;
+  --gold:#C8940A;--gold-l:#FFF8E0;
+  --text:#1A1208;--mid:#4A3F32;--soft:#7A6A5A;
+  --border:#E8E0D4;--warm:#F7F3EE;--bg:#FFFAF4;
+  --green:#22A559;
+  --r:12px;--rs:8px;
+  --font:'Plus Jakarta Sans',sans-serif;
+}
+body{background:var(--bg);font-family:var(--font);color:var(--text);min-height:100vh}
+.announce{background:var(--or);color:#fff;text-align:center;font-size:12px;font-weight:600;padding:8px 16px;letter-spacing:.03em}
+nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+
+.nav-back{color:var(--or);font-size:13px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:5px}
+.cart-hero{text-align:center;padding:28px 20px 16px}
+.cart-hero h1{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--text);margin-bottom:6px}
+.cart-hero p{font-size:14px;color:var(--soft)}
+.trust-strip{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;padding:10px 20px;background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);font-size:12px;color:var(--soft);font-weight:500}
+.trust-item{display:flex;align-items:center;gap:4px}
+.bogo-banner{max-width:900px;margin:16px auto 0;padding:0 16px}
+.bogo-inner{background:linear-gradient(135deg,#FFF6DC,#FFF0E8);border:1.5px solid var(--gold);border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:10px;font-size:13px;color:#7A5C00;font-weight:600}
+.bogo-code{background:var(--or);color:#fff;padding:2px 8px;border-radius:4px;font-family:monospace;font-weight:700;margin:0 4px;font-size:12px}
+.cart-layout{max-width:900px;margin:16px auto 60px;padding:0 16px;display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:start}
+@media(max-width:768px){.cart-layout{grid-template-columns:1fr}.cart-sidebar{order:-1}}
+.cart-items-box{background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.cart-item{padding:16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px}
+.cart-item:last-child{border-bottom:none}
+.item-img{width:60px;height:60px;background:var(--warm);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;overflow:hidden}
+.item-img img{width:100%;height:100%;object-fit:cover}
+.item-details{flex:1;min-width:0}
+.item-name{font-size:14px;font-weight:600;color:var(--text);text-decoration:none;line-height:1.4;display:block}
+.item-name:hover{color:var(--or)}
+.item-variation{font-size:12px;color:var(--soft);margin-top:2px}
+.item-price{font-size:13px;color:var(--mid);margin-top:4px}
+.item-controls{display:flex;align-items:center;gap:8px;margin-top:8px}
+.qty-wrap{display:flex;align-items:center}
+.qty-btn{width:28px;height:28px;background:var(--warm);border:1px solid var(--border);font-size:14px;cursor:pointer;font-weight:700;color:var(--mid);transition:all .2s;display:flex;align-items:center;justify-content:center}
+.qty-btn:first-child{border-radius:6px 0 0 6px}
+.qty-btn:last-child{border-radius:0 6px 6px 0}
+.qty-btn:hover{background:var(--or);color:#fff;border-color:var(--or)}
+.qty-num{width:34px;height:28px;border:1px solid var(--border);border-left:none;border-right:none;text-align:center;font-size:14px;font-weight:600;font-family:var(--font);background:#fff}
+.remove-btn{background:none;border:none;cursor:pointer;color:#ccc;font-size:16px;padding:4px 8px;transition:color .2s}
+.remove-btn:hover{color:#e53935}
+.item-subtotal{font-size:15px;font-weight:700;color:var(--text);flex-shrink:0;text-align:right;min-width:70px}
+.empty-cart{text-align:center;padding:50px 20px}
+.empty-icon{font-size:56px;margin-bottom:14px}
+.empty-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--text);margin-bottom:8px}
+.empty-sub{font-size:14px;color:var(--soft);margin-bottom:20px}
+.empty-btn{background:var(--or);color:#fff;border:none;border-radius:var(--rs);padding:14px 28px;font-size:15px;font-weight:700;font-family:var(--font);cursor:pointer;text-decoration:none;display:inline-block}
+.cart-loading{text-align:center;padding:50px 20px}
+.spinner{width:34px;height:34px;border:3px solid var(--border);border-top-color:var(--or);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 14px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.order-summary{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:22px;position:sticky;top:80px}
+.order-summary h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--text);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.summary-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:14px;color:var(--mid)}
+.summary-row.total{padding-top:14px;margin-top:6px;border-top:2px solid var(--border);font-size:18px;font-weight:700;color:var(--text)}
+.summary-shipping{color:var(--green);font-weight:700}
+.coupon-wrap{margin:16px 0}
+.coupon-label{font-size:11px;font-weight:700;color:var(--mid);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}
+.coupon-row{display:flex;gap:8px}
+.coupon-input{flex:1;border:1.5px solid var(--border);border-radius:var(--rs);padding:10px 12px;font-size:13px;font-family:var(--font);outline:none;transition:border .2s;min-width:0}
+.coupon-input:focus{border-color:var(--or)}
+.coupon-btn{background:var(--warm);border:1.5px solid var(--border);border-radius:var(--rs);padding:10px 14px;font-size:13px;font-weight:700;font-family:var(--font);cursor:pointer;color:var(--mid);transition:all .2s;white-space:nowrap}
+.coupon-btn:hover{background:var(--or);color:#fff;border-color:var(--or)}
+.coupon-msg{font-size:12px;margin-top:6px;font-weight:600}
+.coupon-msg.ok{color:var(--green)}
+.coupon-msg.err{color:#e53935}
+.checkout-btn{display:block;width:100%;background:var(--or);color:#fff;border:none;border-radius:10px;padding:17px;font-size:16px;font-weight:700;font-family:var(--font);cursor:pointer;text-align:center;text-decoration:none;margin-top:14px;transition:all .2s;box-shadow:0 4px 16px rgba(241,90,34,.3)}
+.checkout-btn:hover{background:var(--or-d);transform:translateY(-1px)}
+.continue-link{display:block;text-align:center;color:var(--or);font-size:13px;font-weight:600;text-decoration:none;margin-top:10px}
+.checkout-note{text-align:center;font-size:11px;color:var(--soft);margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);color:#fff;border-radius:10px;padding:12px 20px;font-size:14px;font-weight:500;z-index:9999;opacity:0;transition:all .35s cubic-bezier(.34,1.56,.64,1);pointer-events:none;white-space:nowrap;box-shadow:0 8px 32px rgba(0,0,0,.25)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+footer{background:#1A1208;color:rgba(255,255,255,.6);text-align:center;padding:20px;font-size:12px;margin-top:40px}
+footer a{color:rgba(255,255,255,.6);text-decoration:none;margin:0 8px}
+footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<div class="announce">&#x1F36F; FREE Shipping over $60 &nbsp;&middot;&nbsp; Use code <strong>BOGO</strong> for 10% off &nbsp;&middot;&nbsp; 30-Day Guarantee</div>
+
+<nav>
+  <a href="/" style="text-decoration:none"><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#1A1208">VITA<span style="color:#F15A22">MAX</span><span style="font-size:14px;color:#C8940A">.MY</span></div></a>
+  <a href="/shop.html" class="nav-back">&#8592; Continue Shopping</a>
+</nav>
+
+<div class="cart-hero">
+  <h1>Your Cart</h1>
+  <p id="cart-subtitle">Loading your items...</p>
+</div>
+
+<div class="trust-strip">
+  <div class="trust-item">&#x1F512; Secure Checkout</div>
+  <div class="trust-item">&#x1F4E6; Discreet Packaging</div>
+  <div class="trust-item">&#x2708;&#xFE0F; Free Shipping over $60</div>
+  <div class="trust-item">&#x1F504; 30-Day Guarantee</div>
+</div>
+
+<div class="bogo-banner">
+  <div class="bogo-inner">
+    &#x1F381; Use code <span class="bogo-code">BOGO</span> at checkout for 10% off multi-packs!
+  </div>
+</div>
+
+<div class="cart-layout">
+  <div>
+    <div class="cart-items-box" id="cartBox">
+      <div class="cart-loading" id="cartLoading">
+        <div class="spinner"></div>
+        <div style="font-size:14px;color:var(--soft)">Loading your cart...</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-sidebar">
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <div class="summary-row"><span>Subtotal</span><span id="sumSubtotal">$0.00</span></div>
+      <div class="summary-row"><span>Shipping</span><span class="summary-shipping" id="sumShipping">FREE</span></div>
+      <div class="summary-row total"><span>Total</span><span id="sumTotal">$0.00</span></div>
+      <div class="coupon-wrap">
+        <div class="coupon-label">Discount Code</div>
+        <div class="coupon-row">
+          <input type="text" class="coupon-input" id="couponInput" placeholder="e.g. BOGO">
+          <button class="coupon-btn" onclick="applyCoupon()">Apply</button>
+        </div>
+        <div class="coupon-msg" id="couponMsg"></div>
+      </div>
+      <a href="/order-checkout/" class="checkout-btn" id="checkoutBtn">&#x1F6D2; Proceed to Checkout</a>
+      <a href="/shop.html" class="continue-link">&#8592; Continue Shopping</a>
+      <div class="checkout-note">
+        <span>&#x1F512; SSL</span><span>&middot;</span>
+        <span>Stripe &amp; PayPal</span><span>&middot;</span>
+        <span>Apple Pay</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="/">Home</a><a href="/shop.html">Shop</a>
+  <a href="/wholesale.html">Wholesale</a>
+  <a href="/privacy-policy.html">Privacy Policy</a>
+  <a href="/refund-policy.html">Refund Policy</a>
+  <div style="margin-top:10px">&copy; 2025 VitaMAX.MY &mdash; Premium Royal Honey Supplements</div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function(){ t.classList.remove('show'); }, 3000);
+}
+
+function fmt(n) { return '$' + parseFloat(n).toFixed(2); }
+
+function renderCart(data) {
+  var box = document.getElementById('cartBox');
+  var sub = document.getElementById('cart-subtitle');
+  var items = data.items || [];
+
+  if (!items.length) {
+    sub.textContent = 'Your cart is empty';
+    box.innerHTML = '<div class="empty-cart"><div class="empty-icon">&#x1F36F;</div><div class="empty-title">Your cart is empty</div><div class="empty-sub">Add some products to get started</div><a href="/shop.html" class="empty-btn">Shop Now</a></div>';
+    document.getElementById('checkoutBtn').style.opacity = '0.5';
+    document.getElementById('checkoutBtn').style.pointerEvents = 'none';
+    return;
+  }
+
+  sub.textContent = items.length + ' item' + (items.length !== 1 ? 's' : '') + ' in your cart';
+  document.getElementById('checkoutBtn').style.opacity = '1';
+  document.getElementById('checkoutBtn').style.pointerEvents = 'auto';
+
+  var html = '';
+  items.forEach(function(item) {
+    var imgHtml = item.image
+      ? '<img src="' + item.image + '" alt="' + item.name + '">'
+      : '&#x1F36F;';
+    var variation = '';
+    if (item.variation && item.variation.length) {
+      item.variation.forEach(function(v){ variation += v.value + ' '; });
+    }
+    html += '<div class="cart-item" id="ci-' + item.key + '">';
+    html += '<div class="item-img">' + imgHtml + '</div>';
+    html += '<div class="item-details">';
+    html += '<a href="' + (item.permalink||'#') + '" class="item-name">' + item.name + '</a>';
+    if (variation.trim()) html += '<div class="item-variation">Pack: ' + variation.trim() + '</div>';
+    html += '<div class="item-price">' + fmt(item.price) + ' each</div>';
+    html += '<div class="item-controls">';
+    html += '<div class="qty-wrap">';
+    html += '<button class="qty-btn" data-key="' + item.key + '" data-qty="' + (item.quantity-1) + '" onclick="handleQty(this)">&#8722;</button>';
+    html += '<div class="qty-num" id="qty-' + item.key + '">' + item.quantity + '</div>';
+    html += '<button class="qty-btn" data-key="' + item.key + '" data-qty="' + (item.quantity+1) + '" onclick="handleQty(this)">+</button>';
+    html += '</div>';
+    html += '<button class="remove-btn" data-key="' + item.key + '" onclick="handleRemove(this)">&#x2715; Remove</button>';
+    html += '</div></div>';
+    html += '<div class="item-subtotal">' + fmt(item.subtotal) + '</div>';
+    html += '</div>';
+  });
+  box.innerHTML = html;
+
+  document.getElementById('sumSubtotal').textContent = fmt(data.subtotal);
+  document.getElementById('sumTotal').textContent = fmt(data.total);
+  var shipping = parseFloat(data.shipping);
+  var shipEl = document.getElementById('sumShipping');
+  if (!shipping) { shipEl.textContent = 'FREE'; shipEl.style.color = 'var(--green)'; }
+  else { shipEl.textContent = fmt(shipping); shipEl.style.color = 'var(--mid)'; }
+}
+
+function handleQty(btn) {
+  var key = btn.getAttribute('data-key');
+  var qty = parseInt(btn.getAttribute('data-qty'));
+  updateQty(key, qty);
+}
+
+function handleRemove(btn) {
+  var key = btn.getAttribute('data-key');
+  removeItem(key);
+}
+
+function loadCart() {
+  fetch('/wp-admin/admin-ajax.php', {
+    method: 'POST',
+    credentials: 'include',
+    headers: {'Content-Type':'application/x-www-form-urlencoded'},
+    body: 'action=vitamax_get_cart'
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    if (d.success) renderCart(d);
+    else showEmpty();
+  })
+  .catch(function(){ showEmpty(); });
+}
+
+function showEmpty() {
+  renderCart({items:[], subtotal:0, total:0, shipping:0});
+}
+
+function updateQty(key, qty) {
+  qty = parseInt(qty);
+  if (qty < 1) { removeItem(key); return; }
+  var el = document.getElementById('qty-' + key);
+  if (el) el.textContent = qty;
+  fetch('/wp-admin/admin-ajax.php', {
+    method:'POST', credentials:'include',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:'action=vitamax_update_cart&key='+key+'&quantity='+qty
+  })
+  .then(function(r){return r.json();})
+  .then(function(d){ if(d.success){ loadCart(); showToast('Cart updated!'); } })
+  .catch(function(){});
+}
+
+function removeItem(key) {
+  var el = document.getElementById('ci-' + key);
+  if (el) { el.style.opacity='0.4'; el.style.pointerEvents='none'; }
+  fetch('/wp-admin/admin-ajax.php', {
+    method:'POST', credentials:'include',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:'action=vitamax_remove_item&key='+key
+  })
+  .then(function(r){return r.json();})
+  .then(function(d){ if(d.success){ loadCart(); showToast('Item removed'); } })
+  .catch(function(){});
+}
+
+function applyCoupon() {
+  var code = document.getElementById('couponInput').value.trim().toUpperCase();
+  var msg = document.getElementById('couponMsg');
+  if (!code) { msg.textContent='Enter a coupon code'; msg.className='coupon-msg err'; return; }
+  msg.textContent='Applying...'; msg.className='coupon-msg';
+  fetch('/wp-admin/admin-ajax.php', {
+    method:'POST', credentials:'include',
+    headers:{'Content-Type':'application/x-www-form-urlencoded'},
+    body:'action=vitamax_apply_coupon&code='+encodeURIComponent(code)
+  })
+  .then(function(r){return r.json();})
+  .then(function(d){
+    if(d.success){ msg.textContent='Coupon applied!'; msg.className='coupon-msg ok'; loadCart(); showToast('Coupon '+code+' applied!'); }
+    else { msg.textContent=d.message||'Invalid coupon'; msg.className='coupon-msg err'; }
+  })
+  .catch(function(){ msg.textContent='Could not apply coupon'; msg.className='coupon-msg err'; });
+}
+
+document.addEventListener('DOMContentLoaded', loadCart);
+</script>
+</body>
+</html>
