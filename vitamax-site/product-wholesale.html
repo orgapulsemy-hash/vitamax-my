@@ -67,6 +67,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,250,244,.97);backdrop-
 .thumb-row{display:flex;gap:8px}
 .thumb{width:72px;height:72px;border-radius:var(--rs);border:2px solid var(--border);cursor:pointer;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:28px;background:var(--wg);transition:all .2s;flex-shrink:0}
 .thumb.on,.thumb:hover{border-color:var(--or)}
+.thumb img{width:100%;height:100%;object-fit:cover}
 /* product info panel */
 .info-panel{}
 .prod-breadcat{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--or);margin-bottom:8px}
@@ -261,6 +262,15 @@ footer{background:#1A1208;padding:40px 80px}
 }
 </style>
 <script>window._slug='wholesale';window._v=[{p:499,w:696,s:'v1'},{p:899,w:1392,s:'v2'},{p:0,w:0,s:'v3'}];</script>
+<link rel="icon" type="image/svg+xml" href="/vitamax-images/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VitaMAX.MY">
+<meta property="og:title" content="VitaMAX Wholesale Carton — VitaMAX.MY | Premium Royal Honey">
+<meta property="og:description" content="VitaMAX Wholesale Carton — Bulk supply for resellers, distributors, and retailers. Competitive pricing, dedicated support, minimum 1 carton. Inquire via WhatsApp.">
+<meta property="og:url" content="https://vitamax.my/product-wholesale.html">
+<meta property="og:image" content="https://vitamax.my/vitamax-images/banner-1.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vitamax.my/vitamax-images/banner-1.png">
 </head>
 <body>
 <input type="checkbox" id="menu-toggle">
@@ -302,14 +312,13 @@ footer{background:#1A1208;padding:40px 80px}
 
 <div class="prod-hero">
   <div class="img-panel">
-    <div class="main-img" id="mainImg" style="background:linear-gradient(145deg,#FFF8E0,#FFE8A0)">
-      <!-- TO ADD IMAGE: replace the emoji line below with: <img src="vitamax-images/wholesale.jpg" alt="VitaMAX Wholesale Carton"> -->
-      <span class="emoji-ph" id="mainEmoji">📦</span>
+    <div class="main-img" id="mainImg">
+      <img id="mainImgEl" src="/vitamax-images/Vitamax-wholesale.png" alt="VitaMAX Wholesale Carton">
     </div>
     <div class="thumb-row">
-      <div class="thumb on" onclick="setThumb(this,'📦','mainEmoji')">📦</div>
-      <div class="thumb" onclick="setThumb(this,'🍯','mainEmoji')">🍯</div>
-      <div class="thumb" onclick="setThumb(this,'🌍','mainEmoji')">🌍</div>
+      <div class="thumb on" onclick="setWholesaleImg(this,'/vitamax-images/Vitamax-wholesale.png')"><img src="/vitamax-images/Vitamax-wholesale.png" alt="VitaMAX Wholesale Carton view 1"></div>
+      <div class="thumb" onclick="setWholesaleImg(this,'/vitamax-images/mix-carton-1.png')"><img src="/vitamax-images/mix-carton-1.png" alt="VitaMAX Wholesale Carton view 2"></div>
+      <div class="thumb" onclick="setWholesaleImg(this,'/vitamax-images/mix-carton-2.png')"><img src="/vitamax-images/mix-carton-2.png" alt="VitaMAX Wholesale Carton view 3"></div>
     </div>
   </div>
   <div class="info-panel">
@@ -503,6 +512,10 @@ function selectVariant(el,price,was){
 function setThumb(el,e,t){
   document.querySelectorAll('.thumb').forEach(function(x){x.classList.remove('on');});
   el.classList.add('on'); document.getElementById(t).textContent=e;
+}
+function setWholesaleImg(el,src){
+  document.querySelectorAll('.thumb').forEach(function(x){x.classList.remove('on');});
+  el.classList.add('on'); document.getElementById('mainImgEl').src=src;
 }
 function scrollSec(id,btn){
   var el=document.getElementById(id);
