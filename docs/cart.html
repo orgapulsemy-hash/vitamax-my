@@ -84,7 +84,7 @@ footer{background:#1A1208;color:rgba(255,255,255,.6);text-align:center;padding:2
 footer a{color:rgba(255,255,255,.6);text-decoration:none;margin:0 8px}
 footer a:hover{color:#fff}
 </style>
-<link rel="icon" type="image/svg+xml" href="/vitamax-images/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="vitamax-images/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VitaMAX.MY">
 <meta property="og:title" content="Your Cart — VitaMAX.MY">
@@ -99,8 +99,8 @@ footer a:hover{color:#fff}
 <div class="announce">&#x1F36F; FREE Shipping over $60 &nbsp;&middot;&nbsp; Use code <strong>BOGO</strong> for 10% off &nbsp;&middot;&nbsp; 30-Day Guarantee</div>
 
 <nav>
-  <a href="/" style="text-decoration:none"><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#1A1208">VITA<span style="color:#F15A22">MAX</span><span style="font-size:14px;color:#C8940A">.MY</span></div></a>
-  <a href="/shop.html" class="nav-back">&#8592; Continue Shopping</a>
+  <a href="index.html" style="text-decoration:none"><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#1A1208">VITA<span style="color:#F15A22">MAX</span><span style="font-size:14px;color:#C8940A">.MY</span></div></a>
+  <a href="shop.html" class="nav-back">&#8592; Continue Shopping</a>
 </nav>
 
 <div class="cart-hero">
@@ -145,8 +145,8 @@ footer a:hover{color:#fff}
         </div>
         <div class="coupon-msg" id="couponMsg"></div>
       </div>
-      <a href="/order-checkout/" class="checkout-btn" id="checkoutBtn">&#x1F6D2; Proceed to Checkout</a>
-      <a href="/shop.html" class="continue-link">&#8592; Continue Shopping</a>
+      <a href="order-checkout/" class="checkout-btn" id="checkoutBtn">&#x1F6D2; Proceed to Checkout</a>
+      <a href="shop.html" class="continue-link">&#8592; Continue Shopping</a>
       <div class="checkout-note">
         <span>&#x1F512; SSL</span><span>&middot;</span>
         <span>Stripe &amp; PayPal</span><span>&middot;</span>
@@ -157,10 +157,10 @@ footer a:hover{color:#fff}
 </div>
 
 <footer>
-  <a href="/">Home</a><a href="/shop.html">Shop</a>
-  <a href="/wholesale.html">Wholesale</a>
-  <a href="/privacy-policy.html">Privacy Policy</a>
-  <a href="/refund-policy.html">Refund Policy</a>
+  <a href="index.html">Home</a><a href="shop.html">Shop</a>
+  <a href="wholesale.html">Wholesale</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="refund-policy.html">Refund Policy</a>
   <div style="margin-top:10px">&copy; 2025 VitaMAX.MY &mdash; Premium Royal Honey Supplements</div>
 </footer>
 
@@ -183,7 +183,7 @@ function renderCart(data) {
 
   if (!items.length) {
     sub.textContent = 'Your cart is empty';
-    box.innerHTML = '<div class="empty-cart"><div class="empty-icon">&#x1F36F;</div><div class="empty-title">Your cart is empty</div><div class="empty-sub">Add some products to get started</div><a href="/shop.html" class="empty-btn">Shop Now</a></div>';
+    box.innerHTML = '<div class="empty-cart"><div class="empty-icon">&#x1F36F;</div><div class="empty-title">Your cart is empty</div><div class="empty-sub">Add some products to get started</div><a href="shop.html" class="empty-btn">Shop Now</a></div>';
     document.getElementById('checkoutBtn').style.opacity = '0.5';
     document.getElementById('checkoutBtn').style.pointerEvents = 'none';
     return;
