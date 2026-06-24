@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VitaMAX.MY — Premium Royal Honey Store</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -360,6 +360,8 @@ footer{background:var(--dark);padding:48px 80px}
   .sec-header{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:480px){
+  /* Mobile QA H1: show the full hero banner (no side-crop / no cut-off text) */
+  .hero-slide img{height:auto;min-height:0;max-height:none;object-fit:contain}
   .trust-chips{gap:6px}
   .hero-btns{flex-direction:column}
   .btn-primary,.btn-outline{width:100%;text-align:center}
