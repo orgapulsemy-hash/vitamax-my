@@ -437,6 +437,22 @@ footer{background:var(--dark);padding:48px 80px}
   .trust-item{flex:1 1 45%;min-width:0}
 }
 
+/* Free shipping banner */
+.ship-banner{background:linear-gradient(135deg,var(--gold-l),var(--orange-l));border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+.ship-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:18px;padding:14px 32px;flex-wrap:wrap}
+.ship-ico{width:30px;height:30px;color:var(--orange);flex-shrink:0}
+.ship-text{text-align:left}
+.ship-text strong{display:block;font-size:15px;font-weight:800;color:var(--gold-d);letter-spacing:.01em}
+.ship-text span{font-size:13px;color:var(--text-mid)}
+.ship-text b{color:var(--text);font-weight:700}
+.ship-pills{display:flex;gap:8px;flex-wrap:wrap}
+.ship-pills span{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--gold-d);background:rgba(200,148,10,.12);border:1px solid var(--gold);border-radius:100px;padding:4px 12px}
+@media(max-width:768px){
+  .ship-inner{gap:12px;padding:12px 18px}
+  .ship-text{text-align:center}
+  .ship-text strong{font-size:14px}
+}
+
 </style>
 <link rel="icon" type="image/svg+xml" href="vitamax-images/favicon.svg">
 <meta property="og:type" content="website">
@@ -552,6 +568,20 @@ footer{background:var(--dark);padding:48px 80px}
     <div class="hs-dots">
       <button class="hs-dot active" data-slide="0" aria-label="Slide 1"></button>
       <button class="hs-dot" data-slide="1" aria-label="Slide 2"></button>
+    </div>
+  </div>
+</section>
+
+<!-- FREE SHIPPING BANNER -->
+<section class="ship-banner">
+  <div class="ship-inner">
+    <svg class="ship-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13l9-9 3 3-4 4 5 5-2 2-5-5-4 4z"/><path d="M14.5 7.5L21 4l-3.5 6.5"/></svg>
+    <div class="ship-text">
+      <strong>Free Express Shipping Worldwide</strong>
+      <span>Delivered to the <b>USA</b>, <b>Canada</b>, <b>Europe</b> &amp; <b>Australia</b> — tracked &amp; discreet on orders over&nbsp;$60</span>
+    </div>
+    <div class="ship-pills">
+      <span>USA</span><span>Canada</span><span>Europe</span><span>Australia</span>
     </div>
   </div>
 </section>
@@ -1293,7 +1323,7 @@ footer{background:var(--dark);padding:48px 80px}
 <footer>
   <div class="footer-top">
     <div>
-      <div class="footer-logo"><img src="vitamax-images/logo.svg" alt="VitaMAX.MY" width="150" height="42"></div>
+      <div class="footer-logo"><img src="vitamax-images/logo-light.svg" alt="VitaMAX.MY" width="150" height="42"></div>
       <div class="footer-tagline">Premium Royal Honey Supplements · Since 2024</div>
     </div>
     <div class="footer-links">
