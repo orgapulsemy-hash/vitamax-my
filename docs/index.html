@@ -127,10 +127,10 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 /* Mobile — full viewport like Bloom */
 @media(max-width:768px){
   .hero-slide img{
-    height:80vw;
-    min-height:320px;
-    max-height:520px;
-    object-position:center center;
+    height:auto;
+    min-height:0;
+    max-height:none;
+    object-fit:contain;
   }
   .hs-arrow{width:40px;height:40px;font-size:20px}
   .hs-prev{left:10px}
