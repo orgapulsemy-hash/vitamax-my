@@ -428,6 +428,7 @@ footer{background:var(--dark);padding:48px 80px}
 .trust-strip{background:var(--warm-gray);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .trust-strip-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;padding:18px 32px;flex-wrap:wrap}
 .trust-item{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:140px}
+.trust-ico{width:28px;height:28px;color:var(--orange);margin-bottom:8px}
 .trust-item strong{font-size:14px;font-weight:700;color:var(--text)}
 .trust-item span{font-size:12px;color:var(--text-soft)}
 @media(max-width:768px){
@@ -549,10 +550,22 @@ footer{background:var(--dark);padding:48px 80px}
 <!-- TRUST STRIP -->
 <section class="trust-strip">
   <div class="trust-strip-inner">
-    <div class="trust-item"><strong>Halal Certified</strong><span>Verified ingredients</span></div>
-    <div class="trust-item"><strong>30-Day Guarantee</strong><span>Money-back promise</span></div>
-    <div class="trust-item"><strong>Discreet Shipping</strong><span>Plain packaging always</span></div>
-    <div class="trust-item"><strong>4.9 ★ Rated</strong><span>By thousands of customers</span></div>
+    <div class="trust-item">
+      <svg class="trust-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6.5"/><path d="M9 9l2 2 4-4"/><path d="M8.5 14.3L7 22l5-2.6L17 22l-1.5-7.7"/></svg>
+      <strong>Halal Certified</strong><span>Verified ingredients</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9v-5z"/><path d="M9 11.5l2 2 4-4"/></svg>
+      <strong>30-Day Guarantee</strong><span>Money-back promise</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8.5"/></svg>
+      <strong>Discreet Shipping</strong><span>Plain packaging always</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.6-5 4.3 1.5 6.4L12 17.6 6 19.8l1.5-6.4-5-4.3 6.6-.6z"/></svg>
+      <strong>4.9 Rated</strong><span>By thousands of customers</span>
+    </div>
   </div>
 </section>
 
