@@ -80,19 +80,8 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 .hero-track{display:flex;transition:transform .65s cubic-bezier(.77,0,.18,1);will-change:transform}
 .hero-slide{min-width:100%;position:relative;flex-shrink:0}
 .hero-slide a{display:block;width:100%}
-/* Promotional overlay slides (live text, fully responsive) */
-.hslide{display:flex;align-items:center;justify-content:space-between;gap:28px;min-height:460px;padding:48px 7%;box-sizing:border-box;position:relative;overflow:hidden}
-.hslide-1{background:linear-gradient(135deg,#1A1208 0%,#5a3d12 100%)}
-.hslide-2{background:linear-gradient(135deg,#D44818 0%,#F15A22 60%,#C8940A 100%)}
-.hslide-3{background:linear-gradient(135deg,#0F0B07 0%,#3a2c0a 100%)}
-.hslide-content{max-width:540px;z-index:2}
-.hslide-eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#FFE08A;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);padding:5px 14px;border-radius:100px;margin-bottom:18px}
-.hslide-h{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(30px,4.6vw,52px);line-height:1.04;letter-spacing:-.5px;margin:0 0 14px;color:#fff}
-.hslide-h em{font-style:italic;color:#FFE08A}
-.hslide-p{font-size:clamp(14px,1.5vw,18px);line-height:1.6;color:rgba(255,255,255,.9);margin:0 0 26px;max-width:460px}
-.hslide-cta{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--orange);font-weight:800;font-size:15px;padding:15px 32px;border-radius:100px;text-decoration:none;box-shadow:0 8px 28px rgba(0,0,0,.28);transition:transform .2s}
-.hslide-cta:hover{transform:translateY(-2px)}
-.hslide-img{height:330px;width:auto;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 20px 44px rgba(0,0,0,.45));z-index:2}
+/* Banner image — show the FULL banner (no crop), scales to width */
+.hero-slide img{width:100%;height:auto;display:block}
 
 /* Arrows — Bloom style: large, white circle, subtle shadow */
 .hs-arrow{
@@ -130,11 +119,6 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 
 /* Mobile — full viewport like Bloom */
 @media(max-width:768px){
-  .hslide{flex-direction:column;text-align:center;min-height:0;padding:32px 20px 42px;gap:16px}
-  .hslide-content{max-width:100%;width:100%}
-  .hslide-h{font-size:clamp(26px,7vw,40px)}
-  .hslide-p{margin-left:auto;margin-right:auto;max-width:100%}
-  .hslide-img{height:185px;order:-1}
   .hs-arrow{width:40px;height:40px;font-size:20px}
   .hs-prev{left:10px}
   .hs-next{right:10px}
@@ -363,7 +347,6 @@ footer{background:var(--dark);padding:48px 80px}
   .sec-header{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:480px){
-  .hslide-img{height:155px}
   .trust-chips{gap:6px}
   .hero-btns{flex-direction:column}
   .btn-primary,.btn-outline{width:100%;text-align:center}
@@ -539,43 +522,18 @@ footer{background:var(--dark);padding:48px 80px}
   <div class="hero-slider" id="heroSlider">
     <div class="hero-track" id="heroTrack">
 
-      <!-- Slide 1 — Brand / best seller -->
+      <!-- Slide 1 -->
       <div class="hero-slide">
-        <div class="hslide hslide-1">
-          <div class="hslide-content">
-            <span class="hslide-eyebrow">★ Best Seller</span>
-            <h2 class="hslide-h">Royal Honey for <em>Real Vitality</em></h2>
-            <p class="hslide-p">Energy, stamina and connection — naturally, for him and for her. Wild stingless-bee honey with Tongkat Ali &amp; Ginseng.</p>
-            <a href="/shop.html" class="hslide-cta">Shop Royal Honey →</a>
-          </div>
-          <img class="hslide-img" src="/vitamax-images/royal-gold-1.png" alt="VitaMAX Royal Honey VIP Pack">
-        </div>
+        <a href="/shop.html">
+          <img src="/vitamax-images/banner-2.png" alt="VitaMAX Doubleshot — Feel More Connected Every Day">
+        </a>
       </div>
 
-      <!-- Slide 2 — Promotion / multi-pack offer -->
+      <!-- Slide 2 -->
       <div class="hero-slide">
-        <div class="hslide hslide-2">
-          <div class="hslide-content">
-            <span class="hslide-eyebrow">Limited-Time Offer</span>
-            <h2 class="hslide-h">Buy More, <em>Save More</em></h2>
-            <p class="hslide-p">Save up to 25% on multi-packs and bundles. Use code <strong>BOGO</strong> at checkout for 10% off any multi-pack.</p>
-            <a href="/shop.html" class="hslide-cta">Shop the Deals →</a>
-          </div>
-          <img class="hslide-img" src="/vitamax-images/couples-1.png" alt="VitaMAX Couples Bundle">
-        </div>
-      </div>
-
-      <!-- Slide 3 — Free worldwide shipping -->
-      <div class="hero-slide">
-        <div class="hslide hslide-3">
-          <div class="hslide-content">
-            <span class="hslide-eyebrow">Worldwide Delivery</span>
-            <h2 class="hslide-h">Free Express <em>Shipping</em></h2>
-            <p class="hslide-p">Fast, tracked &amp; discreet delivery to the USA, Canada, Europe &amp; Australia on every order over $60.</p>
-            <a href="/shop.html" class="hslide-cta">Start Shopping →</a>
-          </div>
-          <img class="hslide-img" src="/vitamax-images/ice-1.png" alt="VitaMAX Royal Honey ICE Energy">
-        </div>
+        <a href="/shop.html">
+          <img src="/vitamax-images/banner-1.png" alt="Premium Honey Crafted For Vitality, Wellness & Meaningful Connection">
+        </a>
       </div>
 
     </div>
@@ -588,7 +546,6 @@ footer{background:var(--dark);padding:48px 80px}
     <div class="hs-dots">
       <button class="hs-dot active" data-slide="0" aria-label="Slide 1"></button>
       <button class="hs-dot" data-slide="1" aria-label="Slide 2"></button>
-      <button class="hs-dot" data-slide="2" aria-label="Slide 3"></button>
     </div>
   </div>
 </section>
@@ -1376,7 +1333,7 @@ footer{background:var(--dark);padding:48px 80px}
   var dots  = document.querySelectorAll('.hs-dot');
   var prev  = document.getElementById('hsPrev');
   var next  = document.getElementById('hsNext');
-  var cur   = 0; var total = 3; var timer;
+  var cur   = 0; var total = 2; var timer;
 
   function goTo(n){
     cur = (n + total) % total;
