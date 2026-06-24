@@ -440,6 +440,33 @@ footer{background:var(--dark);padding:48px 80px}
   .ship-text strong{font-size:14px}
 }
 
+/* Best Sellers (Bloom-style) */
+.bestsellers{max-width:1200px;margin:0 auto;padding:64px 32px 8px;text-align:center}
+.bs-title{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(30px,4vw,46px);color:var(--text);line-height:1.06;margin:0 0 8px}
+.bs-sub{font-size:15px;color:var(--text-soft);margin:0 0 36px}
+.bs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.bs-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;text-align:left;display:flex;flex-direction:column;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.bs-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.bs-imgwrap{position:relative;background:var(--warm-gray);padding:22px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+.bs-imgwrap img{max-width:100%;max-height:100%;object-fit:contain}
+.bs-badge{position:absolute;top:14px;left:14px;background:var(--orange);color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 12px;border-radius:100px}
+.bs-badge.her{background:#E91E8C}
+.bs-badge.bundle{background:var(--gold)}
+.bs-body{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.bs-cat{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft)}
+.bs-name{font-family:'Playfair Display',serif;font-weight:700;font-size:19px;color:var(--text);line-height:1.2}
+.bs-stars{color:#F5A623;font-size:13px;letter-spacing:1px}
+.bs-rc{color:var(--text-soft)}
+.bs-price{font-size:18px;font-weight:800;color:var(--text);margin-top:2px}
+.bs-price .was{font-size:14px;font-weight:600;color:var(--text-xsoft);text-decoration:line-through;margin-left:8px}
+.bs-cta{margin-top:14px;text-align:center;background:var(--text);color:#fff;font-weight:700;font-size:14px;padding:13px;border-radius:100px;transition:background .2s}
+.bs-card:hover .bs-cta{background:var(--orange)}
+@media(max-width:768px){
+  .bestsellers{padding:44px 16px 4px}
+  .bs-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:10px;-webkit-overflow-scrolling:touch}
+  .bs-card{min-width:82%;scroll-snap-align:center}
+}
+
 </style>
 <link rel="icon" type="image/svg+xml" href="vitamax-images/favicon.svg">
 <meta property="og:type" content="website">
@@ -592,6 +619,57 @@ footer{background:var(--dark);padding:48px 80px}
       <svg class="trust-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.6-5 4.3 1.5 6.4L12 17.6 6 19.8l1.5-6.4-5-4.3 6.6-.6z"/></svg>
       <strong>4.9 Rated</strong><span>By thousands of customers</span>
     </div>
+  </div>
+</section>
+
+<!-- BEST SELLERS -->
+<section class="bestsellers">
+  <h2 class="bs-title">Shop Our Best Sellers</h2>
+  <p class="bs-sub">The vitality rituals our customers reorder the most.</p>
+  <div class="bs-grid">
+
+    <a class="bs-card" href="product-royal-honey-gold.html">
+      <div class="bs-imgwrap">
+        <span class="bs-badge">Best Seller</span>
+        <img src="vitamax-images/vip-1.png" alt="Royal Honey VIP Pack">
+      </div>
+      <div class="bs-body">
+        <span class="bs-cat">For Him · Royal Honey</span>
+        <span class="bs-name">Royal Honey VIP Pack</span>
+        <span class="bs-stars">★★★★★ <span class="bs-rc">4.9 (1,842)</span></span>
+        <span class="bs-price">$139 <span class="was">$160</span></span>
+        <span class="bs-cta">Shop Now →</span>
+      </div>
+    </a>
+
+    <a class="bs-card" href="product-couples-bundle.html">
+      <div class="bs-imgwrap">
+        <span class="bs-badge bundle">Couples Pick</span>
+        <img src="vitamax-images/couples-1.png" alt="VitaMAX Couples Bundle">
+      </div>
+      <div class="bs-body">
+        <span class="bs-cat">His &amp; Hers · Bundle</span>
+        <span class="bs-name">VitaMAX Couples Bundle</span>
+        <span class="bs-stars">★★★★★ <span class="bs-rc">4.9 (1,204)</span></span>
+        <span class="bs-price">$339 <span class="was">$390</span></span>
+        <span class="bs-cta">Shop Now →</span>
+      </div>
+    </a>
+
+    <a class="bs-card" href="product-queens-honey.html">
+      <div class="bs-imgwrap">
+        <span class="bs-badge her">For Her</span>
+        <img src="vitamax-images/lux-1.png" alt="Lux Honey For Her">
+      </div>
+      <div class="bs-body">
+        <span class="bs-cat">For Her · Royal Honey</span>
+        <span class="bs-name">Lux Honey For Her</span>
+        <span class="bs-stars">★★★★★ <span class="bs-rc">4.8 (967)</span></span>
+        <span class="bs-price">$129 <span class="was">$148</span></span>
+        <span class="bs-cta">Shop Now →</span>
+      </div>
+    </a>
+
   </div>
 </section>
 
