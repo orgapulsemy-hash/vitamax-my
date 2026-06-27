@@ -77,18 +77,14 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 
 /* ── HERO IMAGE SLIDER — Bloom-style full viewport ── */
 .hero-slider{position:relative;width:100%;overflow:hidden;line-height:0}
-.hero-track{display:flex;transition:transform .65s cubic-bezier(.77,0,.18,1);will-change:transform}
-.hero-slide{min-width:100%;position:relative;flex-shrink:0}
+.hero-track{display:flex;width:100%;transition:transform .65s cubic-bezier(.77,0,.18,1);will-change:transform}
+.hero-slide{flex:0 0 100%;min-width:0;position:relative}
 .hero-slide a{display:block;width:100%}
-.hero-slide img{
-  width:100%;
-  height:72vh;
-  min-height:400px;
-  max-height:640px;
-  display:block;
-  object-fit:cover;
-  object-position:center center;
-}
+/* Banner image — show the FULL banner (no crop), scales to width */
+.hero-slide picture{display:block;width:100%}
+.hero-slide img{width:100%;height:auto;display:block}
+/* Desktop: consistent hero height across mixed wide/tall banners */
+@media(min-width:769px){.hero-slide img{height:560px;object-fit:cover;object-position:center}}
 
 /* Arrows — Bloom style: large, white circle, subtle shadow */
 .hs-arrow{
@@ -126,12 +122,6 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 
 /* Mobile — full viewport like Bloom */
 @media(max-width:768px){
-  .hero-slide img{
-    height:80vw;
-    min-height:320px;
-    max-height:520px;
-    object-position:center center;
-  }
   .hs-arrow{width:40px;height:40px;font-size:20px}
   .hs-prev{left:10px}
   .hs-next{right:10px}
@@ -417,6 +407,69 @@ footer{background:var(--dark);padding:48px 80px}
 .cart-toast-action{color:#F15A22;font-weight:600;text-decoration:none;font-size:13px}
 .cart-toast-action:hover{color:#FFE08A}
 
+/* Phase 1 — Hero intro (real H1) */
+.hero-intro{background:var(--cream);padding:56px 32px 40px;text-align:center}
+.hero-intro-inner{max-width:760px;margin:0 auto}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:16px}
+.hero-h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(34px,5vw,60px);line-height:1.05;letter-spacing:-1px;color:var(--text);margin-bottom:18px}
+.hero-h1 em{font-style:italic;color:var(--orange)}
+.hero-sub{font-size:clamp(15px,1.6vw,18px);line-height:1.7;color:var(--text-mid);max-width:560px;margin:0 auto}
+/* Phase 1 — Trust strip */
+.trust-strip{background:var(--warm-gray);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.trust-strip-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;gap:16px;padding:18px 32px;flex-wrap:wrap}
+.trust-item{display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;min-width:140px}
+.trust-ico{width:28px;height:28px;color:var(--orange);margin-bottom:8px}
+.trust-item strong{font-size:14px;font-weight:700;color:var(--text)}
+.trust-item span{font-size:12px;color:var(--text-soft)}
+@media(max-width:768px){
+  .hero-intro{padding:40px 20px 28px}
+  .trust-strip-inner{gap:12px;padding:14px 16px}
+  .trust-item{flex:1 1 45%;min-width:0}
+}
+
+/* Free shipping banner */
+.ship-banner{background:linear-gradient(135deg,var(--gold-l),var(--orange-l));border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+.ship-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:18px;padding:14px 32px;flex-wrap:wrap}
+.ship-ico{width:30px;height:30px;color:var(--orange);flex-shrink:0}
+.ship-text{text-align:left}
+.ship-text strong{display:block;font-size:15px;font-weight:800;color:var(--gold-d);letter-spacing:.01em}
+.ship-text span{font-size:13px;color:var(--text-mid)}
+.ship-text b{color:var(--text);font-weight:700}
+.ship-pills{display:flex;gap:8px;flex-wrap:wrap}
+.ship-pills span{font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--gold-d);background:rgba(200,148,10,.12);border:1px solid var(--gold);border-radius:100px;padding:4px 12px}
+@media(max-width:768px){
+  .ship-inner{gap:12px;padding:12px 18px}
+  .ship-text{text-align:center}
+  .ship-text strong{font-size:14px}
+}
+
+/* Best Sellers (Bloom-style) */
+.bestsellers{max-width:1200px;margin:0 auto;padding:64px 32px 8px;text-align:center}
+.bs-title{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(30px,4vw,46px);color:var(--text);line-height:1.06;margin:0 0 8px}
+.bs-sub{font-size:15px;color:var(--text-soft);margin:0 0 36px}
+.bs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.bs-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;text-align:left;display:flex;flex-direction:column;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.bs-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.bs-imgwrap{position:relative;background:var(--warm-gray);padding:22px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+.bs-imgwrap img{max-width:100%;max-height:100%;object-fit:contain}
+.bs-badge{position:absolute;top:14px;left:14px;background:var(--orange);color:#fff;font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 12px;border-radius:100px}
+.bs-badge.her{background:#E91E8C}
+.bs-badge.bundle{background:var(--gold)}
+.bs-body{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.bs-cat{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft)}
+.bs-name{font-family:'Playfair Display',serif;font-weight:700;font-size:19px;color:var(--text);line-height:1.2}
+.bs-stars{color:#F5A623;font-size:13px;letter-spacing:1px}
+.bs-rc{color:var(--text-soft)}
+.bs-price{font-size:18px;font-weight:800;color:var(--text);margin-top:2px}
+.bs-price .was{font-size:14px;font-weight:600;color:var(--text-xsoft);text-decoration:line-through;margin-left:8px}
+.bs-cta{margin-top:14px;text-align:center;background:var(--text);color:#fff;font-weight:700;font-size:14px;padding:13px;border-radius:100px;transition:background .2s}
+.bs-card:hover .bs-cta{background:var(--orange)}
+@media(max-width:768px){
+  .bestsellers{padding:44px 16px 4px}
+  .bs-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:10px;-webkit-overflow-scrolling:touch}
+  .bs-card{min-width:82%;scroll-snap-align:center}
+}
+
 </style>
 <link rel="icon" type="image/svg+xml" href="/vitamax-images/favicon.svg">
 <meta property="og:type" content="website">
@@ -494,22 +547,58 @@ footer{background:var(--dark);padding:48px 80px}
   </div>
 </div>
 
+<!-- HERO INTRO — real H1 for SEO/accessibility + brand ESP line -->
+<section class="hero-intro">
+  <div class="hero-intro-inner">
+    <span class="hero-eyebrow">Premium Royal Honey · Since 2024</span>
+    <h1 class="hero-h1">Crafted for the couples who <em>refuse to slow down</em></h1>
+    <p class="hero-sub">Premium royal honey for energy, vitality, and connection — together. Naturally sourced, Halal certified, and shipped discreetly worldwide.</p>
+  </div>
+</section>
+
 <!-- HERO -->
 <section style="padding:0;">
   <div class="hero-slider" id="heroSlider">
     <div class="hero-track" id="heroTrack">
 
-      <!-- Slide 1 — Vitamax Doubleshot (Banner 2 — better product) -->
+      <!-- Slide 1 -->
       <div class="hero-slide">
         <a href="/shop.html">
-          <img src="/vitamax-images/banner-2.png" alt="VitaMAX Doubleshot — Feel More Connected Every Day">
+          <picture>
+            <source media="(max-width:768px)" srcset="/vitamax-images/banner-m-doubleshot.png">
+            <img src="/vitamax-images/banner-2.png" alt="VitaMAX Doubleshot — Feel More Connected Every Day">
+          </picture>
         </a>
       </div>
 
-      <!-- Slide 2 — LuxHoney (Banner 1) -->
+      <!-- Slide 2 -->
       <div class="hero-slide">
         <a href="/shop.html">
-          <img src="/vitamax-images/banner-1.png" alt="Premium Honey Crafted For Vitality, Wellness & Meaningful Connection">
+          <picture>
+            <source media="(max-width:768px)" srcset="/vitamax-images/banner-m-leluxe.png">
+            <img src="/vitamax-images/banner-1.png" alt="Premium Honey Crafted For Vitality, Wellness & Meaningful Connection">
+          </picture>
+        </a>
+      </div>
+
+      <!-- Slide 3 — Wholesale -->
+      <div class="hero-slide">
+        <a href="/wholesale.html">
+          <img src="/vitamax-images/banner-m-wholesale.png" alt="Wholesale Mega Pack — Bulk Ready, carton supply for resellers and export">
+        </a>
+      </div>
+
+      <!-- Slide 4 — Energy / Best seller -->
+      <div class="hero-slide">
+        <a href="/shop.html">
+          <img src="/vitamax-images/banner-m-energy.png" alt="Boost Energy & Stamina Fast — Royal Honey VIP">
+        </a>
+      </div>
+
+      <!-- Slide 5 — Nature's Power -->
+      <div class="hero-slide">
+        <a href="/shop.html">
+          <img src="/vitamax-images/banner-m-nature.png" alt="Nature's Power for Vitality & Wellness — pure ingredients, powerful results">
         </a>
       </div>
 
@@ -523,7 +612,97 @@ footer{background:var(--dark);padding:48px 80px}
     <div class="hs-dots">
       <button class="hs-dot active" data-slide="0" aria-label="Slide 1"></button>
       <button class="hs-dot" data-slide="1" aria-label="Slide 2"></button>
+      <button class="hs-dot" data-slide="2" aria-label="Slide 3"></button>
+      <button class="hs-dot" data-slide="3" aria-label="Slide 4"></button>
+      <button class="hs-dot" data-slide="4" aria-label="Slide 5"></button>
     </div>
+  </div>
+</section>
+
+<!-- FREE SHIPPING BANNER -->
+<section class="ship-banner">
+  <div class="ship-inner">
+    <svg class="ship-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13l9-9 3 3-4 4 5 5-2 2-5-5-4 4z"/><path d="M14.5 7.5L21 4l-3.5 6.5"/></svg>
+    <div class="ship-text">
+      <strong>Free Express Shipping Worldwide</strong>
+      <span>Delivered to the <b>USA</b>, <b>Canada</b>, <b>Europe</b> &amp; <b>Australia</b> — tracked &amp; discreet on orders over&nbsp;$60</span>
+    </div>
+    <div class="ship-pills">
+      <span>USA</span><span>Canada</span><span>Europe</span><span>Australia</span>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-item">
+      <svg class="trust-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6.5"/><path d="M9 9l2 2 4-4"/><path d="M8.5 14.3L7 22l5-2.6L17 22l-1.5-7.7"/></svg>
+      <strong>Halal Certified</strong><span>Verified ingredients</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9v-5z"/><path d="M9 11.5l2 2 4-4"/></svg>
+      <strong>30-Day Guarantee</strong><span>Money-back promise</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8.5"/></svg>
+      <strong>Discreet Shipping</strong><span>Plain packaging always</span>
+    </div>
+    <div class="trust-item">
+      <svg class="trust-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.9 6 6.6.6-5 4.3 1.5 6.4L12 17.6 6 19.8l1.5-6.4-5-4.3 6.6-.6z"/></svg>
+      <strong>4.9 Rated</strong><span>By thousands of customers</span>
+    </div>
+  </div>
+</section>
+
+<!-- BEST SELLERS -->
+<section class="bestsellers">
+  <h2 class="bs-title">Shop Our Best Sellers</h2>
+  <p class="bs-sub">The vitality rituals our customers reorder the most.</p>
+  <div class="bs-grid">
+
+    <a class="bs-card" href="/product-royal-honey-gold.html">
+      <div class="bs-imgwrap">
+        <span class="bs-badge">Best Seller</span>
+        <img src="/vitamax-images/vip-1.png" alt="Royal Honey VIP Pack">
+      </div>
+      <div class="bs-body">
+        <span class="bs-cat">For Him · Royal Honey</span>
+        <span class="bs-name">Royal Honey VIP Pack</span>
+        <span class="bs-stars">★★★★★ <span class="bs-rc">4.9 (1,842)</span></span>
+        <span class="bs-price">$139 <span class="was">$160</span></span>
+        <span class="bs-cta">Shop Now →</span>
+      </div>
+    </a>
+
+    <a class="bs-card" href="/product-couples-bundle.html">
+      <div class="bs-imgwrap">
+        <span class="bs-badge bundle">Couples Pick</span>
+        <img src="/vitamax-images/couples-1.png" alt="VitaMAX Couples Bundle">
+      </div>
+      <div class="bs-body">
+        <span class="bs-cat">His &amp; Hers · Bundle</span>
+        <span class="bs-name">VitaMAX Couples Bundle</span>
+        <span class="bs-stars">★★★★★ <span class="bs-rc">4.9 (1,204)</span></span>
+        <span class="bs-price">$339 <span class="was">$390</span></span>
+        <span class="bs-cta">Shop Now →</span>
+      </div>
+    </a>
+
+    <a class="bs-card" href="/product-queens-honey.html">
+      <div class="bs-imgwrap">
+        <span class="bs-badge her">For Her</span>
+        <img src="/vitamax-images/lux-1.png" alt="Lux Honey For Her">
+      </div>
+      <div class="bs-body">
+        <span class="bs-cat">For Her · Royal Honey</span>
+        <span class="bs-name">Lux Honey For Her</span>
+        <span class="bs-stars">★★★★★ <span class="bs-rc">4.8 (967)</span></span>
+        <span class="bs-price">$129 <span class="was">$148</span></span>
+        <span class="bs-cta">Shop Now →</span>
+      </div>
+    </a>
+
   </div>
 </section>
 
@@ -538,7 +717,7 @@ footer{background:var(--dark);padding:48px 80px}
         <h2 class="sec-h2">Shop <span>Royal Honey</span></h2>
         <p class="sec-body">Premium honey supplements for men and women. Select your pack size below each product.</p>
       </div>
-      <a href="/shop.html" style="display:inline-flex;align-items:center;gap:6px;background:var(--orange-l);color:var(--orange);border:1.5px solid var(--orange-m);border-radius:100px;padding:10px 20px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:all .2s" onmouseover="this.style.background='var(--orange)';this.style.color='#fff'" onmouseout="this.style.background='var(--orange-l)';this.style.color='var(--orange)'">View All 14 Products →</a>
+      <a href="/shop.html" style="display:inline-flex;align-items:center;gap:6px;background:var(--orange-l);color:var(--orange);border:1.5px solid var(--orange-m);border-radius:100px;padding:10px 20px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:all .2s" onmouseover="this.style.background='var(--orange)';this.style.color='#fff'" onmouseout="this.style.background='var(--orange-l)';this.style.color='var(--orange)'">View All Products →</a>
     </div>
 
     <div class="products-filter" id="productFilter">
@@ -867,9 +1046,9 @@ footer{background:var(--dark);padding:48px 80px}
 
     <!-- VIEW ALL CTA -->
     <div style="text-align:center;margin-top:40px;padding-top:32px;border-top:1px solid var(--border)">
-      <p style="font-size:15px;color:var(--text-mid);margin-bottom:16px">Showing 10 of 14 products · See the full range on our shop page</p>
+      <p style="font-size:15px;color:var(--text-mid);margin-bottom:16px">Showing all 10 products · See the full range on our shop page</p>
       <a href="/shop.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;border:none;border-radius:var(--radius-sm);padding:16px 36px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 6px 24px rgba(241,90,34,.3);transition:all .2s">
-        🛍 View All 14 Products →
+        🛍 View All Products →
       </a>
       <div style="margin-top:12px;font-size:13px;color:var(--text-soft)">Free shipping over $60 · 30-day guarantee · Discreet packaging</div>
     </div>
@@ -1231,7 +1410,7 @@ footer{background:var(--dark);padding:48px 80px}
     <h2 class="cta-h2">Your Best Energy<br>Is <em>Still Ahead</em></h2>
     <p class="cta-body">Join 10,000+ customers across the US, Canada, and Europe. Natural. Centuries-proven. Backed by our 30-day guarantee.</p>
     <div class="cta-btns">
-      <a class="cta-btn-main" href="/shop.html">🍯 Shop All Products →</button>
+      <a class="cta-btn-main" href="/shop.html">🍯 Shop All Products →</a>
       <a href="https://wa.me/60177809767" class="cta-btn-wa" target="_blank">📱 WhatsApp Us</a>
     </div>
     <div class="cta-guarantee">Free shipping over $60 · <strong>30-day money-back guarantee</strong> · Discreet packaging always</div>
@@ -1274,7 +1453,7 @@ footer{background:var(--dark);padding:48px 80px}
   var dots  = document.querySelectorAll('.hs-dot');
   var prev  = document.getElementById('hsPrev');
   var next  = document.getElementById('hsNext');
-  var cur   = 0; var total = 2; var timer;
+  var cur   = 0; var total = 5; var timer;
 
   function goTo(n){
     cur = (n + total) % total;
