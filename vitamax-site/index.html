@@ -83,6 +83,8 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 /* Banner image — show the FULL banner (no crop), scales to width */
 .hero-slide picture{display:block;width:100%}
 .hero-slide img{width:100%;height:auto;display:block}
+/* Desktop: consistent hero height across mixed wide/tall banners */
+@media(min-width:769px){.hero-slide img{height:560px;object-fit:cover;object-position:center}}
 
 /* Arrows — Bloom style: large, white circle, subtle shadow */
 .hs-arrow{
@@ -570,6 +572,27 @@ footer{background:var(--dark);padding:48px 80px}
         </a>
       </div>
 
+      <!-- Slide 3 — Wholesale -->
+      <div class="hero-slide">
+        <a href="/wholesale.html">
+          <img src="/vitamax-images/banner-m-wholesale.png" alt="Wholesale Mega Pack — Bulk Ready, carton supply for resellers and export">
+        </a>
+      </div>
+
+      <!-- Slide 4 — Energy / Best seller -->
+      <div class="hero-slide">
+        <a href="/shop.html">
+          <img src="/vitamax-images/banner-m-energy.png" alt="Boost Energy & Stamina Fast — Royal Honey VIP">
+        </a>
+      </div>
+
+      <!-- Slide 5 — Nature's Power -->
+      <div class="hero-slide">
+        <a href="/shop.html">
+          <img src="/vitamax-images/banner-m-nature.png" alt="Nature's Power for Vitality & Wellness — pure ingredients, powerful results">
+        </a>
+      </div>
+
     </div>
 
     <!-- Arrows -->
@@ -580,6 +603,9 @@ footer{background:var(--dark);padding:48px 80px}
     <div class="hs-dots">
       <button class="hs-dot active" data-slide="0" aria-label="Slide 1"></button>
       <button class="hs-dot" data-slide="1" aria-label="Slide 2"></button>
+      <button class="hs-dot" data-slide="2" aria-label="Slide 3"></button>
+      <button class="hs-dot" data-slide="3" aria-label="Slide 4"></button>
+      <button class="hs-dot" data-slide="4" aria-label="Slide 5"></button>
     </div>
   </div>
 </section>
@@ -1418,7 +1444,7 @@ footer{background:var(--dark);padding:48px 80px}
   var dots  = document.querySelectorAll('.hs-dot');
   var prev  = document.getElementById('hsPrev');
   var next  = document.getElementById('hsNext');
-  var cur   = 0; var total = 2; var timer;
+  var cur   = 0; var total = 5; var timer;
 
   function goTo(n){
     cur = (n + total) % total;
