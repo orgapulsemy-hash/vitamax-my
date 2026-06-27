@@ -81,6 +81,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 .hero-slide{flex:0 0 100%;min-width:0;position:relative}
 .hero-slide a{display:block;width:100%}
 /* Banner image — show the FULL banner (no crop), scales to width */
+.hero-slide picture{display:block;width:100%}
 .hero-slide img{width:100%;height:auto;display:block}
 
 /* Arrows — Bloom style: large, white circle, subtle shadow */
@@ -552,14 +553,20 @@ footer{background:var(--dark);padding:48px 80px}
       <!-- Slide 1 -->
       <div class="hero-slide">
         <a href="/shop.html">
-          <img src="/vitamax-images/banner-2.png" alt="VitaMAX Doubleshot — Feel More Connected Every Day">
+          <picture>
+            <source media="(max-width:768px)" srcset="/vitamax-images/banner-m-doubleshot.png">
+            <img src="/vitamax-images/banner-2.png" alt="VitaMAX Doubleshot — Feel More Connected Every Day">
+          </picture>
         </a>
       </div>
 
       <!-- Slide 2 -->
       <div class="hero-slide">
         <a href="/shop.html">
-          <img src="/vitamax-images/banner-1.png" alt="Premium Honey Crafted For Vitality, Wellness & Meaningful Connection">
+          <picture>
+            <source media="(max-width:768px)" srcset="/vitamax-images/banner-m-leluxe.png">
+            <img src="/vitamax-images/banner-1.png" alt="Premium Honey Crafted For Vitality, Wellness & Meaningful Connection">
+          </picture>
         </a>
       </div>
 
