@@ -521,6 +521,22 @@ footer{background:var(--dark);padding:48px 80px}
   .promo-strip-btn{width:100%;text-align:center}
 }
 
+/* Buy With Confidence (risk-reversal) */
+.confidence{background:var(--warm-gray,#F7F3EE)}
+.conf-inner{max-width:1100px;margin:0 auto;padding:64px 32px;text-align:center}
+.conf-eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);display:block;margin-bottom:12px}
+.conf-h2{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(28px,3.4vw,44px);line-height:1.1;color:var(--text);margin-bottom:8px}
+.conf-h2 em{font-style:italic;color:var(--orange)}
+.conf-sub{font-size:15px;color:var(--text-soft);margin-bottom:38px}
+.conf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:left}
+.conf-item{background:#fff;border:1px solid var(--border);border-radius:16px;padding:24px 22px;display:flex;flex-direction:column;gap:8px}
+.conf-ic{width:34px;height:34px;color:var(--orange)}
+.conf-item strong{font-size:15px;font-weight:800;color:var(--text)}
+.conf-item span{font-size:13px;line-height:1.55;color:var(--text-soft)}
+.conf-note{margin-top:30px;font-size:15px;font-weight:600;color:var(--text-mid)}
+@media(max-width:820px){.conf-grid{grid-template-columns:1fr 1fr;gap:14px}.conf-inner{padding:48px 18px}}
+@media(max-width:480px){.conf-grid{grid-template-columns:1fr}}
+
 </style>
 <link rel="icon" type="image/svg+xml" href="/vitamax-images/favicon.svg">
 <meta property="og:type" content="website">
@@ -1472,6 +1488,40 @@ footer{background:var(--dark);padding:48px 80px}
         <div class="faq-a">Yes. All VitaMAX products are Halal certified. All ingredients are sourced and processed in compliance with Halal standards. Certification documentation is available on request.</div>
       </div>
     </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- BUY WITH CONFIDENCE -->
+<section class="confidence">
+  <div class="conf-inner">
+    <span class="conf-eyebrow">Buy With Confidence</span>
+    <h2 class="conf-h2">Your Order Is <em>100% Risk-Free</em></h2>
+    <p class="conf-sub">We've made it completely safe to try VitaMAX today.</p>
+    <div class="conf-grid">
+      <div class="conf-item">
+        <svg class="conf-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7 3v5c0 4.5-3 8-7 9-4-1-7-4.5-7-9v-5z"/><path d="M9 11.5l2 2 4-4"/></svg>
+        <strong>30-Day Money-Back Guarantee</strong>
+        <span>Not happy? Get a full refund — no need to return the product.</span>
+      </div>
+      <div class="conf-item">
+        <svg class="conf-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+        <strong>Secure Checkout</strong>
+        <span>Your payment and personal details are encrypted and protected.</span>
+      </div>
+      <div class="conf-item">
+        <svg class="conf-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8.5"/></svg>
+        <strong>Discreet Packaging</strong>
+        <span>Plain, unbranded outer packaging on every single order.</span>
+      </div>
+      <div class="conf-item">
+        <svg class="conf-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13l9-9 3 3-4 4 5 5-2 2-5-5-4 4z"/><path d="M14.5 7.5L21 4l-3.5 6.5"/></svg>
+        <strong>Free Worldwide Shipping</strong>
+        <span>Fast, tracked delivery on every order over $60.</span>
+      </div>
+    </div>
+    <p class="conf-note">💛 Not happy within 30 days? Just message us and we'll refund you in full — no questions asked.</p>
   </div>
 </section>
 
