@@ -458,8 +458,10 @@ body{background:var(--cream);color:var(--text);font-family:'Plus Jakarta Sans',s
 // It starts with: pk_live_... (for live) or pk_test_... (for testing)
 var STRIPE_KEY = 'pk_live_51TVpRpL55OfleZtHn9DL9nCp19YogUwatNjscAnFAPVRsN9nfBo3A6RMGf5UmwOotdz1zQoBaaXhWTrEBJqtF3xL00jQvl5sDm';
 
-var stripe = Stripe(STRIPE_KEY);
-var elements = stripe.elements({
+var stripe, elements, cardNumber, cardExpiry, cardCvc, stripeReady = false;
+try {
+stripe = Stripe(STRIPE_KEY);
+elements = stripe.elements({
   appearance: {
     theme: 'stripe',
     variables: {
@@ -475,9 +477,9 @@ var elements = stripe.elements({
 });
 
 // Mount Stripe card elements
-var cardNumber = elements.create('cardNumber', {placeholder: '1234 5678 9012 3456'});
-var cardExpiry = elements.create('cardExpiry');
-var cardCvc = elements.create('cardCvc');
+cardNumber = elements.create('cardNumber', {placeholder: '1234 5678 9012 3456'});
+cardExpiry = elements.create('cardExpiry');
+cardCvc = elements.create('cardCvc');
 cardNumber.mount('#card-number-element');
 cardExpiry.mount('#card-expiry-element');
 cardCvc.mount('#card-cvc-element');
@@ -494,6 +496,12 @@ cardCvc.mount('#card-cvc-element');
     document.getElementById(pair[1]).classList.toggle('error', !!e.error);
   });
 });
+stripeReady = true;
+} catch(e) {
+  // Stripe.js failed to load (network/DNS/blocker). Don't let it break the page.
+  console.warn('Stripe failed to initialize:', e);
+  stripeReady = false;
+}
 
 // ══════════════════════════════════════
 // READ URL PARAMS — product, variant, price
@@ -649,8 +657,15 @@ async function placeOrder() {
   }
 
   // ── STRIPE PAYMENT ──
-  // NOTE: In production you need a backend server to create a PaymentIntent
-  // For now this shows the flow — connect your backend at the endpoint below
+  if (!stripeReady) {
+    btn.disabled = false;
+    btnText.style.display = 'block';
+    btnLoad.style.display = 'none';
+    errBox.textContent = 'Card payment could not load. Please use WhatsApp or PayPal to complete your order, or try a different browser/network.';
+    errBox.classList.add('show');
+    window.scrollTo({top: document.getElementById('global-error').offsetTop - 100, behavior: 'smooth'});
+    return;
+  }
   try {
     // Step 1: Create PaymentIntent on your server
     // REPLACE THIS URL with your actual backend endpoint
