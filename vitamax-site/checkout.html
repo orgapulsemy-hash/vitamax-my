@@ -102,7 +102,8 @@ body{background:var(--cream);color:var(--text);font-family:'Plus Jakarta Sans',s
 .summary-header{padding:18px 22px;border-bottom:1px solid var(--border);font-size:15px;font-weight:700;color:var(--text)}
 .summary-body{padding:20px 22px}
 .order-item{display:flex;gap:14px;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--border);margin-bottom:16px}
-.order-item-img{width:64px;height:64px;border-radius:var(--rs);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;background:linear-gradient(145deg,#FFF0E8,#FFE0CC)}
+.order-item-img{width:64px;height:64px;border-radius:var(--rs);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;background:linear-gradient(145deg,#FFF0E8,#FFE0CC);overflow:hidden}
+.order-item-img img{width:100%;height:100%;object-fit:cover;display:block}
 .order-item-name{font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px}
 .order-item-variant{font-size:12px;color:var(--soft)}
 .order-item-price{font-size:16px;font-weight:700;color:var(--or);margin-top:4px;font-family:'Playfair Display',serif}
@@ -389,7 +390,7 @@ body{background:var(--cream);color:var(--text);font-family:'Plus Jakarta Sans',s
       <div class="summary-header">Order Summary</div>
       <div class="summary-body">
         <div class="order-item">
-          <div class="order-item-img" id="order-img">🍯</div>
+          <div class="order-item-img" id="order-img"><img id="order-img-el" src="vitamax-images/vip-1.png" alt="Product"></div>
           <div>
             <div class="order-item-name" id="order-name">VitaMAX Royal Honey Gold</div>
             <div class="order-item-variant" id="order-variant">1 Pack · 12 sachets</div>
@@ -504,16 +505,16 @@ var price = parseFloat(params.get('price') || '29');
 
 // Product display map
 var productMap = {
-  'royal-honey-gold': {name:'VitaMAX Royal Honey Gold', img:'🍯', cat:'For Him'},
-  'black-label':      {name:'VitaMAX Black Label',       img:'🖤', cat:'For Him · Premium'},
-  'power-boost':      {name:'VitaMAX Power Boost Honey', img:'⚡', cat:'For Him'},
-  'queens-honey':     {name:"VitaMAX Queen's Honey",     img:'👑', cat:'For Her'},
-  'couples-bundle':   {name:'VitaMAX Couples Bundle',    img:'💑', cat:'His & Hers'},
-  'glow-honey':       {name:'VitaMAX Glow Honey',        img:'🌺', cat:'For Her'},
-  'tualang-herbal':   {name:'VitaMAX Tualang Herbal Honey', img:'🫙', cat:'Herbal'},
-  'detox-honey':      {name:'VitaMAX Detox Honey Blend', img:'🍵', cat:'Herbal'},
-  'pure-wild-honey':  {name:'VitaMAX Pure Wild Honey',   img:'🫙', cat:'Pure Honey'},
-  'wholesale':        {name:'VitaMAX Wholesale Carton',  img:'📦', cat:'Wholesale'},
+  'royal-honey-gold': {name:'VitaMAX Royal Honey Gold', img:'vitamax-images/vip-1.png', cat:'For Him'},
+  'black-label':      {name:'VitaMAX Black Label',       img:'vitamax-images/black-1.png', cat:'For Him · Premium'},
+  'power-boost':      {name:'VitaMAX Power Boost Honey', img:'vitamax-images/etumax-1.png', cat:'For Him'},
+  'queens-honey':     {name:"VitaMAX Queen's Honey",     img:'vitamax-images/lux-1.png', cat:'For Her'},
+  'couples-bundle':   {name:'VitaMAX Couples Bundle',    img:'vitamax-images/couples-1.png', cat:'His & Hers'},
+  'glow-honey':       {name:'VitaMAX Glow Honey',        img:'vitamax-images/ice-1.png', cat:'For Her'},
+  'tualang-herbal':   {name:'VitaMAX Tualang Herbal Honey', img:'vitamax-images/honeymax-1.png', cat:'Herbal'},
+  'detox-honey':      {name:'VitaMAX Detox Honey Blend', img:'vitamax-images/gladiator-1.png', cat:'Herbal'},
+  'pure-wild-honey':  {name:'VitaMAX Pure Wild Honey',   img:'vitamax-images/chobe-1.png', cat:'Pure Honey'},
+  'wholesale':        {name:'VitaMAX Wholesale Carton',  img:'vitamax-images/Vitamax-wholesale.png', cat:'Wholesale'},
 };
 
 var variantLabels = {
@@ -526,7 +527,8 @@ var variantLabels = {
 
 // Populate order summary
 var prod = productMap[productSlug] || productMap['royal-honey-gold'];
-document.getElementById('order-img').textContent = prod.img;
+document.getElementById('order-img-el').src = prod.img;
+document.getElementById('order-img-el').alt = prod.name;
 document.getElementById('order-name').textContent = prod.name;
 document.getElementById('order-variant').textContent = (variantLabels[variant] || variant) + ' · ' + prod.cat;
 document.getElementById('order-price').textContent = price.toFixed(2);
