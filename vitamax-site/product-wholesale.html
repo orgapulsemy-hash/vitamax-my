@@ -260,8 +260,12 @@ footer{background:#1A1208;padding:40px 80px}
   .bc-btns{flex-direction:column;align-items:center}
   .bc-btn,.bc-wa{width:100%;max-width:300px;text-align:center}
 }
+.announce{background:linear-gradient(90deg,#F15A22,#D44818,#C8940A,#F15A22)!important;background-size:300% 100%!important;animation:annShift 9s linear infinite;color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:500}
+.announce strong{color:#FFE08A;font-weight:700}
+@keyframes annShift{to{background-position:300% 0}}
+/* PREMIUM UPGRADE LAYER */
 </style>
-<script>window._slug='wholesale';window._v=[{p:499,w:696,s:'v1'},{p:899,w:1392,s:'v2'},{p:0,w:0,s:'v3'}];</script>
+<script>window._slug='wholesale';window._v=[{p:1020,w:2670,s:'v30'},{p:1680,w:5340,s:'v60'},{p:2340,w:8010,s:'v90'}];</script>
 <link rel="icon" type="image/svg+xml" href="/vitamax-images/favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VitaMAX.MY">
@@ -274,7 +278,7 @@ footer{background:#1A1208;padding:40px 80px}
 </head>
 <body>
 <input type="checkbox" id="menu-toggle">
-<div class="announce">🍯 FREE Shipping over $60 &nbsp;·&nbsp; <strong>SAVE 25%</strong> on 3-Packs &nbsp;·&nbsp; 30-Day Money-Back Guarantee</div>
+<div class="announce">🚚 FREE Delivery On Every Order &nbsp;&middot;&nbsp; <strong>🎁 First Order = +1 FREE Box</strong> &nbsp;&middot;&nbsp; Wholesale cartons: 30 · 60 · 90 boxes — prices include freight</div>
 <nav>
   <div class="nav-logo"><a href="index.html"><img src="/vitamax-images/logo.svg" alt="VitaMAX.MY" width="150" height="42"></a></div>
   <div class="nav-links">
@@ -313,12 +317,12 @@ footer{background:#1A1208;padding:40px 80px}
 <div class="prod-hero">
   <div class="img-panel">
     <div class="main-img" id="mainImg">
-      <img id="mainImgEl" src="/vitamax-images/Vitamax-wholesale.png" alt="VitaMAX Wholesale Carton">
+      <img id="mainImgEl" src="/vitamax-images/Vitamax-wholesale.webp" alt="VitaMAX Wholesale Carton">
     </div>
     <div class="thumb-row">
-      <div class="thumb on" onclick="setWholesaleImg(this,'/vitamax-images/Vitamax-wholesale.png')"><img src="/vitamax-images/Vitamax-wholesale.png" alt="VitaMAX Wholesale Carton view 1"></div>
-      <div class="thumb" onclick="setWholesaleImg(this,'/vitamax-images/mix-carton-1.png')"><img src="/vitamax-images/mix-carton-1.png" alt="VitaMAX Wholesale Carton view 2"></div>
-      <div class="thumb" onclick="setWholesaleImg(this,'/vitamax-images/mix-carton-2.png')"><img src="/vitamax-images/mix-carton-2.png" alt="VitaMAX Wholesale Carton view 3"></div>
+      <div class="thumb on" onclick="setWholesaleImg(this,'/vitamax-images/Vitamax-wholesale.webp')"><img loading="lazy" decoding="async" src="/vitamax-images/Vitamax-wholesale.webp" alt="VitaMAX Wholesale Carton view 1"></div>
+      <div class="thumb" onclick="setWholesaleImg(this,'/vitamax-images/mix-carton-1.webp')"><img loading="lazy" decoding="async" src="/vitamax-images/mix-carton-1.webp" alt="VitaMAX Wholesale Carton view 2"></div>
+      <div class="thumb" onclick="setWholesaleImg(this,'/vitamax-images/mix-carton-2.webp')"><img loading="lazy" decoding="async" src="/vitamax-images/mix-carton-2.webp" alt="VitaMAX Wholesale Carton view 3"></div>
     </div>
   </div>
   <div class="info-panel">
@@ -336,22 +340,25 @@ footer{background:#1A1208;padding:40px 80px}
       <span class="badge badge-gold">📦 Discreet Shipping</span>
       <span class="badge badge-or">🔥 Global Shipping</span>
     </div>
-    <div class="variant-label">Choose your size:</div>
+    <div class="variant-label">Choose your carton &mdash; retail value $89/box &middot; freight included:</div>
     <div class="variant-grid">
-      <div class="v-card on" onclick="selectVariant(this,499,696)">
-        <div class="vt">24 Packs</div><div class="vp">$499</div><div class="vs">full carton · any product</div>
+      <div class="v-card on" onclick="selectVariant(this,1020,2670)">
+        <div class="vt">30 Boxes</div><div class="vp">$1,020</div><div class="vs">$34/box &middot; any product mix</div>
       </div>
-      <div class="v-card" onclick="selectVariant(this,899,1392)">
-        <div class="best-tag">🔥 Best Value</div>
-        <div class="vt">48 Packs</div><div class="vp">$899</div><div class="vs">save 40%</div>
+      <div class="v-card" onclick="selectVariant(this,1680,5340)">
+        <div class="best-tag">🔥 Most Popular</div>
+        <div class="vt">60 Boxes</div><div class="vp">$1,680</div><div class="vs">$28/box &middot; save 69% vs retail</div>
       </div>
-      <div class="v-card" onclick="selectVariant(this,0,0)">
-        <div class="best-tag" style="background:var(--gold)">Most Popular</div>
-        <div class="vt">Custom Order</div><div class="vp">$0</div><div class="vs">save 100%</div>
+      <div class="v-card" onclick="selectVariant(this,2340,8010)">
+        <div class="best-tag" style="background:var(--gold)">Best Value</div>
+        <div class="vt">90 Boxes</div><div class="vp">$2,340</div><div class="vs">$26/box &middot; save 71% vs retail</div>
       </div>
     </div>
     <div class="price-row">
-      <div class="price-main"><sup>$</sup><span id="curPrice">499</span></div>
+      <div class="price-main"><sup>$</sup><span id="curPrice">1,020</span></div>
+      <span class="price-was" id="wasPrice">retail $2,670</span>
+      <span class="price-save" id="saveTag">Save $1,650</span>
+    </div>
       <span class="price-was" id="wasPrice">was $696</span>
       <span class="price-save" id="saveTag">Save $197</span>
     </div>
@@ -450,7 +457,7 @@ footer{background:#1A1208;padding:40px 80px}
 <div class="content-section faq-section" id="faq">
   <div class="sec-label">Have questions</div>
   <h2 class="sec-h2">About <span>VitaMAX Wholesale Carton</span></h2>
-  <div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the minimum order quantity (MOQ)?</button><div class="faq-a">Minimum order is 1 carton (24 packs). There is no upper limit. Most of our partners start with 1–2 cartons to test sell-through in their market, then scale up from there.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What products are available for wholesale?</button><div class="faq-a">All 9 VitaMAX products are available for wholesale: Royal Honey Gold, Black Label, Power Boost, Queen's Honey, Couples Bundle, Glow Honey, Tualang Herbal, Detox Honey, and Pure Wild Honey. Mix and match cartons available.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does wholesale shipping take?</button><div class="faq-a">International wholesale shipments typically take 7–14 business days via tracked freight. Express options are available. We provide a commercial invoice and all documents needed for customs clearance.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you provide marketing materials?</button><div class="faq-a">Yes. Wholesale partners receive access to our full product image library, copy templates, and social media assets. We want you to succeed — your success is our success.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I white-label or rebrand VitaMAX products?</button><div class="faq-a">White-label arrangements are available for orders of 500+ units per SKU. Please contact us directly via WhatsApp to discuss white-label terms and lead times.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I get started?</button><div class="faq-a">Simply WhatsApp us at +60 1X-XXXXXXX with your name, country, and business type. We'll respond within hours with full pricing and information. No commitment required to enquire.</div></div></div>
+  <div class="faq-list"><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the minimum order quantity (MOQ)?</button><div class="faq-a">Minimum order is 1 carton (30–90 boxes). There is no upper limit. Most of our partners start with 1–2 cartons to test sell-through in their market, then scale up from there.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What products are available for wholesale?</button><div class="faq-a">All 9 VitaMAX products are available for wholesale: Royal Honey Gold, Black Label, Power Boost, Queen's Honey, Couples Bundle, Glow Honey, Tualang Herbal, Detox Honey, and Pure Wild Honey. Mix and match cartons available.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does wholesale shipping take?</button><div class="faq-a">International wholesale shipments typically take 7–14 business days via tracked freight. Express options are available. We provide a commercial invoice and all documents needed for customs clearance.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you provide marketing materials?</button><div class="faq-a">Yes. Wholesale partners receive access to our full product image library, copy templates, and social media assets. We want you to succeed — your success is our success.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I white-label or rebrand VitaMAX products?</button><div class="faq-a">White-label arrangements are available for orders of 500+ units per SKU. Please contact us directly via WhatsApp to discuss white-label terms and lead times.</div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I get started?</button><div class="faq-a">Simply WhatsApp us at +60 1X-XXXXXXX with your name, country, and business type. We'll respond within hours with full pricing and information. No commitment required to enquire.</div></div></div>
 </div>
 
 <div class="content-section related-section" id="related">
@@ -465,7 +472,7 @@ footer{background:#1A1208;padding:40px 80px}
     <h2 class="bc-h2">Order VitaMAX Wholesale Carton<br><em>Today</em></h2>
     <p class="bc-body">Natural. Centuries-proven. 30-day money-back guarantee. Ships discreetly to US, Canada and Europe.</p>
     <div class="bc-btns">
-      <a href="checkout.html?product=wholesale&variant=v2&price=899" class="bc-btn">🛒 Order Now — $899</a>
+      <a href="checkout.html?product=wholesale&variant=v60&price=1680" class="bc-btn">🛒 Order 60 Boxes — $1,680</a>
       <a href="https://wa.me/60177809767" class="bc-wa" target="_blank">📱 WhatsApp Order</a>
     </div>
   </div>
@@ -488,7 +495,7 @@ footer{background:#1A1208;padding:40px 80px}
 <div class="sticky-atc" id="satc">
   <div class="sa-info">
     <div class="sa-name">VitaMAX Wholesale Carton</div>
-    <div class="sa-price">24 Packs — $<span id="sa-price-val">499</span> · Free shipping over $60</div>
+    <div class="sa-price">30 Boxes — $<span id="sa-price-val">1,020</span> &middot; FREE freight &middot; 🎁 +1 free box first order</div>
   </div>
   <a href="checkout.html?product=wholesale&variant=v1&price=499" class="sa-btn" id="sa-btn">🛒 Add to Cart</a>
 </div>
@@ -500,14 +507,15 @@ function selectVariant(el,price,was){
   el.classList.add('on');
   var idx=Array.from(document.querySelectorAll('.v-card')).indexOf(el);
   var v=window._v[idx]; if(!v)return;
-  document.getElementById('curPrice').textContent=v.p;
-  document.getElementById('btnPrice').textContent=v.p;
-  document.getElementById('wasPrice').textContent='was $'+v.w;
-  document.getElementById('saveTag').textContent='Save $'+(v.w-v.p);
-  document.getElementById('sa-price-val').textContent=v.p;
+  var f=v.p.toLocaleString('en-US');
+  document.getElementById('curPrice').textContent=f;
+  var bp=document.getElementById('btnPrice'); if(bp)bp.textContent=f;
+  document.getElementById('wasPrice').textContent='retail $'+v.w.toLocaleString('en-US');
+  document.getElementById('saveTag').textContent='Save $'+(v.w-v.p).toLocaleString('en-US');
+  var sa=document.getElementById('sa-price-val'); if(sa)sa.textContent=f;
   var url='checkout.html?product='+window._slug+'&variant='+v.s+'&price='+v.p;
-  document.getElementById('cartBtn').href=url;
-  document.getElementById('sa-btn').href=url;
+  var cartBtn=document.getElementById('cartBtn'); if(cartBtn)cartBtn.href=url;
+  var saBtn=document.getElementById('sa-btn'); if(saBtn)saBtn.href=url;
 }
 function setThumb(el,e,t){
   document.querySelectorAll('.thumb').forEach(function(x){x.classList.remove('on');});

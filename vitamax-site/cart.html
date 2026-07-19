@@ -17,7 +17,9 @@
   --font:'Plus Jakarta Sans',sans-serif;
 }
 body{background:var(--bg);font-family:var(--font);color:var(--text);min-height:100vh}
-.announce{background:var(--or);color:#fff;text-align:center;font-size:12px;font-weight:600;padding:8px 16px;letter-spacing:.03em}
+.announce{background:linear-gradient(90deg,#F15A22,#D44818,#C8940A,#F15A22);background-size:300% 100%;animation:annShift 9s linear infinite;color:#fff;text-align:center;font-size:12px;font-weight:600;padding:8px 16px;letter-spacing:.03em}
+@keyframes annShift{to{background-position:300% 0}}
+.announce strong{color:#FFE08A}
 nav{background:#fff;border-bottom:1px solid var(--border);padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 1px 8px rgba(0,0,0,.06)}
 
 .nav-back{color:var(--or);font-size:13px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:5px}
@@ -96,7 +98,7 @@ footer a:hover{color:#fff}
 </head>
 <body>
 
-<div class="announce">&#x1F36F; FREE Shipping over $60 &nbsp;&middot;&nbsp; Use code <strong>BOGO</strong> for 10% off &nbsp;&middot;&nbsp; 30-Day Guarantee</div>
+<div class="announce">🚚 FREE Delivery On Every Order &nbsp;&middot;&nbsp; <strong>🎁 First Order = +1 FREE Box</strong> &nbsp;&middot;&nbsp; 30-Day Guarantee</div>
 
 <nav>
   <a href="/" style="text-decoration:none"><div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#1A1208">VITA<span style="color:#F15A22">MAX</span><span style="font-size:14px;color:#C8940A">.MY</span></div></a>
@@ -111,13 +113,13 @@ footer a:hover{color:#fff}
 <div class="trust-strip">
   <div class="trust-item">&#x1F512; Secure Checkout</div>
   <div class="trust-item">&#x1F4E6; Discreet Packaging</div>
-  <div class="trust-item">&#x2708;&#xFE0F; Free Shipping over $60</div>
+  <div class="trust-item">🚚 FREE Delivery — Every Order</div>
   <div class="trust-item">&#x1F504; 30-Day Guarantee</div>
 </div>
 
 <div class="bogo-banner">
   <div class="bogo-inner">
-    &#x1F381; Use code <span class="bogo-code">BOGO</span> at checkout for 10% off multi-packs!
+    🎁 <strong>First order?</strong>&nbsp;We add <span class="bogo-code">+1 FREE BOX</span> automatically &nbsp;·&nbsp; 🚚 FREE delivery already included in every price
   </div>
 </div>
 
@@ -135,12 +137,13 @@ footer a:hover{color:#fff}
     <div class="order-summary">
       <h2>Order Summary</h2>
       <div class="summary-row"><span>Subtotal</span><span id="sumSubtotal">$0.00</span></div>
-      <div class="summary-row"><span>Shipping</span><span class="summary-shipping" id="sumShipping">FREE</span></div>
+      <div class="summary-row"><span>Shipping</span><span class="summary-shipping" id="sumShipping">FREE — included</span></div>
+      <div class="summary-row" style="color:var(--green);font-weight:600"><span>🎁 First-order bonus</span><span>+1 FREE box</span></div>
       <div class="summary-row total"><span>Total</span><span id="sumTotal">$0.00</span></div>
       <div class="coupon-wrap">
         <div class="coupon-label">Discount Code</div>
         <div class="coupon-row">
-          <input type="text" class="coupon-input" id="couponInput" placeholder="e.g. BOGO">
+          <input type="text" class="coupon-input" id="couponInput" placeholder="Enter code (optional)">
           <button class="coupon-btn" onclick="applyCoupon()">Apply</button>
         </div>
         <div class="coupon-msg" id="couponMsg"></div>
@@ -196,7 +199,7 @@ function renderCart(data) {
   var html = '';
   items.forEach(function(item) {
     var imgHtml = item.image
-      ? '<img src="' + item.image + '" alt="' + item.name + '">'
+      ? '<img loading="lazy" decoding="async" src="' + item.image + '" alt="' + item.name + '">'
       : '&#x1F36F;';
     var variation = '';
     if (item.variation && item.variation.length) {
@@ -223,10 +226,10 @@ function renderCart(data) {
 
   document.getElementById('sumSubtotal').textContent = fmt(data.subtotal);
   document.getElementById('sumTotal').textContent = fmt(data.total);
-  var shipping = parseFloat(data.shipping);
+  // Delivery is free on every order — always
   var shipEl = document.getElementById('sumShipping');
-  if (!shipping) { shipEl.textContent = 'FREE'; shipEl.style.color = 'var(--green)'; }
-  else { shipEl.textContent = fmt(shipping); shipEl.style.color = 'var(--mid)'; }
+  shipEl.textContent = 'FREE — included';
+  shipEl.style.color = 'var(--green)';
 }
 
 function handleQty(btn) {

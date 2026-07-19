@@ -406,6 +406,10 @@ body:has(#menu-toggle:checked) .mobile-overlay{display:block}
 body:has(#menu-toggle:checked) .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 body:has(#menu-toggle:checked) .hamburger span:nth-child(2){opacity:0}
 body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.announce{background:linear-gradient(90deg,#F15A22,#D44818,#C8940A,#F15A22)!important;background-size:300% 100%!important;animation:annShift 9s linear infinite;color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:500}
+.announce strong{color:#FFE08A;font-weight:700}
+@keyframes annShift{to{background-position:300% 0}}
+/* PREMIUM UPGRADE LAYER */
 </style>
 <link rel="icon" type="image/svg+xml" href="/vitamax-images/favicon.svg">
 <meta property="og:type" content="website">
@@ -419,6 +423,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 </head>
 <body>
 
+<div class="announce">🚚 FREE Delivery On Every Order &nbsp;&middot;&nbsp; <strong>🎁 First Order = +1 FREE Box</strong> &nbsp;&middot;&nbsp; Wholesale cartons: 30 · 60 · 90 boxes — prices include freight</div>
 <input type="checkbox" id="menu-toggle">
 <nav>
   <div class="nav-logo"><a href="index.html"><img src="/vitamax-images/logo.svg" alt="VitaMAX.MY" width="150" height="42"></a></div>
@@ -461,7 +466,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 @media(min-width:769px){.ws-topbanner img{height:380px;object-fit:cover;object-position:center}}
 </style>
 <a href="/wholesale.html#carton" class="ws-topbanner">
-  <img src="/vitamax-images/banner-m-wholesale.png" alt="Wholesale Mega Pack — Bulk Ready, carton supply for resellers and export">
+  <img loading="lazy" decoding="async" src="/vitamax-images/banner-m-wholesale.webp" alt="Wholesale Mega Pack — Bulk Ready, carton supply for resellers and export">
 </a>
 
 <!-- ══ HERO ══ -->
@@ -594,7 +599,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <div class="carton-card featured" id="c1">
         <div class="carton-popular">🔥 Best Seller Carton</div>
         <div class="carton-img carton-img-him" style="padding-top:20px">
-          <a href="product-wholesale-royal-honey-gold.html"><img id="c1-img" src="/vitamax-images/royal-gold-1.png" alt="VitaMAX Royal Honey Gold Carton"></a>
+          <a href="product-wholesale-royal-honey-gold.html"><img loading="lazy" decoding="async" id="c1-img" src="/vitamax-images/royal-gold-1.webp" alt="VitaMAX Royal Honey Gold Carton"></a>
         </div>
         <div class="carton-body">
           <div class="carton-tag">For Him · Royal Honey</div>
@@ -608,12 +613,12 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
             <div class="carton-include-item"><div class="ci-dot"></div>Ships in sealed branded carton</div>
           </div>
           <div class="size-selector">
-            <div class="size-opt on" onclick="selectSize(this,'c1')" data-price="1020" data-was="2670" data-per="34.00" data-boxes="30" data-slug="royal-honey-gold-half" data-checkout="checkout.html?product=royal-honey-gold-carton&variant=half&price=1020" data-img="/vitamax-images/royal-gold-1.png">
+            <div class="size-opt on" onclick="selectSize(this,'c1')" data-price="1020" data-was="2670" data-per="34.00" data-boxes="30" data-slug="royal-honey-gold-half" data-checkout="checkout.html?product=royal-honey-gold-carton&variant=half&price=1020" data-img="/vitamax-images/royal-gold-1.webp">
               <div class="so-label">Half Carton</div>
               <div class="so-boxes">30 boxes</div>
               <div class="so-price">$1,020</div>
             </div>
-            <div class="size-opt" onclick="selectSize(this,'c1')" data-price="1680" data-was="5340" data-per="28.00" data-boxes="60" data-slug="royal-honey-gold-full" data-checkout="checkout.html?product=royal-honey-gold-carton&variant=full&price=1680" data-img="/vitamax-images/royal-gold-2.png">
+            <div class="size-opt" onclick="selectSize(this,'c1')" data-price="1680" data-was="5340" data-per="28.00" data-boxes="60" data-slug="royal-honey-gold-full" data-checkout="checkout.html?product=royal-honey-gold-carton&variant=full&price=1680" data-img="/vitamax-images/royal-gold-2.webp">
               <div class="so-badge">Best Value</div>
               <div class="so-label">Full Carton</div>
               <div class="so-boxes">60 boxes</div>
@@ -637,7 +642,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <!-- CARTON 2: FOR HER -->
       <div class="carton-card" id="c2">
         <div class="carton-img carton-img-her">
-          <a href="product-wholesale-queens-honey.html"><img id="c2-img" src="/vitamax-images/queens-honey-1.png" alt="VitaMAX Queen's Honey Carton"></a>
+          <a href="product-wholesale-queens-honey.html"><img loading="lazy" decoding="async" id="c2-img" src="/vitamax-images/queens-honey-1.webp" alt="VitaMAX Queen's Honey Carton"></a>
         </div>
         <div class="carton-body">
           <div class="carton-tag">For Her · Queen's Honey</div>
@@ -651,12 +656,12 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
             <div class="carton-include-item"><div class="ci-dot"></div>Ships in sealed branded carton</div>
           </div>
           <div class="size-selector">
-            <div class="size-opt on" onclick="selectSize(this,'c2')" data-price="1020" data-was="2670" data-per="34.00" data-boxes="30" data-slug="queens-honey-half" data-checkout="checkout.html?product=queens-honey-carton&variant=half&price=1020" data-img="/vitamax-images/queens-honey-1.png">
+            <div class="size-opt on" onclick="selectSize(this,'c2')" data-price="1020" data-was="2670" data-per="34.00" data-boxes="30" data-slug="queens-honey-half" data-checkout="checkout.html?product=queens-honey-carton&variant=half&price=1020" data-img="/vitamax-images/queens-honey-1.webp">
               <div class="so-label">Half Carton</div>
               <div class="so-boxes">30 boxes</div>
               <div class="so-price">$1,020</div>
             </div>
-            <div class="size-opt" onclick="selectSize(this,'c2')" data-price="1680" data-was="5340" data-per="28.00" data-boxes="60" data-slug="queens-honey-full" data-checkout="checkout.html?product=queens-honey-carton&variant=full&price=1680" data-img="/vitamax-images/queens-honey-2.png">
+            <div class="size-opt" onclick="selectSize(this,'c2')" data-price="1680" data-was="5340" data-per="28.00" data-boxes="60" data-slug="queens-honey-full" data-checkout="checkout.html?product=queens-honey-carton&variant=full&price=1680" data-img="/vitamax-images/queens-honey-2.webp">
               <div class="so-badge">Best Value</div>
               <div class="so-label">Full Carton</div>
               <div class="so-boxes">60 boxes</div>
@@ -680,7 +685,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <!-- CARTON 3: MIX CARTON -->
       <div class="carton-card" id="c3">
         <div class="carton-img carton-img-mix">
-          <a href="product-wholesale-mixed-couples.html"><img id="c3-img" src="/vitamax-images/mix-carton-1.png" alt="VitaMAX Mixed Couples Carton"></a>
+          <a href="product-wholesale-mixed-couples.html"><img loading="lazy" decoding="async" id="c3-img" src="/vitamax-images/mix-carton-1.webp" alt="VitaMAX Mixed Couples Carton"></a>
         </div>
         <div class="carton-body">
           <div class="carton-tag">His &amp; Hers · Mixed Carton</div>
@@ -694,12 +699,12 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
             <div class="carton-include-item"><div class="ci-dot"></div>Halal certified · Branded carton</div>
           </div>
           <div class="size-selector">
-            <div class="size-opt on" onclick="selectSize(this,'c3')" data-price="1020" data-was="2670" data-per="34.00" data-boxes="30" data-slug="mix-carton-half" data-checkout="checkout.html?product=mix-carton&variant=half&price=1020" data-img="/vitamax-images/mix-carton-1.png">
+            <div class="size-opt on" onclick="selectSize(this,'c3')" data-price="1020" data-was="2670" data-per="34.00" data-boxes="30" data-slug="mix-carton-half" data-checkout="checkout.html?product=mix-carton&variant=half&price=1020" data-img="/vitamax-images/mix-carton-1.webp">
               <div class="so-label">Half Carton</div>
               <div class="so-boxes">30 boxes</div>
               <div class="so-price">$1,020</div>
             </div>
-            <div class="size-opt" onclick="selectSize(this,'c3')" data-price="1680" data-was="5340" data-per="28.00" data-boxes="60" data-slug="mix-carton-full" data-checkout="checkout.html?product=mix-carton&variant=full&price=1680" data-img="/vitamax-images/mix-carton-2.png">
+            <div class="size-opt" onclick="selectSize(this,'c3')" data-price="1680" data-was="5340" data-per="28.00" data-boxes="60" data-slug="mix-carton-full" data-checkout="checkout.html?product=mix-carton&variant=full&price=1680" data-img="/vitamax-images/mix-carton-2.webp">
               <div class="so-badge">Best Value</div>
               <div class="so-label">Full Carton</div>
               <div class="so-boxes">60 boxes</div>
@@ -723,7 +728,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <!-- CARTON 4: PURE HONEY -->
       <div class="carton-card" id="c4">
         <div class="carton-img carton-img-pure">
-          <a href="product-wholesale-pure-wild-honey.html"><img id="c4-img" src="/vitamax-images/pure-honey-1.png" alt="VitaMAX Pure Wild Honey Carton"></a>
+          <a href="product-wholesale-pure-wild-honey.html"><img loading="lazy" decoding="async" id="c4-img" src="/vitamax-images/pure-honey-1.webp" alt="VitaMAX Pure Wild Honey Carton"></a>
         </div>
         <div class="carton-body">
           <div class="carton-tag">Pure Honey · Trigona Wild</div>
@@ -737,12 +742,12 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
             <div class="carton-include-item"><div class="ci-dot"></div>Ships in protected carton</div>
           </div>
           <div class="size-selector">
-            <div class="size-opt on" onclick="selectSize(this,'c4')" data-price="1020" data-was="2670" data-per="34.00" data-boxes="30" data-slug="pure-honey-half" data-checkout="checkout.html?product=pure-honey-carton&variant=half&price=1020" data-img="/vitamax-images/pure-honey-1.png">
+            <div class="size-opt on" onclick="selectSize(this,'c4')" data-price="1020" data-was="2670" data-per="34.00" data-boxes="30" data-slug="pure-honey-half" data-checkout="checkout.html?product=pure-honey-carton&variant=half&price=1020" data-img="/vitamax-images/pure-honey-1.webp">
               <div class="so-label">Half Carton</div>
               <div class="so-boxes">30 jars</div>
               <div class="so-price">$1,020</div>
             </div>
-            <div class="size-opt" onclick="selectSize(this,'c4')" data-price="1680" data-was="5340" data-per="28.00" data-boxes="60" data-slug="pure-honey-full" data-checkout="checkout.html?product=pure-honey-carton&variant=full&price=1680" data-img="/vitamax-images/pure-honey-2.png">
+            <div class="size-opt" onclick="selectSize(this,'c4')" data-price="1680" data-was="5340" data-per="28.00" data-boxes="60" data-slug="pure-honey-full" data-checkout="checkout.html?product=pure-honey-carton&variant=full&price=1680" data-img="/vitamax-images/pure-honey-2.webp">
               <div class="so-badge">Best Value</div>
               <div class="so-label">Full Carton</div>
               <div class="so-boxes">60 jars</div>
@@ -886,9 +891,9 @@ function selectSize(el, cardId) {
   var slug = el.dataset.slug;
   var checkout = el.dataset.checkout;
   var img = el.dataset.img;
-  card.querySelector('.carton-price-val').textContent = price;
-  card.querySelector('.carton-was-val').textContent = 'was $'+was;
-  card.querySelector('.carton-save-val').textContent = 'Save $'+(parseInt(was)-parseInt(price));
+  card.querySelector('.carton-price-val').textContent = parseInt(price).toLocaleString('en-US');
+  card.querySelector('.carton-was-val').textContent = 'was $'+parseInt(was).toLocaleString('en-US');
+  card.querySelector('.carton-save-val').textContent = 'Save $'+(parseInt(was)-parseInt(price)).toLocaleString('en-US');
   card.querySelector('.carton-per-val').textContent = '$'+per+' per box · '+boxes+' boxes per carton';
   var addBtn = card.querySelector('.carton-add-btn');
   if(addBtn) addBtn.href = checkout;

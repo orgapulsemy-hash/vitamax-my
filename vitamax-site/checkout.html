@@ -287,11 +287,10 @@ body{background:var(--cream);color:var(--text);font-family:'Plus Jakarta Sans',s
             <div class="field-error" id="zip-err">Please enter your postcode</div>
           </div>
           <div class="field">
-            <label>Shipping speed</label>
-            <select id="shipping">
-              <option value="standard">Standard (8–14 days) — FREE over $60</option>
-              <option value="express">Express DHL (3–5 days) — +$18</option>
-            </select>
+            <label>Delivery</label>
+            <div style="display:flex;align-items:center;gap:8px;background:#F0FFF4;border:1.5px solid #C8F0D8;border-radius:8px;padding:12px 14px;font-size:13.5px;font-weight:600;color:#0f5c2c">
+              🚚 FREE Tracked Delivery — included in your price
+            </div>
           </div>
         </div>
         <div class="field full">
@@ -392,18 +391,22 @@ body{background:var(--cream);color:var(--text);font-family:'Plus Jakarta Sans',s
           <div class="order-item-img" id="order-img">🍯</div>
           <div>
             <div class="order-item-name" id="order-name">VitaMAX Royal Honey Gold</div>
-            <div class="order-item-variant" id="order-variant">1 Pack · 12 sachets</div>
-            <div class="order-item-price">$<span id="order-price">29</span></div>
+            <div class="order-item-variant" id="order-variant">10 Boxes · Full Carton</div>
+            <div class="order-item-price">$<span id="order-price">390</span></div>
           </div>
         </div>
 
         <div class="summary-row">
           <span>Subtotal</span>
-          <span>$<span id="subtotal">29</span></span>
+          <span>$<span id="subtotal">390</span></span>
         </div>
         <div class="summary-row" id="shipping-row">
           <span>Shipping</span>
-          <span id="shipping-cost" class="free">FREE</span>
+          <span id="shipping-cost" class="free">FREE — included</span>
+        </div>
+        <div class="summary-row" style="color:var(--green)">
+          <span>🎁 First-order bonus</span>
+          <span>+1 FREE box</span>
         </div>
         <div class="summary-row" id="discount-row" style="display:none;color:var(--green)">
           <span>Discount</span>
@@ -424,7 +427,8 @@ body{background:var(--cream);color:var(--text);font-family:'Plus Jakarta Sans',s
           <div class="trust-item"><span class="trust-icon">🌿</span><span>100% Natural ingredients — Halal Certified</span></div>
           <div class="trust-item"><span class="trust-icon">📦</span><span>Ships in completely plain, discreet packaging</span></div>
           <div class="trust-item"><span class="trust-icon">🔄</span><span>30-day money-back guarantee — no questions</span></div>
-          <div class="trust-item"><span class="trust-icon">✈️</span><span>Tracked shipping to US · CA · EU</span></div>
+          <div class="trust-item"><span class="trust-icon">🚚</span><span>FREE tracked delivery — US · CA · EU · Worldwide</span></div>
+          <div class="trust-item"><span class="trust-icon">🎁</span><span>First order? +1 FREE box packed automatically</span></div>
         </div>
       </div>
     </div>
@@ -441,7 +445,7 @@ body{background:var(--cream);color:var(--text);font-family:'Plus Jakarta Sans',s
     <a href="privacy-policy.html">Privacy Policy</a>
     <a href="refund-policy.html">Refund Policy</a>
     <a href="terms.html">Terms of Service</a>
-    <a href="https://wa.me/601XXXXXXXX" target="_blank">WhatsApp Support</a>
+    <a href="https://wa.me/60177809767" target="_blank">WhatsApp Support</a>
   </div>
   <div class="co-footer-disc">
     © 2025 VitaMAX.MY · These statements have not been evaluated by the FDA. Not intended to diagnose, treat, cure, or prevent any disease.
@@ -499,8 +503,8 @@ cardCvc.mount('#card-cvc-element');
 // ══════════════════════════════════════
 var params = new URLSearchParams(window.location.search);
 var productSlug = params.get('product') || 'royal-honey-gold';
-var variant = params.get('variant') || 'v1';
-var price = parseFloat(params.get('price') || '29');
+var variant = params.get('variant') || 'v10';
+var price = parseFloat(params.get('price') || '390');
 
 // Product display map
 var productMap = {
@@ -517,11 +521,10 @@ var productMap = {
 };
 
 var variantLabels = {
-  'v1':'1 Pack · 12 sachets', '1pack':'1 Pack · 12 sachets',
-  'v2':'3 Packs · 36 sachets', '3packs':'3 Packs · 36 sachets',
-  'v3':'6 Packs · 72 sachets', '6packs':'6 Packs · 72 sachets',
-  '250g':'250g Jar', '500g':'500g Jar', '1kg':'1kg Jar',
-  '1set':'1 Set (His + Hers)', '2sets':'2 Sets', '3sets':'3 Sets',
+  'v10':'10 Boxes · Full Carton', 'v30':'30 Boxes · Full Carton (Most Popular)', 'v60':'60 Boxes · Full Carton (Best Value)',
+  'v90':'90 Boxes · Wholesale', 'v100':'100 Boxes · Wholesale', 'v200':'200 Boxes · Wholesale',
+  '30':'30 Boxes · Wholesale Carton', '60':'60 Boxes · Wholesale Carton', '90':'90 Boxes · Wholesale Carton',
+  'v1':'10 Boxes · Full Carton', 'v2':'30 Boxes · Full Carton', 'v3':'60 Boxes · Full Carton',
 };
 
 // Populate order summary
@@ -533,27 +536,21 @@ document.getElementById('order-price').textContent = price.toFixed(2);
 document.getElementById('subtotal').textContent = price.toFixed(2);
 document.getElementById('btn-total').textContent = price.toFixed(2);
 
+// Delivery is FREE on every order — no shipping calculations, ever
 var shippingCost = 0;
+var discount = 0;
 updateTotal();
 
 function updateTotal() {
-  var ship = document.getElementById('shipping');
-  shippingCost = (ship && ship.value === 'express') ? 18 : (price >= 60 ? 0 : 8);
+  shippingCost = 0;
   var sc = document.getElementById('shipping-cost');
-  if (shippingCost === 0) {
-    sc.textContent = 'FREE'; sc.className = 'free';
-  } else {
-    sc.textContent = '$' + shippingCost.toFixed(2); sc.className = '';
-  }
+  sc.textContent = 'FREE — included'; sc.className = 'free';
   var total = price + shippingCost - discount;
   document.getElementById('total-price').textContent = total.toFixed(2);
   document.getElementById('btn-total').textContent = total.toFixed(2);
 }
 
-document.getElementById('shipping').addEventListener('change', updateTotal);
-
 // Promo codes
-var discount = 0;
 var promoCodes = { 'VITAMAX10': 10, 'WELCOME15': 15, 'SAVE20': 20, 'ROYAL5': 5 };
 function applyPromo() {
   var code = document.getElementById('promo-code').value.trim().toUpperCase();
@@ -586,7 +583,7 @@ function setPayMethod(method, tab) {
 
 // Update WhatsApp order button
 var waBtn = document.getElementById('wa-order-btn');
-waBtn.href = 'https://wa.me/601XXXXXXXX?text=Hi%2C+I+want+to+order+' + encodeURIComponent(prod.name) + '+(' + encodeURIComponent(variantLabels[variant]||variant) + ')+%24' + price;
+waBtn.href = 'https://wa.me/60177809767?text=Hi%2C+I+want+to+order+' + encodeURIComponent(prod.name) + '+(' + encodeURIComponent(variantLabels[variant]||variant) + ')+%24' + price + '+with+free+delivery';
 
 // ══════════════════════════════════════
 // FORM VALIDATION

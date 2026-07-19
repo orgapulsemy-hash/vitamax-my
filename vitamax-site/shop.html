@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Shop Royal Honey Supplements — VitaMAX.MY</title>
-<meta name="description" content="Shop VitaMAX royal honey supplements. For him, for her, couples bundles and pure honey. Ships to US, Canada and Europe. Halal certified.">
+<meta name="description" content="Shop VitaMAX royal honey supplements in bulk cartons of 10, 30 or 60 boxes. Free delivery on every order, +1 free box for first-time buyers. Ships to US, Canada and Europe. Halal certified.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -277,6 +277,19 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 .shop-promo-btn{flex-shrink:0;z-index:1;background:#fff;color:var(--orange);font-weight:800;font-size:14px;padding:13px 24px;border-radius:100px;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.18)}
 @media(max-width:768px){.shop-promo{flex-direction:column;text-align:center;gap:12px;padding:22px 18px}.shop-promo-text strong{font-size:18px}.shop-promo-btn{width:100%;text-align:center}}
 
+
+/* ══ PREMIUM UPGRADE LAYER ══ */
+.announce{background:linear-gradient(90deg,#F15A22,#D44818,#C8940A,#F15A22);background-size:300% 100%;animation:annShift 9s linear infinite}
+@keyframes annShift{to{background-position:300% 0}}
+.price-perbox{font-size:12px;color:var(--soft);font-weight:700;white-space:nowrap}
+.pcard-promo{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:#8a6d00;background:linear-gradient(90deg,#FFF6DC,#FFF9EA);border:1px solid #F0E2B8;border-radius:8px;padding:7px 10px;margin:0 0 12px}
+.cat-banner{margin-bottom:20px}
+.cat-banner img{width:100%;height:auto;display:block;border-radius:14px;box-shadow:0 8px 32px rgba(26,18,8,.1)}
+.add-btn{position:relative;overflow:hidden}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.announce{animation:none}html{scroll-behavior:auto}}
+
 </style>
 <link rel="icon" type="image/svg+xml" href="/vitamax-images/favicon.svg">
 <meta property="og:type" content="website">
@@ -291,7 +304,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 <body>
 
 <input type="checkbox" id="menu-toggle">
-<div class="announce">&#x1F36F; FREE Shipping over $60 &nbsp;&middot;&nbsp; <strong>Use code BOGO</strong> for 10% off multi-packs &nbsp;&middot;&nbsp; 30-Day Guarantee</div>
+<div class="announce">🚚 FREE Delivery On Every Order &nbsp;&middot;&nbsp; <strong>🎁 First Order = +1 FREE Box</strong> &nbsp;&middot;&nbsp; Full cartons: 10 · 30 · 60 — prices include delivery</div>
 <nav>
   <div class="nav-logo"><a href="/"><img src="/vitamax-images/logo.svg" alt="VitaMAX.MY" width="150" height="42"></a></div>
   <div class="nav-links">
@@ -342,14 +355,14 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <p class="breadcrumb"><a href="/">Home</a><span>&rsaquo;</span>Shop</p>
     </div>
     <h1>Shop <span>VitaMAX</span> Royal Honey</h1>
-    <p>Premium honey supplements for men and women. Sourced from the ancient rainforests of Malaysia. Choose your category below.</p>
+    <p>Premium honey supplements for men and women, sourced from the ancient rainforests of Malaysia. Full cartons only — <strong>10, 30 or 60 boxes</strong> — with free delivery built into every price.</p>
     <div class="trust-strip">
       <div class="t-chip"><div class="t-dot"></div>100% Natural</div>
       <div class="t-chip"><div class="t-dot"></div>Halal Certified</div>
       <div class="t-chip"><div class="t-dot"></div>Discreet Packaging</div>
       <div class="t-chip"><div class="t-dot"></div>30-Day Guarantee</div>
       <div class="t-chip"><div class="t-dot"></div>US &middot; CA &middot; EU Shipping</div>
-      <div class="t-chip" style="background:var(--or-l);border-color:var(--or-m)"><div class="t-dot"></div><strong>Code BOGO — 10% off multi-packs</strong></div>
+      <div class="t-chip" style="background:var(--or-l);border-color:var(--or-m)"><div class="t-dot"></div><strong>🎁 First order: +1 FREE box &middot; 🚚 Free delivery</strong></div>
     </div>
   </div>
 </div>
@@ -372,10 +385,10 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 <div class="shop-promo">
   <span class="shop-promo-ic">🎁</span>
   <div class="shop-promo-text">
-    <strong>Get 3 FREE Sachets With Every Order</strong>
-    <span>Plus free worldwide shipping over $60 — added automatically at checkout. Buy a bundle &amp; save even more.</span>
+    <strong>First Order Gets +1 FREE Box — Automatically</strong>
+    <span>Pick any carton — 10, 30 or 60 boxes — and we pack an extra box free. FREE delivery already included in every price.</span>
   </div>
-  <a href="#sec-bundle" class="shop-promo-btn">Shop Bundles →</a>
+  <a href="#sec-him" class="shop-promo-btn">Claim My Free Box →</a>
 </div>
 
 <!-- FOR HIM -->
@@ -396,7 +409,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <div class="pcard-wish" onclick="this.textContent=this.textContent=='🤍'?'❤️':'🤍'">🤍</div>
       <a href="/product-royal-honey-gold.html" style="text-decoration:none;display:block">
         <div class="pcard-img bg-him">
-          <img src="/vitamax-images/vip-1.png" alt="Royal Honey VIP Pack">
+          <img loading="lazy" decoding="async" src="/vitamax-images/vip-1.webp" alt="Royal Honey VIP Pack">
         </div>
       </a>
       <div class="pcard-body">
@@ -406,16 +419,16 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
         <div class="pcard-stars">★★★★★</div>
         <div class="pcard-reviews">4.9 · 1,842 reviews</div>
         <div class="pcard-variants">
-            <button class="v-pill on" onclick="setPill(this,139,'p1')">1 Pack — $139</button>
-            <button class="v-pill" onclick="setPill(this,250,'p1')">2 Packs — $250</button>
-            <button class="v-pill" onclick="setPill(this,375,'p1')">3 Packs — $375</button>
-            <button class="v-pill" onclick="setPill(this,750,'p1')">6 Packs — $750</button>
+            <button class="v-pill on" onclick="setPill(this,390,'p1')">10 Boxes — $390</button>
+            <button class="v-pill" onclick="setPill(this,1020,'p1')">30 Boxes — $1,020</button>
+            <button class="v-pill" onclick="setPill(this,1680,'p1')">60 Boxes — $1,680</button>
         </div>
+        <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
         <div class="pcard-footer">
           <div class="price-wrap">
-            <span class="price-now" id="p1-price">$139</span>
-            <span class="price-was" id="p1-was">was $160</span>
-            <span class="price-save" id="p1-save">Save $21</span>
+            <span class="price-now" id="p1-price">$390</span>
+            <span class="price-perbox" id="p1-was">$39/box</span>
+            <span class="price-save" id="p1-save">🚚 Free delivery</span>
           </div>
           <a href="/cart.html" onclick="addToCart(event,76,this)" class="add-btn" data-id="76">Add to Cart →</a>
         </div>
@@ -428,7 +441,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <div class="pcard-wish" onclick="this.textContent=this.textContent=='🤍'?'❤️':'🤍'">🤍</div>
       <a href="/product-black-label.html" style="text-decoration:none;display:block">
         <div class="pcard-img bg-him">
-          <img src="/vitamax-images/black-1.png" alt="Black Horse Vital Honey Pack">
+          <img loading="lazy" decoding="async" src="/vitamax-images/black-1.webp" alt="Black Horse Vital Honey Pack">
         </div>
       </a>
       <div class="pcard-body">
@@ -438,16 +451,16 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
         <div class="pcard-stars">★★★★★</div>
         <div class="pcard-reviews">4.8 · 634 reviews</div>
         <div class="pcard-variants">
-            <button class="v-pill on" onclick="setPill(this,129,'p2')">1 Pack — $129</button>
-            <button class="v-pill" onclick="setPill(this,232,'p2')">2 Packs — $232</button>
-            <button class="v-pill" onclick="setPill(this,348,'p2')">3 Packs — $348</button>
-            <button class="v-pill" onclick="setPill(this,696,'p2')">6 Packs — $696</button>
+            <button class="v-pill on" onclick="setPill(this,390,'p2')">10 Boxes — $390</button>
+            <button class="v-pill" onclick="setPill(this,1020,'p2')">30 Boxes — $1,020</button>
+            <button class="v-pill" onclick="setPill(this,1680,'p2')">60 Boxes — $1,680</button>
         </div>
+        <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
         <div class="pcard-footer">
           <div class="price-wrap">
-            <span class="price-now" id="p2-price">$129</span>
-            <span class="price-was" id="p2-was">was $148</span>
-            <span class="price-save" id="p2-save">Save $19</span>
+            <span class="price-now" id="p2-price">$390</span>
+            <span class="price-perbox" id="p2-was">$39/box</span>
+            <span class="price-save" id="p2-save">🚚 Free delivery</span>
           </div>
           <a href="/cart.html" onclick="addToCart(event,81,this)" class="add-btn" data-id="81">Add to Cart →</a>
         </div>
@@ -460,7 +473,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <div class="pcard-wish" onclick="this.textContent=this.textContent=='🤍'?'❤️':'🤍'">🤍</div>
       <a href="/product-glow-honey.html" style="text-decoration:none;display:block">
         <div class="pcard-img bg-him">
-          <img src="/vitamax-images/ice-1.png" alt="VitaMAX Royal Honey ICE ENERGY">
+          <img loading="lazy" decoding="async" src="/vitamax-images/ice-1.webp" alt="VitaMAX Royal Honey ICE ENERGY">
         </div>
       </a>
       <div class="pcard-body">
@@ -470,16 +483,16 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
         <div class="pcard-stars">★★★★★</div>
         <div class="pcard-reviews">4.8 · 389 reviews</div>
         <div class="pcard-variants">
-            <button class="v-pill on" onclick="setPill(this,149,'p6')">1 Pack — $149</button>
-            <button class="v-pill" onclick="setPill(this,268,'p6')">2 Packs — $268</button>
-            <button class="v-pill" onclick="setPill(this,402,'p6')">3 Packs — $402</button>
-            <button class="v-pill" onclick="setPill(this,804,'p6')">6 Packs — $804</button>
+            <button class="v-pill on" onclick="setPill(this,390,'p6')">10 Boxes — $390</button>
+            <button class="v-pill" onclick="setPill(this,1020,'p6')">30 Boxes — $1,020</button>
+            <button class="v-pill" onclick="setPill(this,1680,'p6')">60 Boxes — $1,680</button>
         </div>
+        <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
         <div class="pcard-footer">
           <div class="price-wrap">
-            <span class="price-now" id="p6-price">$149</span>
-            <span class="price-was" id="p6-was">was $171</span>
-            <span class="price-save" id="p6-save">Save $22</span>
+            <span class="price-now" id="p6-price">$390</span>
+            <span class="price-perbox" id="p6-was">$39/box</span>
+            <span class="price-save" id="p6-save">🚚 Free delivery</span>
           </div>
           <a href="/cart.html" onclick="addToCart(event,98,this)" class="add-btn" data-id="98">Add to Cart →</a>
         </div>
@@ -489,6 +502,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 
 <!-- FOR HER -->
 <div class="cat-section cat-her" id="sec-her">
+  <div class="cat-banner"><img loading="lazy" decoding="async" src="/vitamax-images/her-collection-banner.webp" alt="Royal Honey for Women — simple daily wellness made natural"></div>
   <div class="cat-header">
     <div class="cat-icon-big" style="background:var(--her-l);border:1.5px solid var(--her-m)">&#x1F338;</div>
     <div class="cat-title-wrap">
@@ -505,7 +519,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <div class="pcard-wish" onclick="this.textContent=this.textContent=='🤍'?'❤️':'🤍'">🤍</div>
       <a href="/product-power-boost.html" style="text-decoration:none;display:block">
         <div class="pcard-img bg-her">
-          <img src="/vitamax-images/etumax-1.png" alt="Etumax Royal Honey For Her">
+          <img loading="lazy" decoding="async" src="/vitamax-images/etumax-1.webp" alt="Etumax Royal Honey For Her">
         </div>
       </a>
       <div class="pcard-body">
@@ -515,16 +529,16 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
         <div class="pcard-stars">★★★★★</div>
         <div class="pcard-reviews">4.9 · 891 reviews</div>
         <div class="pcard-variants">
-            <button class="v-pill on" onclick="setPill(this,129,'p3')">1 Pack — $129</button>
-            <button class="v-pill" onclick="setPill(this,232,'p3')">2 Packs — $232</button>
-            <button class="v-pill" onclick="setPill(this,348,'p3')">3 Packs — $348</button>
-            <button class="v-pill" onclick="setPill(this,696,'p3')">6 Packs — $696</button>
+            <button class="v-pill on" onclick="setPill(this,390,'p3')">10 Boxes — $390</button>
+            <button class="v-pill" onclick="setPill(this,1020,'p3')">30 Boxes — $1,020</button>
+            <button class="v-pill" onclick="setPill(this,1680,'p3')">60 Boxes — $1,680</button>
         </div>
+        <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
         <div class="pcard-footer">
           <div class="price-wrap">
-            <span class="price-now" id="p3-price">$129</span>
-            <span class="price-was" id="p3-was">was $148</span>
-            <span class="price-save" id="p3-save">Save $19</span>
+            <span class="price-now" id="p3-price">$390</span>
+            <span class="price-perbox" id="p3-was">$39/box</span>
+            <span class="price-save" id="p3-save">🚚 Free delivery</span>
           </div>
           <a href="/cart.html" onclick="addToCart(event,86,this)" class="add-btn" data-id="86">Add to Cart →</a>
         </div>
@@ -537,7 +551,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <div class="pcard-wish" onclick="this.textContent=this.textContent=='🤍'?'❤️':'🤍'">🤍</div>
       <a href="/product-queens-honey.html" style="text-decoration:none;display:block">
         <div class="pcard-img bg-her">
-          <img src="/vitamax-images/lux-1.png" alt="Lux Honey For Her Vital Honey">
+          <img loading="lazy" decoding="async" src="/vitamax-images/lux-1.webp" alt="Lux Honey For Her Vital Honey">
         </div>
       </a>
       <div class="pcard-body">
@@ -547,16 +561,16 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
         <div class="pcard-stars">★★★★★</div>
         <div class="pcard-reviews">4.9 · 764 reviews</div>
         <div class="pcard-variants">
-            <button class="v-pill on" onclick="setPill(this,129,'p4')">1 Pack — $129</button>
-            <button class="v-pill" onclick="setPill(this,232,'p4')">2 Packs — $232</button>
-            <button class="v-pill" onclick="setPill(this,348,'p4')">3 Packs — $348</button>
-            <button class="v-pill" onclick="setPill(this,696,'p4')">6 Packs — $696</button>
+            <button class="v-pill on" onclick="setPill(this,390,'p4')">10 Boxes — $390</button>
+            <button class="v-pill" onclick="setPill(this,1020,'p4')">30 Boxes — $1,020</button>
+            <button class="v-pill" onclick="setPill(this,1680,'p4')">60 Boxes — $1,680</button>
         </div>
+        <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
         <div class="pcard-footer">
           <div class="price-wrap">
-            <span class="price-now" id="p4-price">$129</span>
-            <span class="price-was" id="p4-was">was $148</span>
-            <span class="price-save" id="p4-save">Save $19</span>
+            <span class="price-now" id="p4-price">$390</span>
+            <span class="price-perbox" id="p4-was">$39/box</span>
+            <span class="price-save" id="p4-save">🚚 Free delivery</span>
           </div>
           <a href="/cart.html" onclick="addToCart(event,91,this)" class="add-btn" data-id="91">Add to Cart →</a>
         </div>
@@ -582,7 +596,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <div class="pcard-wish" onclick="this.textContent=this.textContent=='🤍'?'❤️':'🤍'">🤍</div>
       <a href="/product-couples-bundle.html" style="text-decoration:none;display:block">
         <div class="pcard-img bg-her">
-          <img src="/vitamax-images/couples-1.png" alt="VitaMAX Couples Bundle">
+          <img loading="lazy" decoding="async" src="/vitamax-images/couples-1.webp" alt="VitaMAX Couples Bundle">
         </div>
       </a>
       <div class="pcard-body">
@@ -592,16 +606,16 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
         <div class="pcard-stars">★★★★★</div>
         <div class="pcard-reviews">4.9 · 412 reviews</div>
         <div class="pcard-variants">
-            <button class="v-pill on" onclick="setPill(this,339,'p5')">1 Set — $339</button>
-            <button class="v-pill" onclick="setPill(this,610,'p5')">2 Sets — $610</button>
-            <button class="v-pill" onclick="setPill(this,915,'p5')">3 Sets — $915</button>
-            <button class="v-pill" onclick="setPill(this,1830,'p5')">6 Sets — $1830</button>
+            <button class="v-pill on" onclick="setPill(this,780,'p5')">10 Sets — $780</button>
+            <button class="v-pill" onclick="setPill(this,2040,'p5')">30 Sets — $2,040</button>
+            <button class="v-pill" onclick="setPill(this,3360,'p5')">60 Sets — $3,360</button>
         </div>
+        <div class="pcard-promo">🎁 +1 FREE set on your first order</div>
         <div class="pcard-footer">
           <div class="price-wrap">
-            <span class="price-now" id="p5-price">$339</span>
-            <span class="price-was" id="p5-was">was $390</span>
-            <span class="price-save" id="p5-save">Save $51</span>
+            <span class="price-now" id="p5-price">$780</span>
+            <span class="price-perbox" id="p5-was">$78/set</span>
+            <span class="price-save" id="p5-save">🚚 Free delivery</span>
           </div>
           <a href="/cart.html" onclick="addToCart(event,93,this)" class="add-btn" data-id="93">Add to Cart →</a>
         </div>
@@ -614,25 +628,26 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <div class="pcard-wish" onclick="this.textContent=this.textContent=='🤍'?'❤️':'🤍'">🤍</div>
       <a href="/product-wholesale.html" style="text-decoration:none;display:block">
         <div class="pcard-img bg-pure">
-          <img src="/vitamax-images/Vitamax-wholesale.png" alt="VitaMAX Wholesale Carton">
+          <img loading="lazy" decoding="async" src="/vitamax-images/Vitamax-wholesale.webp" alt="VitaMAX Wholesale Carton">
         </div>
       </a>
       <div class="pcard-body">
         <div class="pcard-cat">Wholesale · Bulk Supply</div>
         <div class="pcard-name"><a href="/product-wholesale.html" style="text-decoration:none;color:inherit">VitaMAX Wholesale Carton</a></div>
-        <div class="pcard-tagline">Full carton supply for resellers and bulk buyers. Competitive pricing. Minimum 1 carton. WhatsApp for 10+ cartons.</div>
+        <div class="pcard-tagline">Bulk supply for resellers and serious buyers — 30, 60 or 90 boxes, from $26/box. FREE freight included. WhatsApp for 500+ boxes.</div>
         <div class="pcard-stars">★★★★★</div>
         <div class="pcard-reviews">4.9 · 186 reviews</div>
         <div class="pcard-variants">
-            <button class="v-pill on" onclick="setPill(this,499,'p10')">24 packs — $499</button>
-            <button class="v-pill" onclick="setPill(this,899,'p10')">48 packs — $899</button>
-            <button class="v-pill" onclick="setPill(this,0,'p10')">Custom — Inquire</button>
+            <button class="v-pill on" onclick="setPill(this,1020,'p10')">30 Boxes — $1,020</button>
+            <button class="v-pill" onclick="setPill(this,1680,'p10')">60 Boxes — $1,680</button>
+            <button class="v-pill" onclick="setPill(this,2340,'p10')">90 Boxes — $2,340</button>
         </div>
+        <div class="pcard-promo">📦 Reseller rates from $26/box &middot; FREE delivery included</div>
         <div class="pcard-footer">
           <div class="price-wrap">
-            <span class="price-now" id="p10-price">$499</span>
-            <span class="price-was" id="p10-was">was $574</span>
-            <span class="price-save" id="p10-save">Save $75</span>
+            <span class="price-now" id="p10-price">$1,020</span>
+            <span class="price-perbox" id="p10-was">$34/box</span>
+            <span class="price-save" id="p10-save">🚚 Free delivery</span>
           </div>
           <a href="https://wa.me/60177809767?text=Hi%2C+I+want+wholesale+pricing+for+VitaMAX" class="add-btn">Inquire via WhatsApp →</a>
         </div>
@@ -658,7 +673,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <div class="pcard-wish" onclick="this.textContent=this.textContent=='🤍'?'❤️':'🤍'">🤍</div>
       <a href="/product-tualang-herbal.html" style="text-decoration:none;display:block">
         <div class="pcard-img bg-herb">
-          <img src="/vitamax-images/honeymax-1.png" alt="HoneyMax Royal Honey For Him">
+          <img loading="lazy" decoding="async" src="/vitamax-images/honeymax-1.webp" alt="HoneyMax Royal Honey For Him">
         </div>
       </a>
       <div class="pcard-body">
@@ -668,16 +683,16 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
         <div class="pcard-stars">★★★★★</div>
         <div class="pcard-reviews">4.9 · 347 reviews</div>
         <div class="pcard-variants">
-            <button class="v-pill on" onclick="setPill(this,139,'p7')">1 Pack — $139</button>
-            <button class="v-pill" onclick="setPill(this,250,'p7')">2 Packs — $250</button>
-            <button class="v-pill" onclick="setPill(this,375,'p7')">3 Packs — $375</button>
-            <button class="v-pill" onclick="setPill(this,750,'p7')">6 Packs — $750</button>
+            <button class="v-pill on" onclick="setPill(this,390,'p7')">10 Boxes — $390</button>
+            <button class="v-pill" onclick="setPill(this,1020,'p7')">30 Boxes — $1,020</button>
+            <button class="v-pill" onclick="setPill(this,1680,'p7')">60 Boxes — $1,680</button>
         </div>
+        <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
         <div class="pcard-footer">
           <div class="price-wrap">
-            <span class="price-now" id="p7-price">$139</span>
-            <span class="price-was" id="p7-was">was $160</span>
-            <span class="price-save" id="p7-save">Save $21</span>
+            <span class="price-now" id="p7-price">$390</span>
+            <span class="price-perbox" id="p7-was">$39/box</span>
+            <span class="price-save" id="p7-save">🚚 Free delivery</span>
           </div>
           <a href="/cart.html" onclick="addToCart(event,103,this)" class="add-btn" data-id="103">Add to Cart →</a>
         </div>
@@ -690,7 +705,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <div class="pcard-wish" onclick="this.textContent=this.textContent=='🤍'?'❤️':'🤍'">🤍</div>
       <a href="/product-detox-honey.html" style="text-decoration:none;display:block">
         <div class="pcard-img bg-him">
-          <img src="/vitamax-images/gladiator-1.png" alt="Gladiator Royal Honey For Him">
+          <img loading="lazy" decoding="async" src="/vitamax-images/gladiator-1.webp" alt="Gladiator Royal Honey For Him">
         </div>
       </a>
       <div class="pcard-body">
@@ -700,16 +715,16 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
         <div class="pcard-stars">★★★★★</div>
         <div class="pcard-reviews">4.7 · 198 reviews</div>
         <div class="pcard-variants">
-            <button class="v-pill on" onclick="setPill(this,149,'p8')">1 Pack — $149</button>
-            <button class="v-pill" onclick="setPill(this,268,'p8')">2 Packs — $268</button>
-            <button class="v-pill" onclick="setPill(this,402,'p8')">3 Packs — $402</button>
-            <button class="v-pill" onclick="setPill(this,804,'p8')">6 Packs — $804</button>
+            <button class="v-pill on" onclick="setPill(this,390,'p8')">10 Boxes — $390</button>
+            <button class="v-pill" onclick="setPill(this,1020,'p8')">30 Boxes — $1,020</button>
+            <button class="v-pill" onclick="setPill(this,1680,'p8')">60 Boxes — $1,680</button>
         </div>
+        <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
         <div class="pcard-footer">
           <div class="price-wrap">
-            <span class="price-now" id="p8-price">$149</span>
-            <span class="price-was" id="p8-was">was $171</span>
-            <span class="price-save" id="p8-save">Save $22</span>
+            <span class="price-now" id="p8-price">$390</span>
+            <span class="price-perbox" id="p8-was">$39/box</span>
+            <span class="price-save" id="p8-save">🚚 Free delivery</span>
           </div>
           <a href="/cart.html" onclick="addToCart(event,108,this)" class="add-btn" data-id="108">Add to Cart →</a>
         </div>
@@ -735,7 +750,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <div class="pcard-wish" onclick="this.textContent=this.textContent=='🤍'?'❤️':'🤍'">🤍</div>
       <a href="/product-pure-wild-honey.html" style="text-decoration:none;display:block">
         <div class="pcard-img bg-pure">
-          <img src="/vitamax-images/chobe-1.png" alt="Chobe Pure Polyfloral Honey">
+          <img loading="lazy" decoding="async" src="/vitamax-images/chobe-1.webp" alt="Chobe Pure Polyfloral Honey">
         </div>
       </a>
       <div class="pcard-body">
@@ -745,16 +760,16 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
         <div class="pcard-stars">★★★★★</div>
         <div class="pcard-reviews">4.8 · 329 reviews</div>
         <div class="pcard-variants">
-            <button class="v-pill on" onclick="setPill(this,109,'p9')">250g — $109</button>
-            <button class="v-pill" onclick="setPill(this,196,'p9')">500g — $196</button>
-            <button class="v-pill" onclick="setPill(this,294,'p9')">1kg — $294</button>
-            <button class="v-pill" onclick="setPill(this,588,'p9')">2kg — $588</button>
+            <button class="v-pill on" onclick="setPill(this,390,'p9')">10 Jars — $390</button>
+            <button class="v-pill" onclick="setPill(this,1020,'p9')">30 Jars — $1,020</button>
+            <button class="v-pill" onclick="setPill(this,1680,'p9')">60 Jars — $1,680</button>
         </div>
+        <div class="pcard-promo">🎁 +1 FREE jar on your first order</div>
         <div class="pcard-footer">
           <div class="price-wrap">
-            <span class="price-now" id="p9-price">$109</span>
-            <span class="price-was" id="p9-was">was $125</span>
-            <span class="price-save" id="p9-save">Save $16</span>
+            <span class="price-now" id="p9-price">$390</span>
+            <span class="price-perbox" id="p9-was">$39/jar</span>
+            <span class="price-save" id="p9-save">🚚 Free delivery</span>
           </div>
           <a href="/cart.html" onclick="addToCart(event,113,this)" class="add-btn" data-id="113">Add to Cart →</a>
         </div>
@@ -768,7 +783,7 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-info">
     <div class="sn">VitaMAX Royal Honey Store</div>
-    <div class="sp">10 products &middot; Free shipping over $60 &middot; Code BOGO for 10% off</div>
+    <div class="sp">🚚 FREE delivery on every order &middot; 🎁 +1 free box on first orders &middot; Cartons of 10 / 30 / 60</div>
   </div>
   <button class="s-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to Top</button>
 </div>
@@ -815,59 +830,31 @@ window.addEventListener('scroll', function() {
 
 // Price object for all products
 var prices = {
-  p1:[139,160,250,320,375,480,750,960],
-  p2:[129,148,232,296,348,444,696,888],
-  p3:[129,148,232,296,348,444,696,888],
-  p4:[129,148,232,296,348,444,696,888],
-  p5:[339,390,610,780,915,1170,1830,2340],
-  p6:[149,171,268,342,402,513,804,1026],
-  p7:[139,160,250,320,375,480,750,960],
-  p8:[149,171,268,342,402,513,804,1026],
-  p9:[109,125,196,250,294,375,588,750],
-  p10:[499,574,899,1148,0,0,0,0],
+  p1:{u:'box', p:[390,1020,1680], pb:['39','34','28'], sv:['🚚 Free delivery','Save $150','Save $660']},
+  p2:{u:'box', p:[390,1020,1680], pb:['39','34','28'], sv:['🚚 Free delivery','Save $150','Save $660']},
+  p3:{u:'box', p:[390,1020,1680], pb:['39','34','28'], sv:['🚚 Free delivery','Save $150','Save $660']},
+  p4:{u:'box', p:[390,1020,1680], pb:['39','34','28'], sv:['🚚 Free delivery','Save $150','Save $660']},
+  p5:{u:'set', p:[780,2040,3360], pb:['78','68','56'], sv:['🚚 Free delivery','Save $300','Save $1,320']},
+  p6:{u:'box', p:[390,1020,1680], pb:['39','34','28'], sv:['🚚 Free delivery','Save $150','Save $660']},
+  p7:{u:'box', p:[390,1020,1680], pb:['39','34','28'], sv:['🚚 Free delivery','Save $150','Save $660']},
+  p8:{u:'box', p:[390,1020,1680], pb:['39','34','28'], sv:['🚚 Free delivery','Save $150','Save $660']},
+  p9:{u:'jar', p:[390,1020,1680], pb:['39','34','28'], sv:['🚚 Free delivery','Save $150','Save $660']},
+  p10:{u:'box', p:[1020,1680,2340], pb:['34','28','26'], sv:['🚚 Free delivery','Save $660','Save $1,170']}
 };
 
 // Variant pill selector
 function setPill(btn, price, pid) {
   var container = btn.closest('.pcard-variants');
-  container.querySelectorAll('.v-pill').forEach(function(b) {
-    b.classList.remove('on');
-  });
+  container.querySelectorAll('.v-pill').forEach(function(b) { b.classList.remove('on'); });
   btn.classList.add('on');
   var idx = Array.from(container.querySelectorAll('.v-pill')).indexOf(btn);
-
-  // Update price display
+  var d = prices[pid];
   var el = document.getElementById(pid + '-price');
-  if (el) {
-    el.textContent = price === 0 ? 'Inquire' : '$' + price;
-  }
-
-  // Update slashed was-price dynamically
+  if (el) el.textContent = price === 0 ? 'Inquire' : '$' + price.toLocaleString('en-US');
   var wasEl = document.getElementById(pid + '-was');
-  if (wasEl && prices[pid]) {
-    var wasVal = prices[pid][idx * 2 + 1];
-    wasEl.textContent = wasVal > 0 ? 'was $' + wasVal : '';
-  }
-
-  // Update save amount
+  if (wasEl && d) wasEl.textContent = d.pb[idx] ? '$' + d.pb[idx] + '/' + d.u : '';
   var saveEl = document.getElementById(pid + '-save');
-  if (saveEl && prices[pid]) {
-    var wasVal2 = prices[pid][idx * 2 + 1];
-    var saveAmt = wasVal2 - price;
-    saveEl.textContent = saveAmt > 0 ? 'Save $' + saveAmt : '';
-  }
-
-  // Update View Product link
-  var card = btn.closest('.pcard');
-  if (card) {
-    var addBtn = card.querySelector('.add-btn');
-    if (addBtn && addBtn.href && addBtn.href.indexOf('wa.me') === -1) {
-      var slugMatch = addBtn.href.match(/\/(product-[^.]+)\.html/);
-      if (slugMatch && price > 0) {
-        addBtn.href = '/' + slugMatch[1] + '.html';
-      }
-    }
-  }
+  if (saveEl && d) saveEl.textContent = d.sv[idx] || '';
 }
 
 // Scroll to section
@@ -1023,6 +1010,17 @@ document.addEventListener('DOMContentLoaded', function() { getCartCount(); });
   <span id="cartToastProduct">Product</span> added to cart! 
   <a href="/cart.html" style="color:#F15A22;font-weight:700;margin-left:8px">View Cart →</a>
 </div>
+
+
+<script>
+(function(){
+  if (!('IntersectionObserver' in window)) return;
+  document.querySelectorAll('.pcard').forEach(function(el,i){ el.classList.add('reveal'); el.style.transitionDelay=((i%3)*0.08)+'s'; });
+  document.querySelectorAll('.cat-header,.cat-banner').forEach(function(el){ el.classList.add('reveal'); });
+  var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, {threshold:.08, rootMargin:'0px 0px -4% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
 
 </body>
 </html>

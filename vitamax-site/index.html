@@ -36,7 +36,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--cream);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden}
 
 /* ── ANNOUNCE ── */
-.announce{background:var(--orange);color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:500}
+.announce{background:linear-gradient(90deg,#F15A22,#D44818,#C8940A,#F15A22);background-size:300% 100%;animation:annShift 9s linear infinite;color:#fff;text-align:center;padding:10px 16px;font-size:13px;font-weight:500}
 .announce strong{font-weight:700;color:#FFE08A}
 
 /* ── NAV ── */
@@ -550,6 +550,164 @@ footer{background:var(--dark);padding:48px 80px}
 @media(max-width:820px){.conf-grid{grid-template-columns:1fr 1fr;gap:14px}.conf-inner{padding:48px 18px}}
 @media(max-width:480px){.conf-grid{grid-template-columns:1fr}}
 
+
+/* ══════════ PREMIUM UPGRADE LAYER ══════════ */
+.pcard-promo{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--gold-d);background:linear-gradient(90deg,var(--gold-l),#FFF9EA);border:1px solid #F0E2B8;border-radius:8px;padding:7px 10px;margin-bottom:14px}
+.price-perbox{font-size:12px;color:var(--text-soft);font-weight:600;white-space:nowrap}
+@keyframes annShift{to{background-position:300% 0}}
+.ticker{background:var(--dark);overflow:hidden;padding:13px 0;position:relative}
+.ticker-track{display:flex;width:max-content;animation:tickerMove 28s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-item{display:inline-flex;align-items:center;gap:10px;color:#FFE9D2;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 28px;white-space:nowrap}
+.ticker-item .tick-dot{width:5px;height:5px;border-radius:50%;background:var(--orange);flex-shrink:0}
+@keyframes tickerMove{to{transform:translateX(-50%)}}
+.offer-slide{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;width:100%;background:radial-gradient(ellipse 70% 60% at 50% 0%,#2A1A08 0%,#180F06 55%,#0F0B07 100%);text-decoration:none;overflow:hidden;line-height:1.5;min-height:340px}
+@media(min-width:769px){.offer-slide{height:560px}}
+@media(max-width:768px){.offer-slide{padding:44px 16px}}
+.os-inner{position:relative;z-index:2;padding:24px}
+.os-kicker{font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:#E8B23A;margin-bottom:18px}
+.os-h1{font-family:'Playfair Display',serif;font-size:clamp(38px,6vw,72px);font-weight:900;color:#fff;line-height:1.04;letter-spacing:-1px;margin-bottom:16px}
+.os-h1 em{font-style:italic;color:#E8B23A}
+.os-sub{font-size:clamp(15px,1.8vw,19px);color:rgba(255,255,255,.78);margin-bottom:22px}
+.os-sub strong{color:#FFD98A;font-weight:800}
+.os-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+.os-badges span{font-size:12px;font-weight:700;color:#FFE9C0;background:rgba(241,90,34,.14);border:1px solid rgba(232,178,58,.35);border-radius:100px;padding:8px 16px}
+.os-cta{display:inline-block;background:var(--orange);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:800;padding:16px 38px;border-radius:12px;box-shadow:0 10px 36px rgba(241,90,34,.45);transition:transform .25s,box-shadow .25s}
+.offer-slide:hover .os-cta{transform:translateY(-3px);box-shadow:0 16px 44px rgba(241,90,34,.55)}
+.os-hex{position:absolute;color:#C8940A;opacity:.14;font-size:150px;animation:hexFloat 10s ease-in-out infinite;pointer-events:none}
+.os-hex1{left:6%;top:8%}
+.os-hex2{right:8%;bottom:6%;animation-delay:-3s;font-size:200px}
+@keyframes hexFloat{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-22px) rotate(6deg)}}
+.os-drip{position:absolute;inset:0;pointer-events:none;z-index:1}
+.os-drip span{position:absolute;top:-20px;width:7px;height:34px;background:linear-gradient(180deg,rgba(232,178,58,0),#E8B23A);border-radius:0 0 8px 8px;animation:osDrip 4.8s cubic-bezier(.55,0,.85,.4) infinite}
+.os-drip span:nth-child(1){left:22%}
+.os-drip span:nth-child(2){left:50%;animation-delay:-1.6s}
+.os-drip span:nth-child(3){left:78%;animation-delay:-3.2s}
+@keyframes osDrip{0%{transform:translateY(-40px);opacity:0}12%{opacity:.85}80%{opacity:.85}100%{transform:translateY(600px);opacity:0}}
+.jn-section{background:linear-gradient(160deg,#140D06 0%,#0D0A07 45%,#171006 100%);padding:110px 80px;position:relative;overflow:hidden}
+.jn-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 70% 8%,rgba(241,90,34,.10),transparent 60%),radial-gradient(ellipse 55% 40% at 22% 92%,rgba(200,148,10,.10),transparent 65%);pointer-events:none}
+.jn-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+.jn-head{text-align:center;max-width:680px;margin:0 auto 80px}
+.jn-chapter{display:grid;grid-template-columns:64px 1fr;gap:28px;margin-bottom:64px;position:relative}
+.jn-rail{display:flex;flex-direction:column;align-items:center}
+.jn-num{width:64px;height:64px;border-radius:50%;background:linear-gradient(145deg,rgba(241,90,34,.16),rgba(200,148,10,.14));border:1px solid rgba(232,178,58,.4);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#E8B23A;flex-shrink:0;box-shadow:0 0 24px rgba(232,178,58,.15)}
+.jn-line{width:2px;flex:1;margin-top:12px;background:linear-gradient(180deg,rgba(232,178,58,.5),rgba(232,178,58,.06))}
+.jn-chapter:last-of-type .jn-line{display:none}
+.jn-kicker{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.jn-kicker.her{color:#F077B8}
+.jn-kicker.gold{color:#E8B23A}
+.jn-title{font-family:'Playfair Display',serif;font-size:clamp(24px,2.6vw,36px);font-weight:900;color:#fff;line-height:1.15;margin-bottom:14px;letter-spacing:-.4px}
+.jn-title em{font-style:italic;color:#E8B23A}
+.jn-text{font-size:15.5px;color:rgba(255,255,255,.66);line-height:1.8;max-width:640px;margin-bottom:22px}
+.jn-text strong{color:rgba(255,255,255,.92)}
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:640px}
+.pain-chip{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:15px 17px;transition:border-color .3s,background .3s,transform .3s}
+.pain-chip:hover{background:rgba(241,90,34,.08);border-color:rgba(241,90,34,.35);transform:translateX(4px)}
+.pain-chip.her-chip:hover{background:rgba(240,119,184,.08);border-color:rgba(240,119,184,.35)}
+.pain-ico{font-size:20px;flex-shrink:0;line-height:1.3}
+.pain-t{font-size:13.5px;font-weight:700;color:rgba(255,255,255,.9);line-height:1.4}
+.pain-s{font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;line-height:1.5}
+.hope-band{background:linear-gradient(135deg,rgba(200,148,10,.14),rgba(241,90,34,.10));border:1px solid rgba(232,178,58,.3);border-radius:var(--radius);padding:26px 30px;max-width:640px;display:flex;gap:18px;align-items:center}
+.hope-band .hb-ico{font-size:34px;flex-shrink:0}
+.hope-band .hb-t{font-size:15px;font-weight:700;color:#FFE9C0;line-height:1.55}
+.solution-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:640px}
+.sol-card{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:18px 20px;transition:all .3s}
+.sol-card:hover{border-color:rgba(232,178,58,.45);background:rgba(232,178,58,.07);transform:translateY(-3px)}
+.sol-h{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:800;color:#fff;margin-bottom:6px}
+.sol-h span{font-size:19px}
+.sol-p{font-size:12.5px;color:rgba(255,255,255,.55);line-height:1.6}
+.jn-cta{text-align:center;margin-top:22px}
+.jn-cta .btn-primary{font-size:16px;padding:18px 40px}
+.jn-cta-sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:14px}
+.jn-cta-sub strong{color:#E8B23A}
+.ba-table{max-width:760px;margin:70px auto 0;border-radius:var(--radius);overflow:hidden;border:1px solid rgba(255,255,255,.12)}
+.ba-head{display:grid;grid-template-columns:1fr 1fr;background:rgba(255,255,255,.05)}
+.ba-head div{padding:16px 24px;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;text-align:center}
+.ba-head .ba-before{color:rgba(255,255,255,.45)}
+.ba-head .ba-after{color:#E8B23A;background:rgba(232,178,58,.08)}
+.ba-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.08)}
+.ba-row div{padding:14px 24px;font-size:13.5px;line-height:1.5}
+.ba-row .ba-before{color:rgba(255,255,255,.45)}
+.ba-row .ba-after{color:rgba(255,255,255,.88);background:rgba(232,178,58,.05);font-weight:600}
+.ing-home{background:var(--warm-white);position:relative;overflow:hidden}
+.ing-home::before{content:'';position:absolute;right:-160px;top:-160px;width:480px;height:480px;background:radial-gradient(circle,rgba(200,148,10,.08),transparent 65%);pointer-events:none}
+.ing-home-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+.ingp-card{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;position:relative;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease,border-color .35s}
+.ingp-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--gold)}
+.ingp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--orange));opacity:0;transition:opacity .3s}
+.ingp-card:hover::before{opacity:1}
+.ingp-emoji{width:56px;height:56px;border-radius:16px;background:linear-gradient(145deg,var(--gold-l),var(--orange-l));border:1px solid #F0E2B8;display:flex;align-items:center;justify-content:center;font-size:27px;margin-bottom:16px;transition:transform .35s ease}
+.ingp-card:hover .ingp-emoji{transform:scale(1.1) rotate(-6deg)}
+.ingp-name{font-size:16.5px;font-weight:800;color:var(--text)}
+.ingp-latin{font-size:11.5px;font-style:italic;color:var(--text-xsoft);margin-bottom:10px}
+.ingp-origin{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-d);background:var(--gold-l);border-radius:100px;padding:4px 11px;margin-bottom:14px}
+.ingp-row{font-size:12.5px;color:var(--text-mid);line-height:1.6;padding:7px 0;border-top:1px dashed var(--border)}
+.ingp-row b{color:var(--text);font-weight:700}
+.ing-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.ing-stat{background:linear-gradient(145deg,var(--gold-l),#FFF9EA);border:1px solid #F0E2B8;border-radius:var(--radius);padding:24px 18px;text-align:center;transition:transform .3s}
+.ing-stat:hover{transform:translateY(-4px)}
+.ing-stat-n{font-family:'Playfair Display',serif;font-size:34px;font-weight:900;color:var(--gold-d);line-height:1.05}
+.ing-stat-l{font-size:12px;color:var(--text-mid);font-weight:600;margin-top:6px;line-height:1.45}
+.cmp-section{background:var(--warm-gray)}
+.cmp-table{max-width:860px;margin:48px auto 0;background:#fff;border-radius:var(--radius);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow)}
+.cmp-row{display:grid;grid-template-columns:1.6fr 1fr 1fr;border-top:1px solid var(--border)}
+.cmp-row:first-child{border-top:none;background:var(--dark)}
+.cmp-row:first-child div{color:#fff;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.cmp-row div{padding:15px 22px;font-size:14px;display:flex;align-items:center;gap:8px}
+.cmp-row div:nth-child(2){justify-content:center;background:linear-gradient(180deg,#FFF9EE,#FFF4E4);font-weight:700;color:var(--text);border-left:1px solid var(--border);border-right:1px solid var(--border)}
+.cmp-row:first-child div:nth-child(2){background:var(--orange);justify-content:center}
+.cmp-row div:nth-child(3){justify-content:center;color:var(--text-soft)}
+.cmp-yes{color:#1D8348;font-weight:800}
+.cmp-no{color:#C0392B;font-weight:800}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.btn-primary,.cta-btn-main,.sticky-btn{position:relative;overflow:hidden}
+.btn-primary::after,.cta-btn-main::after,.sticky-btn::after{content:'';position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:btnShine 4.2s ease-in-out infinite}
+@keyframes btnShine{0%,55%{left:-70%}75%,100%{left:140%}}
+.exit-modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}
+.exit-modal.open{display:flex}
+.exit-backdrop{position:absolute;inset:0;background:rgba(15,11,7,.72);backdrop-filter:blur(4px)}
+.exit-card{position:relative;background:#fff;border-radius:20px;max-width:470px;width:100%;overflow:hidden;box-shadow:0 32px 90px rgba(0,0,0,.4);animation:exitPop .42s cubic-bezier(.34,1.56,.64,1)}
+@keyframes exitPop{from{opacity:0;transform:translateY(26px) scale(.96)}}
+.exit-top{background:linear-gradient(135deg,var(--orange),#C8400A);padding:34px 32px 28px;text-align:center;position:relative;overflow:hidden}
+.exit-top::before{content:'🍯';position:absolute;left:-24px;top:-24px;font-size:110px;opacity:.12;transform:rotate(-18deg)}
+.exit-top::after{content:'🎁';position:absolute;right:-14px;bottom:-20px;font-size:96px;opacity:.12;transform:rotate(14deg)}
+.exit-kicker{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:8px}
+.exit-h{font-family:'Playfair Display',serif;font-size:30px;font-weight:900;color:#fff;line-height:1.12}
+.exit-h em{font-style:italic;color:#FFE08A}
+.exit-body{padding:26px 32px 30px;text-align:center}
+.exit-p{font-size:14.5px;color:var(--text-mid);line-height:1.65;margin-bottom:18px}
+.exit-p strong{color:var(--orange)}
+.exit-perks{display:flex;flex-direction:column;gap:8px;margin-bottom:22px;text-align:left}
+.exit-perk{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:600;color:var(--text);background:var(--gold-l);border:1px solid #F0E2B8;border-radius:10px;padding:11px 14px}
+.exit-btn{display:block;width:100%;background:var(--orange);color:#fff;border:none;border-radius:12px;padding:16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15.5px;font-weight:800;cursor:pointer;text-decoration:none;transition:all .2s;box-shadow:0 8px 26px rgba(241,90,34,.35)}
+.exit-btn:hover{background:var(--orange-d);transform:translateY(-2px)}
+.exit-no{display:inline-block;margin-top:12px;font-size:12.5px;color:var(--text-xsoft);background:none;border:none;cursor:pointer;text-decoration:underline;font-family:'Plus Jakarta Sans',sans-serif}
+.exit-x{position:absolute;top:12px;right:12px;z-index:2;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.18);border:none;color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.exit-x:hover{background:rgba(255,255,255,.32)}
+.footer-promo{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+.footer-promo span{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:#FFE9C0;background:rgba(241,90,34,.14);border:1px solid rgba(241,90,34,.3);border-radius:100px;padding:7px 14px}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .ticker-track,.announce,.os-drip span,.os-hex{animation:none}
+  .btn-primary::after,.cta-btn-main::after,.sticky-btn::after{animation:none}
+  html{scroll-behavior:auto}
+}
+@media(max-width:1024px){
+  .ing-home-grid{grid-template-columns:repeat(2,1fr)}
+  .ing-stats{grid-template-columns:repeat(2,1fr)}
+  .jn-section{padding:80px 40px}
+}
+@media(max-width:768px){
+  .jn-section{padding:64px 20px}
+  .jn-chapter{grid-template-columns:44px 1fr;gap:16px;margin-bottom:48px}
+  .jn-num{width:44px;height:44px;font-size:16px}
+  .pain-grid,.solution-grid{grid-template-columns:1fr}
+  .ing-home-grid{grid-template-columns:1fr}
+  .cmp-row div{padding:12px 12px;font-size:12.5px}
+  .ba-head div,.ba-row div{padding:12px 14px;font-size:12.5px}
+}
+
 </style>
 <link rel="icon" type="image/svg+xml" href="/vitamax-images/favicon.svg">
 <meta property="og:type" content="website">
@@ -569,7 +727,7 @@ footer{background:var(--dark);padding:48px 80px}
 <!-- ANNOUNCE BAR -->
 <input type="checkbox" id="menu-toggle" style="position:fixed;top:-9999px;left:-9999px;opacity:0;pointer-events:none">
 <div class="announce">
-  🍯 FREE Shipping on orders over $60 &nbsp;·&nbsp; <strong>SAVE 25%</strong> on 3-Packs today &nbsp;·&nbsp; Discreet packaging on every order
+  🚚 FREE Delivery On Every Order &nbsp;·&nbsp; <strong>🎁 First Order = +1 FREE Box</strong> &nbsp;·&nbsp; Full cartons: 10 · 30 · 60 — all prices include delivery
 </div>
 
 <!-- NAV -->
@@ -579,7 +737,8 @@ footer{background:var(--dark);padding:48px 80px}
   </div>
   <div class="nav-links">
     <a href="#products">Shop</a>
-    <a href="#benefits">Benefits</a>
+    <a href="#journey">Why VitaMAX</a>
+    <a href="#ingredients">Ingredients</a>
     <a href="#reviews">Reviews</a>
     <a href="#faq">FAQ</a>
     <a href="/wholesale.html">Wholesale</a>
@@ -611,6 +770,8 @@ footer{background:var(--dark);padding:48px 80px}
   </div>
   <div class="menu-body">
     <a href="/shop.html" class="mobile-link">Shop All Products</a>
+    <a href="#journey" class="mobile-link">Why VitaMAX</a>
+    <a href="#ingredients" class="mobile-link">Ingredients</a>
     <a href="#benefits" class="mobile-link">Benefits</a>
     <a href="#reviews" class="mobile-link">Customer Reviews</a>
     <a href="#faq" class="mobile-link">FAQ</a>
@@ -645,9 +806,29 @@ footer{background:var(--dark);padding:48px 80px}
       <div class="hero-slide">
         <a href="/shop.html">
           <picture>
-            <source media="(max-width:768px)" srcset="/vitamax-images/banner-m-doubleshot.png">
-            <img src="/vitamax-images/banner-2.png" alt="VitaMAX Doubleshot — Feel More Connected Every Day">
+            <source media="(max-width:768px)" srcset="/vitamax-images/banner-m-doubleshot.webp">
+            <img fetchpriority="high" decoding="async" src="/vitamax-images/banner-2.webp" alt="VitaMAX Doubleshot — Feel More Connected Every Day">
           </picture>
+        </a>
+      </div>
+
+      <!-- Slide 2 — Welcome offer (pure CSS) -->
+      <div class="hero-slide">
+        <a href="/shop.html" class="offer-slide">
+          <span class="os-hex os-hex1">⬡</span>
+          <span class="os-hex os-hex2">⬡</span>
+          <div class="os-drip" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="os-inner">
+            <div class="os-kicker">The VitaMAX Welcome Offer</div>
+            <div class="os-h1">FREE Delivery<br><em>On Every Order</em></div>
+            <div class="os-sub">First order gets <strong>+1 FREE box</strong> — added automatically</div>
+            <div class="os-badges">
+              <span>📦 Full cartons · 10 / 30 / 60</span>
+              <span>🚚 No shipping fees, ever</span>
+              <span>🔄 30-day guarantee</span>
+            </div>
+            <span class="os-cta">🍯 Shop Now →</span>
+          </div>
         </a>
       </div>
 
@@ -655,8 +836,8 @@ footer{background:var(--dark);padding:48px 80px}
       <div class="hero-slide">
         <a href="/shop.html">
           <picture>
-            <source media="(max-width:768px)" srcset="/vitamax-images/banner-m-leluxe.png">
-            <img src="/vitamax-images/banner-1.png" alt="Premium Honey Crafted For Vitality, Wellness & Meaningful Connection">
+            <source media="(max-width:768px)" srcset="/vitamax-images/banner-m-leluxe.webp">
+            <img loading="lazy" decoding="async" src="/vitamax-images/banner-1.webp" alt="Premium Honey Crafted For Vitality, Wellness & Meaningful Connection">
           </picture>
         </a>
       </div>
@@ -664,14 +845,14 @@ footer{background:var(--dark);padding:48px 80px}
       <!-- Slide 3 — Energy / Best seller -->
       <div class="hero-slide">
         <a href="/shop.html">
-          <img src="/vitamax-images/banner-m-energy.png" alt="Boost Energy & Stamina Fast — Royal Honey VIP">
+          <img loading="lazy" decoding="async" src="/vitamax-images/banner-m-energy.webp" alt="Boost Energy & Stamina Fast — Royal Honey VIP">
         </a>
       </div>
 
       <!-- Slide 4 — Nature's Power -->
       <div class="hero-slide">
         <a href="/shop.html">
-          <img src="/vitamax-images/banner-m-nature.png" alt="Nature's Power for Vitality & Wellness — pure ingredients, powerful results">
+          <img loading="lazy" decoding="async" src="/vitamax-images/banner-m-nature.webp" alt="Nature's Power for Vitality & Wellness — pure ingredients, powerful results">
         </a>
       </div>
 
@@ -687,6 +868,7 @@ footer{background:var(--dark);padding:48px 80px}
       <button class="hs-dot" data-slide="1" aria-label="Slide 2"></button>
       <button class="hs-dot" data-slide="2" aria-label="Slide 3"></button>
       <button class="hs-dot" data-slide="3" aria-label="Slide 4"></button>
+      <button class="hs-dot" data-slide="4" aria-label="Slide 5"></button>
     </div>
   </div>
 </section>
@@ -704,6 +886,25 @@ footer{background:var(--dark);padding:48px 80px}
     </div>
   </div>
 </section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="tick-dot"></span>🚚 Free Delivery On Every Order</span>
+    <span class="ticker-item"><span class="tick-dot"></span>🎁 First Order Gets +1 Free Box</span>
+    <span class="ticker-item"><span class="tick-dot"></span>🍯 Wild Malaysian Rainforest Honey</span>
+    <span class="ticker-item"><span class="tick-dot"></span>✅ Halal &amp; Kosher Certified</span>
+    <span class="ticker-item"><span class="tick-dot"></span>📦 Discreet Packaging Always</span>
+    <span class="ticker-item"><span class="tick-dot"></span>🔄 30-Day Money-Back Guarantee</span>
+    <span class="ticker-item"><span class="tick-dot"></span>🚚 Free Delivery On Every Order</span>
+    <span class="ticker-item"><span class="tick-dot"></span>🎁 First Order Gets +1 Free Box</span>
+    <span class="ticker-item"><span class="tick-dot"></span>🍯 Wild Malaysian Rainforest Honey</span>
+    <span class="ticker-item"><span class="tick-dot"></span>✅ Halal &amp; Kosher Certified</span>
+    <span class="ticker-item"><span class="tick-dot"></span>📦 Discreet Packaging Always</span>
+    <span class="ticker-item"><span class="tick-dot"></span>🔄 30-Day Money-Back Guarantee</span>
+  </div>
+</div>
+
 
 <!-- TRUST STRIP -->
 <section class="trust-strip">
@@ -730,19 +931,19 @@ footer{background:var(--dark);padding:48px 80px}
 <!-- BEST SELLERS -->
 <section class="bestsellers">
   <h2 class="bs-title">Shop Our Best Sellers</h2>
-  <p class="bs-sub">The vitality rituals our customers reorder the most.</p>
+  <p class="bs-sub">The vitality rituals our customers reorder the most — full cartons, delivery included, +1 free box on first orders.</p>
   <div class="bs-grid">
 
     <a class="bs-card" href="/product-royal-honey-gold.html">
       <div class="bs-imgwrap">
         <span class="bs-badge">Best Seller</span>
-        <img src="/vitamax-images/vip-1.png" alt="Royal Honey VIP Pack">
+        <img loading="lazy" decoding="async" src="/vitamax-images/vip-1.webp" alt="Royal Honey VIP Pack">
       </div>
       <div class="bs-body">
         <span class="bs-cat">For Him · Royal Honey</span>
         <span class="bs-name">Royal Honey VIP Pack</span>
         <span class="bs-stars">★★★★★ <span class="bs-rc">4.9 (1,842)</span></span>
-        <span class="bs-price">$139 <span class="was">$160</span></span>
+        <span class="bs-price">From $390 <span class="was">$890 value</span></span>
         <span class="bs-cta">Shop Now →</span>
       </div>
     </a>
@@ -750,13 +951,13 @@ footer{background:var(--dark);padding:48px 80px}
     <a class="bs-card" href="/product-couples-bundle.html">
       <div class="bs-imgwrap">
         <span class="bs-badge bundle">Couples Pick</span>
-        <img src="/vitamax-images/couples-1.png" alt="VitaMAX Couples Bundle">
+        <img loading="lazy" decoding="async" src="/vitamax-images/couples-1.webp" alt="VitaMAX Couples Bundle">
       </div>
       <div class="bs-body">
         <span class="bs-cat">His &amp; Hers · Bundle</span>
         <span class="bs-name">VitaMAX Couples Bundle</span>
         <span class="bs-stars">★★★★★ <span class="bs-rc">4.9 (1,204)</span></span>
-        <span class="bs-price">$339 <span class="was">$390</span></span>
+        <span class="bs-price">From $780 <span class="was">$1,780 value</span></span>
         <span class="bs-cta">Shop Now →</span>
       </div>
     </a>
@@ -764,13 +965,13 @@ footer{background:var(--dark);padding:48px 80px}
     <a class="bs-card" href="/product-queens-honey.html">
       <div class="bs-imgwrap">
         <span class="bs-badge her">For Her</span>
-        <img src="/vitamax-images/lux-1.png" alt="Lux Honey For Her">
+        <img loading="lazy" decoding="async" src="/vitamax-images/lux-1.webp" alt="Lux Honey For Her">
       </div>
       <div class="bs-body">
         <span class="bs-cat">For Her · Royal Honey</span>
         <span class="bs-name">Lux Honey For Her</span>
         <span class="bs-stars">★★★★★ <span class="bs-rc">4.8 (967)</span></span>
-        <span class="bs-price">$129 <span class="was">$148</span></span>
+        <span class="bs-price">From $390 <span class="was">$890 value</span></span>
         <span class="bs-cta">Shop Now →</span>
       </div>
     </a>
@@ -787,7 +988,7 @@ footer{background:var(--dark);padding:48px 80px}
       <div>
         <div class="sec-label">Our Products</div>
         <h2 class="sec-h2">Shop <span>Royal Honey</span></h2>
-        <p class="sec-body">Premium honey supplements for men and women. Select your pack size below each product.</p>
+        <p class="sec-body">Premium honey supplements for men and women — bulk pricing only. Choose <strong>10, 30 or 60 boxes</strong> (retail value $89/box). Every price already includes delivery, and your first order gets <strong>+1 box FREE</strong>.</p>
       </div>
       <a href="/shop.html" style="display:inline-flex;align-items:center;gap:6px;background:var(--orange-l);color:var(--orange);border:1.5px solid var(--orange-m);border-radius:100px;padding:10px 20px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:all .2s" onmouseover="this.style.background='var(--orange)';this.style.color='#fff'" onmouseout="this.style.background='var(--orange-l)';this.style.color='var(--orange)'">View All Products →</a>
     </div>
@@ -809,7 +1010,7 @@ footer{background:var(--dark);padding:48px 80px}
         <div class="pcard-wish" onclick="toggleWish(this)" title="Save">🤍</div>
         <a href="/product-royal-honey-gold.html" style="text-decoration:none;display:block">
           <div class="pcard-img pcard-img-him">
-            <img src="/vitamax-images/vip-1.png" alt="Royal Honey VIP Pack">
+            <img loading="lazy" decoding="async" src="/vitamax-images/vip-1.webp" alt="Royal Honey VIP Pack">
           </div>
         </a>
         <div class="pcard-body">
@@ -819,20 +1020,19 @@ footer{background:var(--dark);padding:48px 80px}
           <div class="pcard-stars">★★★★★</div>
           <div class="pcard-reviews">4.9 · 1,842 reviews</div>
           <div class="pcard-variants" id="p1-variants">
-            <button class="variant-btn active" onclick="selectVariant(this,'p1',139,'/product-royal-honey-gold.html','v1')">1 Pack — $139</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p1',250,'/product-royal-honey-gold.html','v2')">2 Packs — $250</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p1',375,'/product-royal-honey-gold.html','v3')">3 Packs — $375</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p1',750,'/product-royal-honey-gold.html','v6')">6 Packs — $750</button>
+            <button class="variant-btn active" onclick="selectVariant(this,'p1',390,'/product-royal-honey-gold.html','v10')">10 Boxes — $390</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p1',1020,'/product-royal-honey-gold.html','v30')">30 Boxes — $1,020</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p1',1680,'/product-royal-honey-gold.html','v60')">60 Boxes — $1,680</button>
           </div>
+          <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
           <div class="pcard-footer">
             <div class="pcard-price">
-              <span class="price-now" id="p1-price">$139</span>
-              <span class="price-was" id="p1-was">$185</span>
-              <span class="price-save">Save 25%</span>
+              <span class="price-now" id="p1-price">$390</span>
+              <span class="price-perbox" id="p1-was">$39/box</span>
+              <span class="price-save" id="p1-save">🚚 Delivery FREE</span>
             </div>
             <a href="/product-royal-honey-gold.html" class="add-btn" data-id="76" id="p1-btn">View Product →</a>
           </div>
-        </div>
       </div>
       <!-- PRODUCT 2 -->
       <div class="pcard" data-cat="him" id="card-p2">
@@ -840,7 +1040,7 @@ footer{background:var(--dark);padding:48px 80px}
         <div class="pcard-wish" onclick="toggleWish(this)" title="Save">🤍</div>
         <a href="/product-black-label.html" style="text-decoration:none;display:block">
           <div class="pcard-img pcard-img-him">
-            <img src="/vitamax-images/black-1.png" alt="Black Horse Vital Honey Pack">
+            <img loading="lazy" decoding="async" src="/vitamax-images/black-1.webp" alt="Black Horse Vital Honey Pack">
           </div>
         </a>
         <div class="pcard-body">
@@ -850,20 +1050,19 @@ footer{background:var(--dark);padding:48px 80px}
           <div class="pcard-stars">★★★★★</div>
           <div class="pcard-reviews">4.8 · 634 reviews</div>
           <div class="pcard-variants" id="p2-variants">
-            <button class="variant-btn active" onclick="selectVariant(this,'p2',129,'/product-black-label.html','v1')">1 Pack — $129</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p2',232,'/product-black-label.html','v2')">2 Packs — $232</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p2',348,'/product-black-label.html','v3')">3 Packs — $348</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p2',696,'/product-black-label.html','v6')">6 Packs — $696</button>
+            <button class="variant-btn active" onclick="selectVariant(this,'p2',390,'/product-black-label.html','v10')">10 Boxes — $390</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p2',1020,'/product-black-label.html','v30')">30 Boxes — $1,020</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p2',1680,'/product-black-label.html','v60')">60 Boxes — $1,680</button>
           </div>
+          <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
           <div class="pcard-footer">
             <div class="pcard-price">
-              <span class="price-now" id="p2-price">$129</span>
-              <span class="price-was" id="p2-was">$182</span>
-              <span class="price-save">Save 29%</span>
+              <span class="price-now" id="p2-price">$390</span>
+              <span class="price-perbox" id="p2-was">$39/box</span>
+              <span class="price-save" id="p2-save">🚚 Delivery FREE</span>
             </div>
             <a href="/product-black-label.html" class="add-btn" data-id="81" id="p2-btn">View Product →</a>
           </div>
-        </div>
       </div>
       <!-- PRODUCT 3 -->
       <div class="pcard" data-cat="her" id="card-p3">
@@ -871,7 +1070,7 @@ footer{background:var(--dark);padding:48px 80px}
         <div class="pcard-wish" onclick="toggleWish(this)" title="Save">🤍</div>
         <a href="/product-queens-honey.html" style="text-decoration:none;display:block">
           <div class="pcard-img pcard-img-her">
-            <img src="/vitamax-images/lux-1.png" alt="Lux Honey For Her Vital Honey">
+            <img loading="lazy" decoding="async" src="/vitamax-images/lux-1.webp" alt="Lux Honey For Her Vital Honey">
           </div>
         </a>
         <div class="pcard-body">
@@ -881,20 +1080,19 @@ footer{background:var(--dark);padding:48px 80px}
           <div class="pcard-stars">★★★★★</div>
           <div class="pcard-reviews">4.9 · 891 reviews</div>
           <div class="pcard-variants" id="p3-variants">
-            <button class="variant-btn active" onclick="selectVariant(this,'p3',129,'/product-queens-honey.html','v1')">1 Pack — $129</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p3',232,'/product-queens-honey.html','v2')">2 Packs — $232</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p3',348,'/product-queens-honey.html','v3')">3 Packs — $348</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p3',696,'/product-queens-honey.html','v6')">6 Packs — $696</button>
+            <button class="variant-btn active" onclick="selectVariant(this,'p3',390,'/product-queens-honey.html','v10')">10 Boxes — $390</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p3',1020,'/product-queens-honey.html','v30')">30 Boxes — $1,020</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p3',1680,'/product-queens-honey.html','v60')">60 Boxes — $1,680</button>
           </div>
+          <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
           <div class="pcard-footer">
             <div class="pcard-price">
-              <span class="price-now" id="p3-price">$129</span>
-              <span class="price-was" id="p3-was">$172</span>
-              <span class="price-save">Save 25%</span>
+              <span class="price-now" id="p3-price">$390</span>
+              <span class="price-perbox" id="p3-was">$39/box</span>
+              <span class="price-save" id="p3-save">🚚 Delivery FREE</span>
             </div>
             <a href="/product-queens-honey.html" class="add-btn" data-id="91" id="p3-btn">View Product →</a>
           </div>
-        </div>
       </div>
       <!-- PRODUCT 4 -->
       <div class="pcard" data-cat="bundle" id="card-p4">
@@ -902,7 +1100,7 @@ footer{background:var(--dark);padding:48px 80px}
         <div class="pcard-wish" onclick="toggleWish(this)" title="Save">🤍</div>
         <a href="/product-couples-bundle.html" style="text-decoration:none;display:block">
           <div class="pcard-img pcard-img-her">
-            <img src="/vitamax-images/couples-1.png" alt="VitaMAX Couples Bundle">
+            <img loading="lazy" decoding="async" src="/vitamax-images/couples-1.webp" alt="VitaMAX Couples Bundle">
           </div>
         </a>
         <div class="pcard-body">
@@ -912,30 +1110,29 @@ footer{background:var(--dark);padding:48px 80px}
           <div class="pcard-stars">★★★★★</div>
           <div class="pcard-reviews">4.9 · 412 reviews</div>
           <div class="pcard-variants" id="p4-variants">
-            <button class="variant-btn active" onclick="selectVariant(this,'p4',129,'/product-couples-bundle.html','v1')">1 Pack — $129</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p4',232,'/product-couples-bundle.html','v2')">2 Packs — $232</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p4',348,'/product-couples-bundle.html','v3')">3 Packs — $348</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p4',696,'/product-couples-bundle.html','v6')">6 Packs — $696</button>
+            <button class="variant-btn active" onclick="selectVariant(this,'p4',780,'/product-couples-bundle.html','v10')">10 Sets — $780</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p4',2040,'/product-couples-bundle.html','v30')">30 Sets — $2,040</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p4',3360,'/product-couples-bundle.html','v60')">60 Sets — $3,360</button>
           </div>
+          <div class="pcard-promo">🎁 +1 FREE set on your first order</div>
           <div class="pcard-footer">
             <div class="pcard-price">
-              <span class="price-now" id="p4-price">$129</span>
-              <span class="price-was" id="p4-was">$170</span>
-              <span class="price-save">Save 24%</span>
+              <span class="price-now" id="p4-price">$780</span>
+              <span class="price-perbox" id="p4-was">$78/set</span>
+              <span class="price-save" id="p4-save">🚚 Delivery FREE</span>
             </div>
             <a href="/product-couples-bundle.html" class="add-btn" data-id="93" id="p4-btn">View Product →</a>
           </div>
-        </div>
       </div>
 
       <!-- MID-GRID PROMO STRIP -->
       <div class="promo-strip">
         <span class="promo-strip-ic">🎁</span>
         <div class="promo-strip-text">
-          <strong>Get 3 FREE Sachets With Every Order</strong>
-          <span>Limited time — added automatically at checkout. Feel the difference, on us.</span>
+          <strong>First Order Gets +1 FREE Box — Automatically</strong>
+          <span>No code needed. Pick any carton — 10, 30 or 60 boxes — and we pack an extra box free. Delivery included.</span>
         </div>
-        <a href="/shop.html" class="promo-strip-btn">Claim Yours →</a>
+        <a href="/shop.html" class="promo-strip-btn">Claim My Free Box →</a>
       </div>
 
       <!-- PRODUCT 5 -->
@@ -944,7 +1141,7 @@ footer{background:var(--dark);padding:48px 80px}
         <div class="pcard-wish" onclick="toggleWish(this)" title="Save">🤍</div>
         <a href="/product-pure-wild-honey.html" style="text-decoration:none;display:block">
           <div class="pcard-img pcard-img-pure">
-            <img src="/vitamax-images/chobe-1.png" alt="Chobe Pure Polyfloral Honey">
+            <img loading="lazy" decoding="async" src="/vitamax-images/chobe-1.webp" alt="Chobe Pure Polyfloral Honey">
           </div>
         </a>
         <div class="pcard-body">
@@ -954,20 +1151,19 @@ footer{background:var(--dark);padding:48px 80px}
           <div class="pcard-stars">★★★★★</div>
           <div class="pcard-reviews">4.8 · 329 reviews</div>
           <div class="pcard-variants" id="p5-variants">
-            <button class="variant-btn active" onclick="selectVariant(this,'p5',339,'/product-couples-bundle.html','v1')">1 Set — $339</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p5',610,'/product-couples-bundle.html','v2')">2 Sets — $610</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p5',915,'/product-couples-bundle.html','v3')">3 Sets — $915</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p5',1830,'/product-couples-bundle.html','v6')">6 Sets — $1830</button>
+            <button class="variant-btn active" onclick="selectVariant(this,'p5',390,'/product-pure-wild-honey.html','v10')">10 Jars — $390</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p5',1020,'/product-pure-wild-honey.html','v30')">30 Jars — $1,020</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p5',1680,'/product-pure-wild-honey.html','v60')">60 Jars — $1,680</button>
           </div>
+          <div class="pcard-promo">🎁 +1 FREE jar on your first order</div>
           <div class="pcard-footer">
             <div class="pcard-price">
-              <span class="price-now" id="p5-price">$339</span>
-              <span class="price-was" id="p5-was">$452</span>
-              <span class="price-save">Save 25%</span>
+              <span class="price-now" id="p5-price">$390</span>
+              <span class="price-perbox" id="p5-was">$39/jar</span>
+              <span class="price-save" id="p5-save">🚚 Delivery FREE</span>
             </div>
             <a href="/product-pure-wild-honey.html" class="add-btn" data-id="113" id="p5-btn">View Product →</a>
           </div>
-        </div>
       </div>
       <!-- PRODUCT 6 -->
       <div class="pcard" data-cat="bundle" id="card-p6">
@@ -975,30 +1171,29 @@ footer{background:var(--dark);padding:48px 80px}
         <div class="pcard-wish" onclick="toggleWish(this)" title="Save">🤍</div>
         <a href="/product-wholesale.html" style="text-decoration:none;display:block">
           <div class="pcard-img pcard-img-pure">
-            <img src="/vitamax-images/Vitamax-wholesale.png" alt="VitaMAX Wholesale Carton">
+            <img loading="lazy" decoding="async" src="/vitamax-images/Vitamax-wholesale.webp" alt="VitaMAX Wholesale Carton">
           </div>
         </a>
         <div class="pcard-body">
           <div class="pcard-tag">Wholesale · Bulk Supply</div>
           <div class="pcard-name"><a href="/product-wholesale.html" style="text-decoration:none;color:inherit">VitaMAX Wholesale Carton</a></div>
-          <div class="pcard-desc">Full carton supply for resellers and bulk buyers. 24–48 packs per carton. Competitive pricing with dedicated WhatsApp support.</div>
+          <div class="pcard-desc">Wholesale supply for resellers and serious buyers — 30, 60 or 90 boxes per order, any product mix. Dedicated WhatsApp account manager.</div>
           <div class="pcard-stars">★★★★★</div>
           <div class="pcard-reviews">4.9 · 186 reviews</div>
           <div class="pcard-variants" id="p6-variants">
-            <button class="variant-btn active" onclick="selectVariant(this,'p6',149,'/product-glow-honey.html','v1')">1 Pack — $149</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p6',268,'/product-glow-honey.html','v2')">2 Packs — $268</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p6',402,'/product-glow-honey.html','v3')">3 Packs — $402</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p6',804,'/product-glow-honey.html','v6')">6 Packs — $804</button>
+            <button class="variant-btn active" onclick="selectVariant(this,'p6',1020,'/product-wholesale.html','v30')">30 Boxes — $1,020</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p6',1680,'/product-wholesale.html','v60')">60 Boxes — $1,680</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p6',2340,'/product-wholesale.html','v90')">90 Boxes — $2,340</button>
           </div>
+          <div class="pcard-promo">📦 Reseller rates from $26/box · FREE freight</div>
           <div class="pcard-footer">
             <div class="pcard-price">
-              <span class="price-now" id="p6-price">$149</span>
-              <span class="price-was" id="p6-was">$207</span>
-              <span class="price-save">Save 28%</span>
+              <span class="price-now" id="p6-price">$1,020</span>
+              <span class="price-perbox" id="p6-was">$34/box</span>
+              <span class="price-save" id="p6-save">🚚 Delivery FREE</span>
             </div>
             <a href="/product-wholesale.html" class="add-btn" id="p6-btn">View Product →</a>
           </div>
-        </div>
       </div>
       <!-- PRODUCT 7 -->
       <div class="pcard" data-cat="herb" id="card-p7">
@@ -1006,7 +1201,7 @@ footer{background:var(--dark);padding:48px 80px}
         <div class="pcard-wish" onclick="toggleWish(this)" title="Save">🤍</div>
         <a href="/product-tualang-herbal.html" style="text-decoration:none;display:block">
           <div class="pcard-img pcard-img-him">
-            <img src="/vitamax-images/honeymax-1.png" alt="HoneyMax Royal Honey For Him">
+            <img loading="lazy" decoding="async" src="/vitamax-images/honeymax-1.webp" alt="HoneyMax Royal Honey For Him">
           </div>
         </a>
         <div class="pcard-body">
@@ -1016,20 +1211,19 @@ footer{background:var(--dark);padding:48px 80px}
           <div class="pcard-stars">★★★★★</div>
           <div class="pcard-reviews">4.9 · 347 reviews</div>
           <div class="pcard-variants" id="p7-variants">
-            <button class="variant-btn active" onclick="selectVariant(this,'p7',139,'/product-tualang-herbal.html','v1')">1 Pack — $139</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p7',250,'/product-tualang-herbal.html','v2')">2 Packs — $250</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p7',375,'/product-tualang-herbal.html','v3')">3 Packs — $375</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p7',750,'/product-tualang-herbal.html','v6')">6 Packs — $750</button>
+            <button class="variant-btn active" onclick="selectVariant(this,'p7',390,'/product-tualang-herbal.html','v10')">10 Boxes — $390</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p7',1020,'/product-tualang-herbal.html','v30')">30 Boxes — $1,020</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p7',1680,'/product-tualang-herbal.html','v60')">60 Boxes — $1,680</button>
           </div>
+          <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
           <div class="pcard-footer">
             <div class="pcard-price">
-              <span class="price-now" id="p7-price">$139</span>
-              <span class="price-was" id="p7-was">$188</span>
-              <span class="price-save">Save 26%</span>
+              <span class="price-now" id="p7-price">$390</span>
+              <span class="price-perbox" id="p7-was">$39/box</span>
+              <span class="price-save" id="p7-save">🚚 Delivery FREE</span>
             </div>
             <a href="/product-tualang-herbal.html" class="add-btn" data-id="103" id="p7-btn">View Product →</a>
           </div>
-        </div>
       </div>
       <!-- PRODUCT 8 -->
       <div class="pcard" data-cat="herb" id="card-p8">
@@ -1037,7 +1231,7 @@ footer{background:var(--dark);padding:48px 80px}
         <div class="pcard-wish" onclick="toggleWish(this)" title="Save">🤍</div>
         <a href="/product-detox-honey.html" style="text-decoration:none;display:block">
           <div class="pcard-img pcard-img-him">
-            <img src="/vitamax-images/gladiator-1.png" alt="Gladiator Royal Honey For Him">
+            <img loading="lazy" decoding="async" src="/vitamax-images/gladiator-1.webp" alt="Gladiator Royal Honey For Him">
           </div>
         </a>
         <div class="pcard-body">
@@ -1047,20 +1241,19 @@ footer{background:var(--dark);padding:48px 80px}
           <div class="pcard-stars">★★★★★</div>
           <div class="pcard-reviews">4.7 · 198 reviews</div>
           <div class="pcard-variants" id="p8-variants">
-            <button class="variant-btn active" onclick="selectVariant(this,'p8',149,'/product-detox-honey.html','v1')">1 Pack — $149</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p8',268,'/product-detox-honey.html','v2')">2 Packs — $268</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p8',402,'/product-detox-honey.html','v3')">3 Packs — $402</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p8',804,'/product-detox-honey.html','v6')">6 Packs — $804</button>
+            <button class="variant-btn active" onclick="selectVariant(this,'p8',390,'/product-detox-honey.html','v10')">10 Boxes — $390</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p8',1020,'/product-detox-honey.html','v30')">30 Boxes — $1,020</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p8',1680,'/product-detox-honey.html','v60')">60 Boxes — $1,680</button>
           </div>
+          <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
           <div class="pcard-footer">
             <div class="pcard-price">
-              <span class="price-now" id="p8-price">$149</span>
-              <span class="price-was" id="p8-was">$201</span>
-              <span class="price-save">Save 26%</span>
+              <span class="price-now" id="p8-price">$390</span>
+              <span class="price-perbox" id="p8-was">$39/box</span>
+              <span class="price-save" id="p8-save">🚚 Delivery FREE</span>
             </div>
             <a href="/product-detox-honey.html" class="add-btn" data-id="108" id="p8-btn">View Product →</a>
           </div>
-        </div>
       </div>
       <!-- PRODUCT 9 -->
       <div class="pcard" data-cat="her" id="card-p9">
@@ -1068,30 +1261,29 @@ footer{background:var(--dark);padding:48px 80px}
         <div class="pcard-wish" onclick="toggleWish(this)" title="Save">🤍</div>
         <a href="/product-glow-honey.html" style="text-decoration:none;display:block">
           <div class="pcard-img pcard-img-her">
-            <img src="/vitamax-images/ice-1.png" alt="VitaMAX Royal Honey ICE ENERGY">
+            <img loading="lazy" decoding="async" src="/vitamax-images/ice-1.webp" alt="VitaMAX Royal Honey ICE ENERGY">
           </div>
         </a>
         <div class="pcard-body">
-          <div class="pcard-tag">For Her · Beauty & Glow</div>
+          <div class="pcard-tag">For Him · Ice Energy</div>
           <div class="pcard-name"><a href="/product-glow-honey.html" style="text-decoration:none;color:inherit">VitaMAX Royal Honey ICE ENERGY</a></div>
-          <div class="pcard-desc">Wild honey with Marine Collagen, Rose water and Vitamin C. Beauty from within — radiant skin, stronger hair, natural glow.</div>
+          <div class="pcard-desc">Wild honey with Black Seed, Maca Root and a cooling complex. Clean, sharp, powerful energy — no jitters, no crash.</div>
           <div class="pcard-stars">★★★★★</div>
           <div class="pcard-reviews">4.8 · 203 reviews</div>
           <div class="pcard-variants" id="p9-variants">
-            <button class="variant-btn active" onclick="selectVariant(this,'p9',109,'/product-pure-wild-honey.html','v1')">250g — $109</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p9',196,'/product-pure-wild-honey.html','v2')">500g — $196</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p9',294,'/product-pure-wild-honey.html','v3')">1kg — $294</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p9',588,'/product-pure-wild-honey.html','v6')">2kg — $588</button>
+            <button class="variant-btn active" onclick="selectVariant(this,'p9',390,'/product-glow-honey.html','v10')">10 Boxes — $390</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p9',1020,'/product-glow-honey.html','v30')">30 Boxes — $1,020</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p9',1680,'/product-glow-honey.html','v60')">60 Boxes — $1,680</button>
           </div>
+          <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
           <div class="pcard-footer">
             <div class="pcard-price">
-              <span class="price-now" id="p9-price">$109</span>
-              <span class="price-was" id="p9-was">$151</span>
-              <span class="price-save">Save 28%</span>
+              <span class="price-now" id="p9-price">$390</span>
+              <span class="price-perbox" id="p9-was">$39/box</span>
+              <span class="price-save" id="p9-save">🚚 Delivery FREE</span>
             </div>
             <a href="/product-glow-honey.html" class="add-btn" data-id="98" id="p9-btn">View Product →</a>
           </div>
-        </div>
       </div>
       <!-- PRODUCT 10 -->
       <div class="pcard" data-cat="him" id="card-p10">
@@ -1099,30 +1291,29 @@ footer{background:var(--dark);padding:48px 80px}
         <div class="pcard-wish" onclick="toggleWish(this)" title="Save">🤍</div>
         <a href="/product-power-boost.html" style="text-decoration:none;display:block">
           <div class="pcard-img pcard-img-him">
-            <img src="/vitamax-images/etumax-1.png" alt="Etumax Royal Honey For Her">
+            <img loading="lazy" decoding="async" src="/vitamax-images/etumax-1.webp" alt="Etumax Royal Honey For Her">
           </div>
         </a>
         <div class="pcard-body">
-          <div class="pcard-tag">For Him · Energy Boost</div>
+          <div class="pcard-tag her-tag">For Her · Royal Honey</div>
           <div class="pcard-name"><a href="/product-power-boost.html" style="text-decoration:none;color:inherit">Etumax Royal Honey For Her</a></div>
-          <div class="pcard-desc">Wild honey with Black Seed and Maca Root. Clean energy, athletic stamina and mental clarity — ancient formula, modern results.</div>
+          <div class="pcard-desc">Wild honey with Royal Jelly and herbal extracts for women. Daily energy, mood balance and natural radiance — ancient formula, modern results.</div>
           <div class="pcard-stars">★★★★★</div>
           <div class="pcard-reviews">4.7 · 289 reviews</div>
           <div class="pcard-variants" id="p10-variants">
-            <button class="variant-btn active" onclick="selectVariant(this,'p10',499,'/product-wholesale.html','v1')">24 packs — $499</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p10',899,'/product-wholesale.html','v2')">48 packs — $899</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p10',0,'/product-wholesale.html','v3')">Custom — Inquire</button>
-            <button class="variant-btn" onclick="selectVariant(this,'p10',0,'/product-wholesale.html','v6')">10+ Cartons — WhatsApp</button>
+            <button class="variant-btn active" onclick="selectVariant(this,'p10',390,'/product-power-boost.html','v10')">10 Boxes — $390</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p10',1020,'/product-power-boost.html','v30')">30 Boxes — $1,020</button>
+            <button class="variant-btn" onclick="selectVariant(this,'p10',1680,'/product-power-boost.html','v60')">60 Boxes — $1,680</button>
           </div>
+          <div class="pcard-promo">🎁 +1 FREE box on your first order</div>
           <div class="pcard-footer">
             <div class="pcard-price">
-              <span class="price-now" id="p10-price">$499</span>
-              <span class="price-was" id="p10-was">$684</span>
-              <span class="price-save">Save 27%</span>
+              <span class="price-now" id="p10-price">$390</span>
+              <span class="price-perbox" id="p10-was">$39/box</span>
+              <span class="price-save" id="p10-save">🚚 Delivery FREE</span>
             </div>
             <a href="/product-power-boost.html" class="add-btn" data-id="86" id="p10-btn">View Product →</a>
           </div>
-        </div>
       </div>
 
     </div>
@@ -1133,7 +1324,7 @@ footer{background:var(--dark);padding:48px 80px}
       <a href="/shop.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:#fff;border:none;border-radius:var(--radius-sm);padding:16px 36px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 6px 24px rgba(241,90,34,.3);transition:all .2s">
         🛍 View All Products →
       </a>
-      <div style="margin-top:12px;font-size:13px;color:var(--text-soft)">Free shipping over $60 · 30-day guarantee · Discreet packaging</div>
+      <div style="margin-top:12px;font-size:13px;color:var(--text-soft)">🚚 FREE delivery on every order · 🎁 +1 free box on first orders · 30-day guarantee · Discreet packaging</div>
     </div>
 
   </div>
@@ -1142,6 +1333,190 @@ footer{background:var(--dark);padding:48px 80px}
 <hr class="divider">
 
 <!-- COUPLE BENEFITS -->
+
+<!-- ═══════════ THE JOURNEY (pain → solution storyboard) ═══════════ -->
+<section class="jn-section" id="journey">
+  <div class="jn-inner">
+    <div class="jn-head">
+      <div class="sec-label" style="color:#E8B23A">The story every home knows</div>
+      <h2 class="sec-h2" style="color:#fff">You Used To Have <em style="color:#E8B23A">More&nbsp;Energy.</em><br>Where Did It Go?</h2>
+      <p class="sec-body" style="color:rgba(255,255,255,.62);margin:0 auto">It doesn't disappear overnight. It fades quietly — one busy year at a time — until one day you notice the difference. This is the story we hear from thousands of customers. Maybe it's yours too.</p>
+    </div>
+
+    <div class="jn-chapter">
+      <div class="jn-rail"><div class="jn-num">01</div><div class="jn-line"></div></div>
+      <div>
+        <div class="jn-kicker">For Him · The Slow Fade</div>
+        <h3 class="jn-title">The Alarm Rings. You're <em>Already Tired.</em></h3>
+        <p class="jn-text">Long days. Deadlines. Responsibilities that never stop. You give everything to work and family — and by evening there's <strong>nothing left for yourself</strong>. Not for the gym. Not for your goals. Not for her. And quietly, a worry grows: <strong>"Is this just who I am now?"</strong></p>
+        <div class="pain-grid">
+          <div class="pain-chip"><span class="pain-ico">⚡</span><div><div class="pain-t">Energy gone by 6 PM</div><div class="pain-s">The day isn't over — but you are.</div></div></div>
+          <div class="pain-chip"><span class="pain-ico">☕</span><div><div class="pain-t">Coffee stopped working</div><div class="pain-s">More cups, less effect, worse sleep.</div></div></div>
+          <div class="pain-chip"><span class="pain-ico">💪</span><div><div class="pain-t">Stamina isn't what it was</div><div class="pain-s">Workouts skipped. Confidence slipping.</div></div></div>
+          <div class="pain-chip"><span class="pain-ico">🪞</span><div><div class="pain-t">"I feel older than I am"</div><div class="pain-s">The drive that defined you feels dimmer.</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jn-chapter">
+      <div class="jn-rail"><div class="jn-num">02</div><div class="jn-line"></div></div>
+      <div>
+        <div class="jn-kicker her">For Her · Running On Empty</div>
+        <h3 class="jn-title">She Carries Everyone. <em>Who Carries Her?</em></h3>
+        <p class="jn-text">Career, home, family — she puts everyone first, every single day. The energy she spends on the world leaves <strong>nothing in reserve for herself</strong>. The glow dims. The spark feels far away. And she deserves so much better than "just tired."</p>
+        <div class="pain-grid">
+          <div class="pain-chip her-chip"><span class="pain-ico">🌙</span><div><div class="pain-t">Heavy mornings, restless nights</div><div class="pain-s">Sleep that doesn't refresh anymore.</div></div></div>
+          <div class="pain-chip her-chip"><span class="pain-ico">✨</span><div><div class="pain-t">Skin &amp; hair lost their shine</div><div class="pain-s">The mirror shows the exhaustion.</div></div></div>
+          <div class="pain-chip her-chip"><span class="pain-ico">🎭</span><div><div class="pain-t">Moods that swing without warning</div><div class="pain-s">Patience thin. Joy harder to reach.</div></div></div>
+          <div class="pain-chip her-chip"><span class="pain-ico">🔋</span><div><div class="pain-t">Zero energy left for herself</div><div class="pain-s">Wellness always postponed to "someday."</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jn-chapter">
+      <div class="jn-rail"><div class="jn-num">03</div><div class="jn-line"></div></div>
+      <div>
+        <div class="jn-kicker gold">The Turn · Hope From The Rainforest</div>
+        <h3 class="jn-title">Nature Solved This — <em>130 Million Years Ago.</em></h3>
+        <p class="jn-text">Deep in the Malaysian rainforest — the <strong>oldest rainforest on Earth</strong>, older than the Amazon — grow botanicals that Southeast Asian royalty treasured for centuries: Tongkat Ali roots matured for a decade in ancient soil, wild honey from stingless Trigona bees, Royal Jelly reserved for queens. Not a trend. Not a lab invention. <strong>A tradition that never stopped working.</strong></p>
+        <div class="hope-band">
+          <span class="hb-ico">🌿</span>
+          <div class="hb-t">For generations, Malaysian families have started their mornings with herb-infused honey — the original daily vitality ritual, now in one golden sachet.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jn-chapter">
+      <div class="jn-rail"><div class="jn-num">04</div></div>
+      <div>
+        <div class="jn-kicker">The Ritual · Your Solution</div>
+        <h3 class="jn-title">One Sachet Each Morning. <em>Everything Changes.</em></h3>
+        <p class="jn-text">Tear. Taste. Go. VitaMAX blends wild rainforest honey with Malaysia's finest herbs — so him, her, and the two of you together get back what busy life took away.</p>
+        <div class="solution-grid">
+          <div class="sol-card"><div class="sol-h"><span>⚡</span> For Him — Steady Power</div><div class="sol-p">Natural energy that builds through the day, stamina for training and life, and the confident drive you thought was gone.</div></div>
+          <div class="sol-card"><div class="sol-h"><span>🌸</span> For Her — Radiant Balance</div><div class="sol-p">Gentle daily energy, brighter skin and hair, calmer moods and deeper rest — wellness that finally puts her first.</div></div>
+          <div class="sol-card"><div class="sol-h"><span>💞</span> Together — Closer</div><div class="sol-p">When both of you feel your best, everything improves — the evenings, the laughter, the connection.</div></div>
+          <div class="sol-card"><div class="sol-h"><span>🛡️</span> Every Day — Protected</div><div class="sol-p">Raw honey antioxidants, Royal Jelly and Black Seed support immunity and recovery, morning after morning.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ba-table">
+      <div class="ba-head"><div class="ba-before">Life Before</div><div class="ba-after">Weeks 3–4 With VitaMAX</div></div>
+      <div class="ba-row"><div class="ba-before">Dragging through afternoons on caffeine</div><div class="ba-after">Clean, steady energy from morning to night</div></div>
+      <div class="ba-row"><div class="ba-before">Workouts skipped, stamina fading</div><div class="ba-after">Strength and endurance trending up again</div></div>
+      <div class="ba-row"><div class="ba-before">Dull skin, heavy eyes, low mood</div><div class="ba-after">Natural glow, brighter mornings, lifted spirits</div></div>
+      <div class="ba-row"><div class="ba-before">Too drained to truly connect</div><div class="ba-after">Present, confident, and close again</div></div>
+    </div>
+
+    <div class="jn-cta">
+      <a class="btn-primary" href="/shop.html">🍯 Start Your Ritual — Shop Now</a>
+      <div class="jn-cta-sub">🎁 <strong>First order gets +1 FREE box</strong> · 🚚 Free delivery included · 30-day money-back guarantee</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ INGREDIENTS ═══════════ -->
+<section class="ing-home" id="ingredients">
+  <div class="sec-inner">
+    <div class="sec-header">
+      <div>
+        <div class="sec-label">From the Malaysian rainforest</div>
+        <h2 class="sec-h2">The World's <em>Finest Herbs</em>,<br>In Every Golden Sachet</h2>
+        <p class="sec-body">Malaysia's rainforest is <strong>130 million years old</strong> — the oldest on Earth. The botanicals that grow beneath its canopy are prized across Asia as some of the finest in the world. We source them the traditional way, and blend them with wild honey. Nothing synthetic. Ever.</p>
+      </div>
+    </div>
+
+    <div class="ing-home-grid">
+      <div class="ingp-card">
+        <div class="ingp-emoji">🌱</div>
+        <div class="ingp-name">Tongkat Ali</div>
+        <div class="ingp-latin">Eurycoma longifolia — "Malaysian Ginseng"</div>
+        <div class="ingp-origin">🇲🇾 Pahang Rainforest · Wild Root</div>
+        <div class="ingp-row"><b>Traditional use:</b> Southeast Asia's most prized men's vitality tonic for over 400 years.</div>
+        <div class="ingp-row"><b>Why we chose it:</b> Roots matured 5–10 years in ancient rainforest soil — the gold standard.</div>
+        <div class="ingp-row"><b>Supports:</b> Natural energy, stamina, drive and healthy hormone balance.</div>
+      </div>
+      <div class="ingp-card">
+        <div class="ingp-emoji">🍯</div>
+        <div class="ingp-name">Wild Trigona Honey</div>
+        <div class="ingp-latin">Stingless bee honey — raw &amp; unfiltered</div>
+        <div class="ingp-origin">🇲🇾 Borneo Jungle Canopy</div>
+        <div class="ingp-row"><b>Traditional use:</b> The daily wellness elixir of rainforest communities for generations.</div>
+        <div class="ingp-row"><b>Why we chose it:</b> Hand-harvested wild colonies — up to 2× the antioxidants of farmed honey.</div>
+        <div class="ingp-row"><b>Supports:</b> Clean natural energy, immunity and antioxidant protection.</div>
+      </div>
+      <div class="ingp-card">
+        <div class="ingp-emoji">🌳</div>
+        <div class="ingp-name">Tualang Honey</div>
+        <div class="ingp-latin">From giant Tualang trees up to 80m tall</div>
+        <div class="ingp-origin">🇲🇾 Kedah Rainforest</div>
+        <div class="ingp-row"><b>Traditional use:</b> The "healing honey" of Malay tradition, harvested by rope at dawn.</div>
+        <div class="ingp-row"><b>Why we chose it:</b> One of the most studied honeys on Earth for its bioactive richness.</div>
+        <div class="ingp-row"><b>Supports:</b> Immune health, recovery and daily wellbeing.</div>
+      </div>
+      <div class="ingp-card">
+        <div class="ingp-emoji">🍂</div>
+        <div class="ingp-name">Panax Ginseng</div>
+        <div class="ingp-latin">The world's most researched adaptogen</div>
+        <div class="ingp-origin">🌏 Highland Roots · 5,000-Year History</div>
+        <div class="ingp-row"><b>Traditional use:</b> Endurance and clarity tonic across Asia for five millennia.</div>
+        <div class="ingp-row"><b>Why we chose it:</b> The perfect partner to Tongkat Ali — balanced, time-proven energy.</div>
+        <div class="ingp-row"><b>Supports:</b> Physical endurance, mental focus and stress resilience.</div>
+      </div>
+      <div class="ingp-card">
+        <div class="ingp-emoji">👑</div>
+        <div class="ingp-name">Royal Jelly &amp; Bee Pollen</div>
+        <div class="ingp-latin">The queen bee's exclusive food</div>
+        <div class="ingp-origin">🐝 Pure Apiary · Cold Processed</div>
+        <div class="ingp-row"><b>Traditional use:</b> Reserved for royalty — nature's densest nourishment.</div>
+        <div class="ingp-row"><b>Why we chose it:</b> Naturally rich in B5, B6, proteins and 250+ bioactive compounds.</div>
+        <div class="ingp-row"><b>Supports:</b> Recovery, mood, glow and all-round vitality.</div>
+      </div>
+      <div class="ingp-card">
+        <div class="ingp-emoji">⚫</div>
+        <div class="ingp-name">Habbatus Sauda</div>
+        <div class="ingp-latin">Nigella sativa — Black Seed, cold-pressed</div>
+        <div class="ingp-origin">🌙 "The Seed of Blessing"</div>
+        <div class="ingp-row"><b>Traditional use:</b> Treasured across the Muslim world for over 1,400 years.</div>
+        <div class="ingp-row"><b>Why we chose it:</b> Naturally rich in thymoquinone — one of nature's most studied compounds.</div>
+        <div class="ingp-row"><b>Supports:</b> Immune strength and healthy inflammation response.</div>
+      </div>
+    </div>
+
+    <div class="ing-stats">
+      <div class="ing-stat"><div class="ing-stat-n">130M</div><div class="ing-stat-l">Years old — Earth's oldest rainforest</div></div>
+      <div class="ing-stat"><div class="ing-stat-n">5–10</div><div class="ing-stat-l">Years each Tongkat Ali root matures</div></div>
+      <div class="ing-stat"><div class="ing-stat-n">0</div><div class="ing-stat-l">Synthetic additives — 100% natural</div></div>
+      <div class="ing-stat"><div class="ing-stat-n">100%</div><div class="ing-stat-l">Halal &amp; Kosher certified · Lab tested</div></div>
+    </div>
+    <p style="margin-top:22px;font-size:12.5px;color:var(--text-xsoft);text-align:center">Her formulas feature Tribulus Terrestris, Rose extract &amp; Marine Collagen · Crafted in Malaysia in a GMP-compliant facility</p>
+  </div>
+</section>
+
+<!-- ═══════════ COMPARISON ═══════════ -->
+<section class="cmp-section" id="compare">
+  <div class="sec-inner">
+    <div style="text-align:center">
+      <div class="sec-label" style="text-align:center">Why buyers choose us</div>
+      <h2 class="sec-h2">VitaMAX vs. <span>Ordinary Honey Brands</span></h2>
+    </div>
+    <div class="cmp-table">
+      <div class="cmp-row"><div></div><div>🍯 VitaMAX</div><div>Others</div></div>
+      <div class="cmp-row"><div>Wild rainforest honey (not farmed)</div><div><span class="cmp-yes">✓</span></div><div><span class="cmp-no">✗</span></div></div>
+      <div class="cmp-row"><div>Genuine Malaysian Tongkat Ali, aged 5–10 yrs</div><div><span class="cmp-yes">✓</span></div><div><span class="cmp-no">✗</span></div></div>
+      <div class="cmp-row"><div>Free delivery included in every price</div><div><span class="cmp-yes">✓</span></div><div>Rarely</div></div>
+      <div class="cmp-row"><div>+1 FREE box on your first order</div><div><span class="cmp-yes">✓</span></div><div><span class="cmp-no">✗</span></div></div>
+      <div class="cmp-row"><div>Carton pricing — $28/box at 60 boxes (retail $89)</div><div><span class="cmp-yes">✓</span></div><div><span class="cmp-no">✗</span></div></div>
+      <div class="cmp-row"><div>Halal &amp; Kosher certified · discreet packaging</div><div><span class="cmp-yes">✓</span></div><div>Sometimes</div></div>
+      <div class="cmp-row"><div>30-day money-back guarantee</div><div><span class="cmp-yes">✓</span></div><div><span class="cmp-no">✗</span></div></div>
+    </div>
+    <div style="text-align:center;margin-top:34px">
+      <a class="btn-primary" href="/shop.html">Choose Your Carton →</a>
+    </div>
+  </div>
+</section>
+
 <section class="couple-section" id="benefits">
   <div class="couple-inner">
     <div class="couple-left">
@@ -1246,7 +1621,7 @@ footer{background:var(--dark);padding:48px 80px}
       <a href="/shop.html" class="story-btn">Shop Our Honey →</a>
     </div>
     <div class="story-img">
-      <img src="/vitamax-images/story-couple.png" alt="A couple enjoying renewed energy and connection">
+      <img loading="lazy" decoding="async" src="/vitamax-images/story-couple.webp" alt="A couple enjoying renewed energy and connection">
       <div class="story-cap"><strong>Energy &amp; love, every day</strong><span>Crafted for couples who choose each other</span></div>
     </div>
   </div>
@@ -1265,7 +1640,7 @@ footer{background:var(--dark);padding:48px 80px}
       <!-- Step 1 -->
       <div class="step">
         <div class="step-icon">
-          <img src="/vitamax-images/step-1.png" alt="Pure raw honey harvested from Malaysian rainforests">
+          <img loading="lazy" decoding="async" src="/vitamax-images/step-1.webp" alt="Pure raw honey harvested from Malaysian rainforests">
         </div>
         <div class="step-content">
           <div class="step-num">01</div>
@@ -1277,7 +1652,7 @@ footer{background:var(--dark);padding:48px 80px}
       <!-- Step 2 -->
       <div class="step">
         <div class="step-icon">
-          <img src="/vitamax-images/step-2.png" alt="Ancient botanicals blended with honey">
+          <img loading="lazy" decoding="async" src="/vitamax-images/step-2.webp" alt="Ancient botanicals blended with honey">
         </div>
         <div class="step-content">
           <div class="step-num">02</div>
@@ -1289,7 +1664,7 @@ footer{background:var(--dark);padding:48px 80px}
       <!-- Step 3 -->
       <div class="step">
         <div class="step-icon">
-          <img src="/vitamax-images/step-3.png" alt="Feel the difference in energy and vitality">
+          <img loading="lazy" decoding="async" src="/vitamax-images/step-3.webp" alt="Feel the difference in energy and vitality">
         </div>
         <div class="step-content">
           <div class="step-num">03</div>
@@ -1414,7 +1789,7 @@ footer{background:var(--dark);padding:48px 80px}
       </div>
       <div class="rev-card">
         <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"Ordered the 3-pack, thinking I'd just try it. <strong>Reordered the 6-pack before pack 2 was finished.</strong> Fast shipping, discreet packaging, and the product just works."</p>
+        <p class="rev-text">"Started with the 10-box carton to try it — <strong>reordered the 30-box before we finished the first five.</strong> Free delivery, discreet box, and the extra free box on my first order was a classy touch."</p>
         <div class="reviewer">
           <div class="rev-avatar" style="background:#F3E5F5;color:#7B1FA2">M</div>
           <div>
@@ -1436,7 +1811,7 @@ footer{background:var(--dark);padding:48px 80px}
       </div>
       <div class="rev-card">
         <div class="rev-stars">★★★★☆</div>
-        <p class="rev-text">"Shipping to Germany took 13 days — they warned me upfront. <strong>Product quality is genuinely impressive. Real honey taste, clean energy, and no crash.</strong> Will reorder."</p>
+        <p class="rev-text">"Shipping to Germany took 13 days — free, tracked, exactly as promised. <strong>Product quality is genuinely impressive. Real honey taste, clean energy, and no crash.</strong> The 60-box rate makes it an easy reorder."</p>
         <div class="reviewer">
           <div class="rev-avatar" style="background:#E8F5E9;color:#2E7D32">K</div>
           <div>
@@ -1469,6 +1844,14 @@ footer{background:var(--dark);padding:48px 80px}
     <h2 class="sec-h2">Everything You <span>Need to Know</span></h2>
     <div class="faq-grid">
       <div class="faq-item">
+        <div class="faq-q">Why is the minimum order 10 boxes?</div>
+        <div class="faq-a">We ship full cartons direct from Malaysia — 10, 30 or 60 boxes. Skipping the middle layers is exactly what lets us include free worldwide delivery and drop the per-box price from the $89 retail rate to as low as $28. A 10-box carton is roughly a two-month daily ritual for a couple — and many customers resell the extras at retail.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How does the FREE first-order box work?</div>
+        <div class="faq-a">Simple: place your first order of any size — 10, 30 or 60 boxes — and we automatically pack +1 extra box free. No code needed. It's our way of saying welcome to the VitaMAX family.</div>
+      </div>
+      <div class="faq-item">
         <div class="faq-q">What is Royal Honey and how is it different from regular honey?</div>
         <div class="faq-a">Royal Honey comes from wild Trigona stingless bees in the Malaysian rainforest — raw and unfiltered with higher antioxidant content than commercial honey. We blend it with traditional botanicals like Tongkat Ali and Ginseng for a complete wellness supplement.</div>
       </div>
@@ -1485,8 +1868,8 @@ footer{background:var(--dark);padding:48px 80px}
         <div class="faq-a">100%. Every order ships in plain, unmarked outer packaging. The shipping label shows only "VitaMAX" — no product description, no images, nothing that indicates the contents. Your privacy is guaranteed.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q">How long does delivery take?</div>
-        <div class="faq-a">US and Canada: 8–14 business days standard. Europe: 10–18 business days. All orders are fully tracked. Expedited DHL (3–5 days) is available at checkout.</div>
+        <div class="faq-q">How long does delivery take — and is it really free?</div>
+        <div class="faq-a">Really free, on every order. US and Canada: 8–14 business days. Europe: 10–18 business days. Every shipment is fully tracked from Malaysia to your door, and the price you saw at checkout is the price you pay.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">What if I'm not satisfied?</div>
@@ -1531,7 +1914,7 @@ footer{background:var(--dark);padding:48px 80px}
       <div class="conf-item">
         <svg class="conf-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13l9-9 3 3-4 4 5 5-2 2-5-5-4 4z"/><path d="M14.5 7.5L21 4l-3.5 6.5"/></svg>
         <strong>Free Worldwide Shipping</strong>
-        <span>Fast, tracked delivery on every order over $60.</span>
+        <span>FREE, fully tracked delivery on every order — no minimum.</span>
       </div>
     </div>
     <p class="conf-note">💛 Not happy within 30 days? Just message us and we'll refund you in full — no questions asked.</p>
@@ -1547,10 +1930,10 @@ footer{background:var(--dark);padding:48px 80px}
     <h2 class="cta-h2">Your Best Energy<br>Is <em>Still Ahead</em></h2>
     <p class="cta-body">Join 10,000+ customers across the US, Canada, and Europe. Natural. Centuries-proven. Backed by our 30-day guarantee.</p>
     <div class="cta-btns">
-      <a class="cta-btn-main" href="/shop.html">🍯 Shop All Products →</a>
+      <a class="cta-btn-main" href="/shop.html">🎁 Claim My Free Box →</a>
       <a href="https://wa.me/60177809767" class="cta-btn-wa" target="_blank">📱 WhatsApp Us</a>
     </div>
-    <div class="cta-guarantee">Free shipping over $60 · <strong>30-day money-back guarantee</strong> · Discreet packaging always</div>
+    <div class="cta-guarantee">🚚 FREE delivery on every order · 🎁 <strong>+1 free box for first-time buyers</strong> · 30-day money-back guarantee · Discreet packaging always</div>
   </div>
 </section>
 
@@ -1560,6 +1943,11 @@ footer{background:var(--dark);padding:48px 80px}
     <div class="footer-brand">
       <div class="footer-logo"><img src="/vitamax-images/logo-light.svg" alt="VitaMAX.MY" width="150" height="42"></div>
       <div class="footer-tagline">Premium Royal Honey Supplements · Ships Worldwide</div>
+      <div class="footer-promo">
+        <span>🚚 FREE delivery on every order</span>
+        <span>🎁 First order: +1 FREE box</span>
+        <span>📦 Full cartons: 10 · 30 · 60</span>
+      </div>
       <div class="footer-company">
         <strong>Amyal International LLC</strong><br>
         A2-27-2, Soho Suites @ KLCC,<br>
@@ -1594,10 +1982,10 @@ footer{background:var(--dark);padding:48px 80px}
 <!-- STICKY BAR -->
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-info">
-    <div class="sticky-name">Royal Honey VIP Pack</div>
-    <div class="sticky-price">From $29 · Free shipping over $60</div>
+    <div class="sticky-name">🎁 First order = +1 FREE box</div>
+    <div class="sticky-price">Cartons from $390 · FREE delivery included</div>
   </div>
-  <a class="sticky-btn" href="/shop.html">🛒 Shop Now →</a>
+  <a class="sticky-btn" href="/shop.html">🛒 Claim My Free Box →</a>
 </div>
 
 <script>
@@ -1607,7 +1995,7 @@ footer{background:var(--dark);padding:48px 80px}
   var dots  = document.querySelectorAll('.hs-dot');
   var prev  = document.getElementById('hsPrev');
   var next  = document.getElementById('hsNext');
-  var cur   = 0; var total = 4; var timer;
+  var cur = 0; var total = track ? track.children.length : 0; var timer;
 
   function goTo(n){
     cur = (n + total) % total;
@@ -1646,35 +2034,35 @@ function selectVariant(btn, pid, price, pageSlug, variantSlug) {
 
   // Variant data with was-prices
   var vData = {
-    p1:  [{p:139,w:185},{p:250,w:320},{p:375,w:480},{p:750,w:960}],
-    p2:  [{p:129,w:182},{p:232,w:297},{p:348,w:445},{p:696,w:890}],
-    p3:  [{p:129,w:172},{p:232,w:297},{p:348,w:445},{p:696,w:890}],
-    p4:  [{p:129,w:170},{p:232,w:297},{p:348,w:445},{p:696,w:890}],
-    p5:  [{p:339,w:452},{p:610,w:780},{p:915,w:1170},{p:1830,w:2340}],
-    p6:  [{p:149,w:207},{p:268,w:342},{p:402,w:513},{p:804,w:1026}],
-    p7:  [{p:139,w:188},{p:250,w:320},{p:375,w:480},{p:750,w:960}],
-    p8:  [{p:149,w:201},{p:268,w:342},{p:402,w:513},{p:804,w:1026}],
-    p9:  [{p:109,w:151},{p:196,w:251},{p:294,w:376},{p:588,w:752}],
-    p10: [{p:499,w:684},{p:899,w:1148},{p:0,w:0},{p:0,w:0}]
+    p1: [{p:390,pb:'39',sv:'🚚 Delivery FREE',u:'box'},{p:1020,pb:'34',sv:'Save $150',u:'box'},{p:1680,pb:'28',sv:'Save $660',u:'box'}],
+    p2: [{p:390,pb:'39',sv:'🚚 Delivery FREE',u:'box'},{p:1020,pb:'34',sv:'Save $150',u:'box'},{p:1680,pb:'28',sv:'Save $660',u:'box'}],
+    p3: [{p:390,pb:'39',sv:'🚚 Delivery FREE',u:'box'},{p:1020,pb:'34',sv:'Save $150',u:'box'},{p:1680,pb:'28',sv:'Save $660',u:'box'}],
+    p4: [{p:780,pb:'78',sv:'🚚 Delivery FREE',u:'set'},{p:2040,pb:'68',sv:'Save $300',u:'set'},{p:3360,pb:'56',sv:'Save $1,320',u:'set'}],
+    p5: [{p:390,pb:'39',sv:'🚚 Delivery FREE',u:'jar'},{p:1020,pb:'34',sv:'Save $150',u:'jar'},{p:1680,pb:'28',sv:'Save $660',u:'jar'}],
+    p6: [{p:1020,pb:'34',sv:'🚚 Delivery FREE',u:'box'},{p:1680,pb:'28',sv:'Save $660',u:'box'},{p:2340,pb:'26',sv:'Save $1,170',u:'box'}],
+    p7: [{p:390,pb:'39',sv:'🚚 Delivery FREE',u:'box'},{p:1020,pb:'34',sv:'Save $150',u:'box'},{p:1680,pb:'28',sv:'Save $660',u:'box'}],
+    p8: [{p:390,pb:'39',sv:'🚚 Delivery FREE',u:'box'},{p:1020,pb:'34',sv:'Save $150',u:'box'},{p:1680,pb:'28',sv:'Save $660',u:'box'}],
+    p9: [{p:390,pb:'39',sv:'🚚 Delivery FREE',u:'box'},{p:1020,pb:'34',sv:'Save $150',u:'box'},{p:1680,pb:'28',sv:'Save $660',u:'box'}],
+    p10: [{p:390,pb:'39',sv:'🚚 Delivery FREE',u:'box'},{p:1020,pb:'34',sv:'Save $150',u:'box'},{p:1680,pb:'28',sv:'Save $660',u:'box'}]
   };
 
   var v = vData[pid] ? vData[pid][idx] : null;
 
   // Update price display
   var priceEl = document.getElementById(pid + '-price');
-  if (priceEl) priceEl.textContent = price === 0 ? 'Inquire' : '$' + price;
+  if (priceEl) priceEl.textContent = price === 0 ? 'Inquire' : '$' + price.toLocaleString('en-US');
 
-  // Update was price
+  // Update per-unit rate
   var wasEl = document.getElementById(pid + '-was');
-  if (wasEl && v) wasEl.textContent = v.w > 0 ? 'was $' + v.w : '';
+  if (wasEl && v) wasEl.textContent = v.pb ? '$' + v.pb + '/' + v.u : '';
 
-  // Update save amount
+  // Update savings tag
   var saveEl = document.getElementById(pid + '-save');
-  if (saveEl && v && v.w > 0 && price > 0) saveEl.textContent = 'Save $' + (v.w - price);
+  if (saveEl && v) saveEl.textContent = v.sv;
 
   // Update View Product button link
   var addBtn = document.getElementById(pid + '-btn');
-  if (addBtn && price > 0 && pageSlug) addBtn.href = pageSlug;
+  if (addBtn && pageSlug) addBtn.href = pageSlug;
 
   if (window.event) window.event.stopPropagation();
 }
@@ -1857,5 +2245,68 @@ document.addEventListener('DOMContentLoaded', function() { getCartCount(); });
     <a href="/cart.html" class="cart-toast-action">View Cart &amp; Checkout →</a>
   </div>
 </div>
+
+<!-- EXIT INTENT MODAL -->
+<div class="exit-modal" id="exitModal" role="dialog" aria-modal="true" aria-label="Special offer">
+  <div class="exit-backdrop"></div>
+  <div class="exit-card">
+    <button class="exit-x" aria-label="Close">✕</button>
+    <div class="exit-top">
+      <div class="exit-kicker">Wait — before you go</div>
+      <div class="exit-h">Your FREE Box Is<br><em>Still Waiting</em></div>
+    </div>
+    <div class="exit-body">
+      <p class="exit-p">First-time buyers get <strong>+1 FREE box</strong> added to any carton — 10, 30 or 60 boxes. And delivery? Already included.</p>
+      <div class="exit-perks">
+        <div class="exit-perk">🎁 +1 FREE box on your first order — automatic</div>
+        <div class="exit-perk">🚚 FREE tracked delivery, worldwide</div>
+        <div class="exit-perk">🔄 30-day money-back guarantee</div>
+      </div>
+      <a href="/shop.html" class="exit-btn">Claim My Free Box →</a>
+      <button class="exit-no">No thanks, I don't want a free box</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// SCROLL REVEAL
+(function(){
+  if (!('IntersectionObserver' in window)) return;
+  ['.bs-card','.pcard','.ingp-card','.step','.rev-card','.why-card','.faq-item','.bcard','.couple-card','.ing-stat'].forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(el,i){ el.classList.add('reveal'); el.style.transitionDelay=((i%4)*0.07)+'s'; });
+  });
+  ['.jn-head','.jn-chapter','.ba-table','.jn-cta','.cmp-table','.sec-header','.promo-strip','.story-inner'].forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(el){ el.classList.add('reveal'); });
+  });
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:.1, rootMargin:'0px 0px -5% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+
+// EXIT INTENT — once per session, desktop only
+(function(){
+  var modal = document.getElementById('exitModal');
+  if (!modal) return;
+  var shown = false, armed = false;
+  try { shown = sessionStorage.getItem('vmxExit') === '1'; } catch(e) {}
+  setTimeout(function(){ armed = true; }, 7000);
+  function openM(){
+    if (shown || !armed) return;
+    shown = true;
+    try { sessionStorage.setItem('vmxExit','1'); } catch(e) {}
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeM(){ modal.classList.remove('open'); document.body.style.overflow = ''; }
+  document.addEventListener('mouseout', function(e){ if (!e.relatedTarget && e.clientY <= 8) openM(); });
+  modal.querySelector('.exit-backdrop').addEventListener('click', closeM);
+  modal.querySelector('.exit-x').addEventListener('click', closeM);
+  var no = modal.querySelector('.exit-no');
+  if (no) no.addEventListener('click', closeM);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeM(); });
+})();
+</script>
+
 </body>
 </html>
