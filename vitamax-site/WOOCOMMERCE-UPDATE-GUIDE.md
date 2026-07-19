@@ -1,21 +1,21 @@
 # WooCommerce Backend Update Guide — Carton Pricing Model
 
 The site now sells **full cartons only (10 / 30 / 60 boxes)** with **free delivery included** and a
-**"+1 free box on first order"** promise, anchored against the $89/box single-retail value.
-The front-end reuses your existing WooCommerce variation IDs, so until you update the variations
-in WP Admin, add-to-cart will show the OLD pack names and prices.
+**"+1 free box on first order"** promise. The front-end reuses your existing WooCommerce variation IDs,
+so until you update the variations in WP Admin, add-to-cart will show the OLD pack names and prices.
 
 ## Retail pricing ladder (uniform across products)
 
-| Tier | Price | Per box | vs $89 retail |
+| Tier | Price | Per box | Savings vs 10-box rate |
 |---|---|---|---|
-| 10 Boxes — Full Carton | $390 | $39 | Save 56% |
-| 30 Boxes — Full Carton (Most Popular) | $1,020 | $34 | Save 62% |
-| 60 Boxes — Full Carton (Best Value) | $1,680 | $28 | Save 69% |
-| Couples Bundle (sets = his + hers) | $780 / $2,040 / $3,360 | $78 / $68 / $56 per set | — |
+| 10 Boxes — Full Carton (min. order) | $890 | $89 | — |
+| 30 Boxes — Full Carton (Most Popular) | $2,370 | $79 | Save $300 |
+| 60 Boxes — Full Carton (Best Value) | $4,140 | $69 | Save $1,200 |
+| Couples Bundle (sets = his + hers) | $1,780 / $4,740 / $8,280 | $178 / $158 / $138 per set | — / $600 / $2,400 |
 
-Wholesale channel (wholesale.html + product-wholesale pages): 30 / 60 / 90 boxes at $34 / $28 / $26 per box,
-500+ boxes $24/box via WhatsApp — matches the June pricing already in place.
+Wholesale channel (wholesale.html + product-wholesale pages): 30 / 60 / 90 boxes at $79 / $69 / $59 per box
+($2,370 / $4,140 / $5,310), 500+ boxes via WhatsApp. Note: the $59/box 90-box rate extends your
+89→79→69 progression — adjust if you want a different rate there.
 
 ## 1. Update product variations (WP Admin → Products → edit → Variations)
 
@@ -24,24 +24,24 @@ Rename each variation and set its new price. The 4th (old 6-pack) variation of e
 
 | Product (ID) | Variation ID | New name | New price |
 |---|---|---|---|
-| Royal Honey VIP Pack (76) | 77 | 10 Boxes — Full Carton | $390 |
-| | 78 | 30 Boxes — Full Carton | $1,020 |
-| | 79 | 60 Boxes — Full Carton | $1,680 |
+| Royal Honey VIP Pack (76) | 77 | 10 Boxes — Full Carton | $890 |
+| | 78 | 30 Boxes — Full Carton | $2,370 |
+| | 79 | 60 Boxes — Full Carton | $4,140 |
 | | 80 | *(disable)* | — |
-| Black Horse Vital Honey (81) | 82 / 83 / 84 | 10 / 30 / 60 Boxes | $390 / $1,020 / $1,680 |
+| Black Horse Vital Honey (81) | 82 / 83 / 84 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
 | | 85 | *(disable)* | — |
-| Etumax Royal Honey For Her (86) | 87 / 88 / 89 | 10 / 30 / 60 Boxes | $390 / $1,020 / $1,680 |
+| Etumax Royal Honey For Her (86) | 87 / 88 / 89 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
 | | 90 | *(disable)* | — |
 | Lux Honey For Her (91) | *(page sends no variation ID — set product default to the same ladder, 10 Boxes default)* | | |
-| VitaMAX Couples Bundle (93) | 94 / 95 / 96 | 10 / 30 / 60 Sets | $780 / $2,040 / $3,360 |
+| VitaMAX Couples Bundle (93) | 94 / 95 / 96 | 10 / 30 / 60 Sets | $1,780 / $4,740 / $8,280 |
 | | 97 | *(disable)* | — |
-| ICE ENERGY (98) | 99 / 100 / 101 | 10 / 30 / 60 Boxes | $390 / $1,020 / $1,680 |
+| ICE ENERGY (98) | 99 / 100 / 101 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
 | | 102 | *(disable)* | — |
-| HoneyMax (103) | 104 / 105 / 106 | 10 / 30 / 60 Boxes | $390 / $1,020 / $1,680 |
+| HoneyMax (103) | 104 / 105 / 106 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
 | | 107 | *(disable)* | — |
-| Gladiator (108) | 109 / 110 / 111 | 10 / 30 / 60 Boxes | $390 / $1,020 / $1,680 |
+| Gladiator (108) | 109 / 110 / 111 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
 | | 112 | *(disable)* | — |
-| Chobe Pure Honey (113) | 114 / 115 / 116 | 10 / 30 / 60 Jars | $390 / $1,020 / $1,680 |
+| Chobe Pure Honey (113) | 114 / 115 / 116 | 10 / 30 / 60 Jars | $890 / $2,370 / $4,140 |
 | | 117 | *(disable, if it exists)* | — |
 
 ## 2. Shipping → free everywhere
