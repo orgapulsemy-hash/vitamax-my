@@ -659,7 +659,7 @@ footer{background:var(--dark);padding:48px 80px}
 .cmp-row div:nth-child(3){justify-content:center;color:var(--text-soft)}
 .cmp-yes{color:#1D8348;font-weight:800}
 .cmp-no{color:#C0392B;font-weight:800}
-.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .8s cubic-bezier(.22,.61,.36,1)}
+.reveal{opacity:1;transform:none}
 .reveal.in{opacity:1;transform:none}
 .btn-primary,.cta-btn-main,.sticky-btn{position:relative;overflow:hidden}
 .btn-primary::after,.cta-btn-main::after,.sticky-btn::after{content:'';position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:btnShine 4.2s ease-in-out infinite}
@@ -2270,18 +2270,27 @@ document.addEventListener('DOMContentLoaded', function() { getCartCount(); });
 
 <script>
 // SCROLL REVEAL
-(function(){
-  if (!('IntersectionObserver' in window)) return;
+(function(){
   ['.bs-card','.pcard','.ingp-card','.step','.rev-card','.why-card','.faq-item','.bcard','.couple-card','.ing-stat'].forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(el,i){ el.classList.add('reveal'); el.style.transitionDelay=((i%4)*0.07)+'s'; });
   });
   ['.jn-head','.jn-chapter','.ba-table','.jn-cta','.cmp-table','.sec-header','.promo-strip','.story-inner'].forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(el){ el.classList.add('reveal'); });
   });
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
-  }, {threshold:.1, rootMargin:'0px 0px -5% 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  function _vmxReveal(){
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var list = document.querySelectorAll('.reveal:not(.in)');
+    for (var i=0;i<list.length;i++){
+      if (list[i].getBoundingClientRect().top < vh * 0.92) list[i].classList.add('in');
+    }
+  }
+  _vmxReveal();
+  window.addEventListener('scroll', _vmxReveal, {passive:true});
+  window.addEventListener('resize', _vmxReveal, {passive:true});
+  window.addEventListener('load', _vmxReveal);
+  setTimeout(_vmxReveal, 300);
+  // Guaranteed fallback: reveal everything after 1.8s regardless of scroll/visibility state
+  setTimeout(function(){ var a=document.querySelectorAll('.reveal'); for(var i=0;i<a.length;i++) a[i].classList.add('in'); }, 1800);
 })();
 
 // EXIT INTENT — once per session, desktop only
