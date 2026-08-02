@@ -22,27 +22,35 @@ Wholesale channel (wholesale.html + product-wholesale pages): 30 / 60 / 90 boxes
 Rename each variation and set its new price. The 4th (old 6-pack) variation of each product should be
 **disabled or deleted** — the site never sends it.
 
-| Product (ID) | Variation ID | New name | New price |
+**Now includes the 5-box "Try It" entry tier.** The site's 5-box option reuses each product's
+**4th variation** (the old "6-pack" that was previously disabled) — so instead of disabling it,
+**re-price it to $495 ($990 for Couples), rename it "5 Boxes", and make sure it's enabled/purchasable.**
+Every product's 4 variations are now all live.
+
+Full ladder per box product: **5 = $495 ($99/box) · 10 = $890 ($89) · 30 = $2,370 ($79) · 60 = $4,140 ($69)**.
+
+| Product (ID) | Variation ID | Name | Price |
 |---|---|---|---|
-| Royal Honey VIP Pack (76) | 77 | 10 Boxes — Full Carton | $890 |
-| | 78 | 30 Boxes — Full Carton | $2,370 |
-| | 79 | 60 Boxes — Full Carton | $4,140 |
-| | 80 | *(disable)* | — |
-| Black Horse Vital Honey (81) | 82 / 83 / 84 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
-| | 85 | *(disable)* | — |
-| Etumax Royal Honey For Her (86) | 87 / 88 / 89 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
-| | 90 | *(disable)* | — |
-| Lux Honey For Her (91) | *(page sends no variation ID — set product default to the same ladder, 10 Boxes default)* | | |
-| VitaMAX Couples Bundle (93) | 94 / 95 / 96 | 10 / 30 / 60 Sets | $1,780 / $4,740 / $8,280 |
-| | 97 | *(disable)* | — |
-| ICE ENERGY (98) | 99 / 100 / 101 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
-| | 102 | *(disable)* | — |
-| HoneyMax (103) | 104 / 105 / 106 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
-| | 107 | *(disable)* | — |
-| Gladiator (108) | 109 / 110 / 111 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
-| | 112 | *(disable)* | — |
-| Chobe Pure Honey (113) | 114 / 115 / 116 | 10 / 30 / 60 Jars | $890 / $2,370 / $4,140 |
-| | 117 | *(disable, if it exists)* | — |
+| Royal Honey VIP Pack (76) | 80 | **5 Boxes** (was 6-pack) | **$495** |
+| | 77 / 78 / 79 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
+| Black Horse Vital Honey (81) | 85 | **5 Boxes** | **$495** |
+| | 82 / 83 / 84 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
+| Etumax Royal Honey For Her (86) | 90 | **5 Boxes** | **$495** |
+| | 87 / 88 / 89 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
+| Lux Honey For Her (91) | 134 | **5 Boxes** | **$495** |
+| | 131 / 132 / 133 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
+| VitaMAX Couples Bundle (93) | 97 | **5 Sets** | **$990** |
+| | 94 / 95 / 96 | 10 / 30 / 60 Sets | $1,780 / $4,740 / $8,280 |
+| ICE ENERGY (98) | 102 | **5 Boxes** | **$495** |
+| | 99 / 100 / 101 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
+| HoneyMax (103) | 107 | **5 Boxes** | **$495** |
+| | 104 / 105 / 106 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
+| Gladiator (108) | 112 | **5 Boxes** | **$495** |
+| | 109 / 110 / 111 | 10 / 30 / 60 Boxes | $890 / $2,370 / $4,140 |
+| Chobe Pure Honey (113) | 117 | **5 Jars** | **$495** |
+| | 114 / 115 / 116 | 10 / 30 / 60 Jars | $890 / $2,370 / $4,140 |
+
+*(Lux/Queen's is fully wired — the site sends variations 131/132/133/134 directly.)*
 
 ## 2. Shipping → free everywhere
 
