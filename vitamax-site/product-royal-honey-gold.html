@@ -971,6 +971,20 @@ document.addEventListener('DOMContentLoaded', function() { getCartCount(); });
   // Guaranteed fallback: reveal everything after 1.8s regardless of scroll/visibility state
   setTimeout(function(){ var a=document.querySelectorAll('.reveal'); for(var i=0;i<a.length;i++) a[i].classList.add('in'); }, 1800);
 })();
+
+// Preselect a tier from ?tier=5|10|30|60 (used by ad landing pages, e.g. lp-royal-honey.html)
+(function(){
+  var t=(new URLSearchParams(location.search)).get('tier');
+  if(!t) return;
+  var want={'5':0,'10':1,'30':2,'60':3}[t];
+  if(want===undefined) return;
+  function apply(){
+    var cards=document.querySelectorAll('.v-card');
+    if(cards[want]) cards[want].click();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',apply);
+  else apply();
+})();
 </script>
 
 </body>
