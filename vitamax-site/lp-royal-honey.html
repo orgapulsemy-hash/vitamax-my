@@ -66,6 +66,22 @@ strong{font-weight:800}
 .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:24px 0}
 .chip{background:#fff;border:1.5px solid var(--border);border-radius:100px;padding:8px 15px;font-size:12.5px;font-weight:700;color:var(--mid)}
 .hero-img{border-radius:20px;overflow:hidden;margin:28px 0 0;box-shadow:0 16px 48px rgba(26,18,8,.18);border:1px solid var(--border)}
+/* two-column hero */
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center;text-align:left}
+.hero-copy .chips{justify-content:flex-start}
+.hero-portrait{border-radius:20px;overflow:hidden;box-shadow:0 18px 50px rgba(26,18,8,.22);border:1px solid var(--border);line-height:0}
+.hero-portrait img{width:100%;height:auto}
+/* full-width image band */
+.imgband{border-radius:18px;overflow:hidden;margin:34px 0 0;box-shadow:0 14px 40px rgba(26,18,8,.15);border:1px solid var(--border);line-height:0}
+.imgband img{width:100%;height:auto}
+.imgband-cap{font-size:12.5px;color:var(--soft);text-align:center;margin-top:11px;font-weight:600}
+/* life-benefit cards */
+.life{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:32px}
+.lc{display:flex;gap:15px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:15px;padding:22px 24px;transition:transform .26s,box-shadow .26s,border-color .26s}
+.lc:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(26,18,8,.1);border-color:var(--gold-br)}
+.lc .li{font-size:26px;flex-shrink:0;line-height:1.2}
+.lc b{display:block;font-size:16px;font-weight:800;margin-bottom:5px}
+.lc span{font-size:14px;color:var(--mid);line-height:1.65}
 
 /* ── pain / recognition ── */
 .recog{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -217,7 +233,10 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
 @media(max-width:760px){
   section{padding:44px 0}
   body{font-size:16px}
-  .pains,.wins,.proof,.mech,.revs{grid-template-columns:1fr}
+  .pains,.wins,.proof,.mech,.revs,.life{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr;gap:26px;text-align:center}
+  .hero-copy .chips{justify-content:center}
+  .hero-portrait{order:-1;max-width:300px;margin:0 auto}
   .rev-num{font-size:42px}
   .cta{font-size:17px;padding:18px 28px;width:100%;max-width:350px}
   .tli{grid-template-columns:76px 1fr;gap:16px}
@@ -241,21 +260,24 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
 
 <!-- ═══ HERO / HOOK ═══ -->
 <section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Real Malaysian Royal Honey</div>
-    <h1>By 8 PM, You're Done.<br><em>It Didn't Used to Be This Way.</em></h1>
-    <p class="sub">One spoon of real Malaysian royal honey each morning — wild honey blended with Tongkat Ali and ginseng. <strong>For the energy, stamina and confidence you thought you'd left behind in your thirties.</strong></p>
-    <div class="chips">
-      <span class="chip">🏛️ MOH GMP Certified</span>
-      <span class="chip">🍯 Real Wild Trigona Honey</span>
-      <span class="chip">🇲🇾 Made in Malaysia</span>
-      <span class="chip">📦 Discreet Shipping</span>
-      <span class="chip">🛡️ 30-Day Guarantee</span>
-    </div>
-    <a href="/product-royal-honey-gold.html?tier=5" class="cta" onclick="lpClick('hero')">Claim My 5 Boxes + 1 FREE →</a>
-    <div class="cta-sub">$495 for 6 boxes · Free worldwide delivery · Money-back guarantee</div>
-    <div class="hero-img">
-      <img src="/vitamax-images/story-couple.webp" alt="A couple enjoying renewed energy and connection" width="860" height="510" fetchpriority="high" decoding="async">
+  <div class="wrap-wide">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">Real Malaysian Royal Honey</div>
+        <h1>By 8 PM, You're Done.<br><em>It Didn't Used to Be This Way.</em></h1>
+        <p class="sub">One spoon of real Malaysian royal honey each morning — wild honey blended with Tongkat Ali and ginseng. <strong>For the energy, stamina and confidence you thought you'd left behind in your thirties.</strong></p>
+        <div class="chips">
+          <span class="chip">🏛️ MOH GMP Certified</span>
+          <span class="chip">🇲🇾 Made in Malaysia</span>
+          <span class="chip">📦 Discreet Shipping</span>
+          <span class="chip">🛡️ 30-Day Guarantee</span>
+        </div>
+        <a href="/product-royal-honey-gold.html?tier=5" class="cta" onclick="lpClick('hero')">Claim My 5 Boxes + 1 FREE →</a>
+        <div class="cta-sub">$495 for 6 boxes · Free worldwide delivery · Money-back guarantee</div>
+      </div>
+      <div class="hero-portrait">
+        <img src="/vitamax-images/lp-hero-couple.webp" alt="A couple looking happy and relaxed together, with VitaMAX royal honey" width="620" height="1150" fetchpriority="high" decoding="async">
+      </div>
     </div>
   </div>
 </section>
@@ -272,6 +294,10 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
       <div class="pain"><span class="pi">💪</span><div><b>Your stamina isn't what it was</b><span>You feel it at the gym, on the stairs, and long before the day is over.</span></div></div>
       <div class="pain"><span class="pi">🪞</span><div><b>You feel older than you are</b><span>The face in the mirror is fine. The energy behind it isn't.</span></div></div>
       <div class="pain"><span class="pi">🔋</span><div><b>Nothing left for yourself</b><span>Work takes it all. Your family gets the leftovers. You get none.</span></div></div>
+      <div class="pain"><span class="pi">😮‍💨</span><div><b>The 3 PM wall</b><span>Halfway through the afternoon your brain fogs over and the day becomes something to survive.</span></div></div>
+      <div class="pain"><span class="pi">🌙</span><div><b>Tired, but not rested</b><span>Seven hours of sleep and you still wake up like you never went to bed.</span></div></div>
+      <div class="pain"><span class="pi">🤷‍♂️</span><div><b>You've quietly stopped saying yes</b><span>The trip, the football game, the night out — you pass, and you don't even explain why anymore.</span></div></div>
+      <div class="pain"><span class="pi">💬</span><div><b>She's noticed before you did</b><span>"You're always tired lately." She isn't nagging. She misses the man who had energy for her.</span></div></div>
     </div>
     <p class="recog-close">Here's what most men get wrong: they assume this is just <strong>getting older</strong>.<br>It usually isn't. It's <strong>running on empty</strong> — and that's a very different problem.</p>
     <div class="cta-block">
@@ -300,6 +326,9 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
   <div class="wrap-wide">
     <h2 class="center">Three Ingredients Do <span>All the Work</span></h2>
     <p class="lead">No 30-item "proprietary blend" hiding pixie dust. Just three things, in amounts that matter.</p>
+    <div class="imgband" style="margin:0 0 34px">
+      <img src="/vitamax-images/lp-ingredients.webp" alt="Aged ginseng root, raw honeycomb and rainforest botanicals beside a box of VitaMAX royal honey" width="1200" height="500" loading="lazy" decoding="async">
+    </div>
     <div class="mech">
       <div class="mc">
         <div class="ico">🌱</div>
@@ -366,6 +395,31 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
       <div class="win"><b><i>💛</i> Present with her</b><span>Confidence and stamina change how you show up for your partner. Most wives notice before their husbands mention it.</span></div>
       <div class="win"><b><i>🌅</i> Saying yes again</b><span>The weekend trip, the long walk, the late dinner — the things you'd quietly started declining.</span></div>
       <div class="win"><b><i>🧠</i> Sharper, calmer</b><span>Clear-headed through the afternoon instead of pushing through fog on caffeine and willpower.</span></div>
+    </div>
+    <div class="imgband" style="border-color:rgba(255,255,255,.12)">
+      <img src="/vitamax-images/story-couple.webp" alt="A couple enjoying renewed energy and connection together" width="900" height="530" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT IT DOES FOR YOUR LIFE ═══ -->
+<section>
+  <div class="wrap-wide">
+    <h2 class="center">What One Sachet a Day <span>Actually Gives You Back</span></h2>
+    <p class="lead">Forget the marketing words for a second. Here's what changes in an ordinary week.</p>
+    <div class="life">
+      <div class="lc"><span class="li">🌅</span><div><b>Mornings that don't fight you</b><span>You wake up and get going — no hitting snooze four times, no needing two coffees before you're a person.</span></div></div>
+      <div class="lc"><span class="li">⚡</span><div><b>Energy that lasts past 6 PM</b><span>The single biggest change men report. The workday no longer takes everything, so your evening is actually yours.</span></div></div>
+      <div class="lc"><span class="li">💪</span><div><b>Strength and stamina worth showing up for</b><span>Training sessions you finish rather than survive — and recovery that doesn't cost you the next two days.</span></div></div>
+      <div class="lc"><span class="li">💛</span><div><b>Being present with your partner</b><span>Not too drained to talk, laugh, or go out. The closeness that quietly slipped away tends to come back with the energy.</span></div></div>
+      <div class="lc"><span class="li">🧠</span><div><b>A clear head at 3 PM</b><span>Focus through the afternoon instead of fog, irritability and willpower.</span></div></div>
+      <div class="lc"><span class="li">🧘</span><div><b>Steadier mood, calmer temper</b><span>Being tired all the time makes everyone short-fused. Fix the fuel and your patience comes back with it.</span></div></div>
+      <div class="lc"><span class="li">😴</span><div><b>Sleep that actually restores</b><span>No caffeine jitters keeping you wired at midnight — you rest properly and wake up ahead.</span></div></div>
+      <div class="lc"><span class="li">🙂</span><div><b>Feeling like yourself again</b><span>The hardest one to put in a bullet point, and the one men mention most: "I feel like me again."</span></div></div>
+    </div>
+    <div class="cta-block">
+      <a href="/product-royal-honey-gold.html?tier=5" class="cta" onclick="lpClick('life')">I Want That Back — 5 Boxes + 1 FREE →</a>
+      <div class="cta-sub">$495 · free worldwide delivery · 30-day money-back guarantee</div>
     </div>
   </div>
 </section>
@@ -470,6 +524,11 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
       <div class="pf"><span class="pico">📦</span><div><b>Nobody Knows What's Inside</b><span>Plain unmarked outer box. No product name, no images, no description on the label.</span></div></div>
       <div class="pf"><span class="pico">🔒</span><div><b>Secure, Encrypted Checkout</b><span>SSL-encrypted payment through Stripe and PayPal. We never see or store your card details.</span></div></div>
     </div>
+
+    <div class="imgband">
+      <img src="/vitamax-images/lp-worldwide.webp" alt="VitaMAX royal honey ships worldwide — United States, United Kingdom, Saudi Arabia and Malaysia" width="1200" height="550" loading="lazy" decoding="async">
+    </div>
+    <div class="imgband-cap">Shipped free to the US, UK, Gulf, Europe and beyond — fully tracked, in plain packaging.</div>
 
     <div class="guarantee-box">
       <div class="gi">🛡️</div>
