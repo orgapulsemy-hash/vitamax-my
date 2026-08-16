@@ -402,14 +402,14 @@ body{background:var(--cream);color:var(--text);font-family:'Plus Jakarta Sans',s
           <div class="order-item-img" id="order-img">🍯</div>
           <div>
             <div class="order-item-name" id="order-name">VitaMAX Royal Honey Gold</div>
-            <div class="order-item-variant" id="order-variant">10 Boxes · Full Carton</div>
-            <div class="order-item-price">$<span id="order-price">890</span></div>
+            <div class="order-item-variant" id="order-variant">5 Boxes · Full Carton</div>
+            <div class="order-item-price">$<span id="order-price">325</span></div>
           </div>
         </div>
 
         <div class="summary-row">
           <span>Subtotal</span>
-          <span>$<span id="subtotal">890</span></span>
+          <span>$<span id="subtotal">325</span></span>
         </div>
         <div class="summary-row" id="shipping-row">
           <span>Shipping</span>
@@ -514,8 +514,8 @@ cardCvc.mount('#card-cvc-element');
 // ══════════════════════════════════════
 var params = new URLSearchParams(window.location.search);
 var productSlug = params.get('product') || 'royal-honey-gold';
-var variant = params.get('variant') || 'v10';
-var price = parseFloat(params.get('price') || '890');
+var variant = params.get(variant) || v5;
+var price = parseFloat(params.get(price) || 325);
 
 // Product display map
 var productMap = {
@@ -532,7 +532,7 @@ var productMap = {
 };
 
 var variantLabels = {
-  'v10':'10 Boxes · Full Carton', 'v30':'30 Boxes · Full Carton (Most Popular)', 'v60':'60 Boxes · Full Carton (Best Value)',
+  'v5':'5 Boxes · Starter Carton', 'v10':'10 Boxes · Full Carton (Most Popular)', 'v30':'30 Boxes · Full Carton (Best Value)', 'v60':'60 Boxes · Full Carton (Max Savings)',
   'v90':'90 Boxes · Wholesale', 'v100':'100 Boxes · Wholesale', 'v200':'200 Boxes · Wholesale',
   '30':'30 Boxes · Wholesale Carton', '60':'60 Boxes · Wholesale Carton', '90':'90 Boxes · Wholesale Carton',
   'v1':'10 Boxes · Full Carton', 'v2':'30 Boxes · Full Carton', 'v3':'60 Boxes · Full Carton',

@@ -367,6 +367,24 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 </script>
 </head>
 <body>
+<style>
+.sub-offer{border:2px dashed var(--gold,#C8940A);background:linear-gradient(135deg,#FFF9EA,#FFF4E2);border-radius:14px;padding:0;margin:18px 0 22px;overflow:hidden}
+.sub-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:linear-gradient(135deg,#C8940A,#A87908);padding:10px 18px}
+.sub-badge{color:#fff;font-weight:800;font-size:13px;letter-spacing:.02em}
+.sub-freq{color:#FFF0C9;font-size:12px;font-weight:700}
+.sub-body{padding:16px 18px 18px}
+.sub-price{font-family:'Playfair Display',serif;font-size:15px;color:#7a5c00;margin-bottom:4px}
+.sub-price s{color:#B5A695;font-size:14px}
+.sub-price b{font-size:26px;color:#8a6608;font-weight:900}
+.sub-price span{font-size:13px;font-family:'Plus Jakarta Sans',sans-serif;color:#8a7550;font-weight:600}
+.sub-detail{font-size:13px;color:#6b5514;font-weight:600;margin-bottom:10px}
+.sub-list{list-style:none;margin:0 0 14px;padding:0}
+.sub-list li{font-size:13px;color:#6b5514;margin-bottom:5px;line-height:1.5}
+.sub-btn{display:block;text-align:center;background:#25D366;color:#fff;text-decoration:none;font-weight:800;font-size:14.5px;padding:13px;border-radius:10px;box-shadow:0 5px 16px rgba(37,211,102,.28)}
+.sub-btn:hover{background:#1DB954}
+.sub-note{font-size:11.5px;color:#8a7550;text-align:center;margin-top:8px;line-height:1.55}
+</style>
+
 <input type="checkbox" id="menu-toggle">
 <div class="announce">🚚 FREE Delivery On Every Order &nbsp;&middot;&nbsp; <strong>🎁 First Order = +1 FREE Box</strong> &nbsp;&middot;&nbsp; Full cartons: 10 · 30 · 60 — prices include delivery</div>
 <nav>
@@ -448,45 +466,45 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       </div>
     </div>
 
-    <div class="variant-label">Choose your carton &mdash; every price includes FREE delivery:</div>
+    <div class="variant-label"><span style="display:inline-block;background:linear-gradient(135deg,#E03131,#C92A2A);color:#fff;font-size:11px;font-weight:800;letter-spacing:.07em;border-radius:100px;padding:4px 12px;margin-right:8px">35% OFF</span>Choose your carton &mdash; every price includes FREE delivery:</div>
     <div class="variant-grid">
-      <div class="v-card" onclick="selectVariant(this,495,'99',107)">
+      <div class="v-card" onclick="selectVariant(this,325,'65',107)">
         <div class="best-tag" style="background:var(--green)">Try It</div>
         <div class="vt">5 Boxes</div>
-        <div class="vp">$495</div>
-        <div class="vs">$99/box &middot; Starter</div>
+        <div class="vp"><s style="color:var(--xsoft);font-size:12px;font-weight:600">$495</s> $325</div>
+        <div class="vs">$65/box &middot; <b style="color:#1F9D57">save $170</b></div>
       </div>
-      <div class="v-card on" onclick="selectVariant(this,890,'89',104)">
+      <div class="v-card on" onclick="selectVariant(this,580,'58',104)">
         <div class="best-tag" style="background:var(--or)">Most Popular</div>
         <div class="vt">10 Boxes</div>
-        <div class="vp">$890</div>
-        <div class="vs">$89/box &middot; Save $100</div>
+        <div class="vp"><s style="color:var(--xsoft);font-size:12px;font-weight:600">$890</s> $580</div>
+        <div class="vs">$58/box &middot; <b style="color:#1F9D57">save $310</b></div>
       </div>
-      <div class="v-card" onclick="selectVariant(this,2370,'79',105)">
+      <div class="v-card" onclick="selectVariant(this,1530,'51',105)">
         <div class="best-tag" style="background:var(--gold)">Best Value</div>
         <div class="vt">30 Boxes</div>
-        <div class="vp">$2,370</div>
-        <div class="vs">$79/box &middot; Save $300</div>
+        <div class="vp"><s style="color:var(--xsoft);font-size:12px;font-weight:600">$2,370</s> $1,530</div>
+        <div class="vs">$51/box &middot; <b style="color:#1F9D57">save $840</b></div>
       </div>
-      <div class="v-card" onclick="selectVariant(this,4140,'69',106)">
+      <div class="v-card" onclick="selectVariant(this,2700,'45',106)">
         <div class="best-tag" style="background:var(--text)">Max Savings</div>
         <div class="vt">60 Boxes</div>
-        <div class="vp">$4,140</div>
-        <div class="vs">$69/box &middot; Save $1,200</div>
+        <div class="vp"><s style="color:var(--xsoft);font-size:12px;font-weight:600">$4,140</s> $2,700</div>
+        <div class="vs">$45/box &middot; <b style="color:#1F9D57">save $1,440</b></div>
       </div>
     </div>
-    <div class="gift-note">🎁 <b>First order?</b> We add +1 FREE box automatically &middot; 🚚 FREE tracked delivery on every carton</div>
+    <div class="gift-note">🎁 <b>First order?</b> We add <b>+1 FREE box</b> automatically &middot; 📘 plus <a href="/royal-honey-handbook.html" target="_blank" rel="noopener" style="color:#B54708;font-weight:800">The Royal Honey Handbook</a> free &middot; 🚚 FREE tracked delivery on every carton</div>
 
     <div class="price-row">
-      <div class="price-main"><sup>$</sup><span id="curPrice">890</span></div>
-      <span class="price-perbox" id="wasPrice">$89/box</span>
-      <span class="price-save" id="saveTag">🚚 Delivery FREE</span>
+      <div class="price-main"><sup>$</sup><span id="curPrice">580</span></div>
+      <span class="price-perbox" id="wasPrice">$58/box</span>
+      <span class="price-save" id="saveTag">💰 Save $310</span>
     </div>
 
     <a href="/cart.html" onclick="addToCart(event,103,this,104)" class="btn-cart" id="cartBtn">
-      Add to Cart &mdash; $<span id="btnPrice">890</span> <span style="font-weight:500;font-size:13px;opacity:.85">&middot; FREE delivery</span>
+      Add to Cart &mdash; $<span id="btnPrice">580</span> <span style="font-weight:500;font-size:13px;opacity:.85">&middot; FREE delivery</span>
     </a>
-    <a href="https://wa.me/60177809767?text=Hi%2C%20I%20want%20to%20order%20HoneyMax%20Royal%20Honey%20For%20Him%20%E2%80%94%2010%20Box%20carton%20(%24890%2C%20free%20delivery)" class="btn-wa" target="_blank">
+    <a href="https://wa.me/60177809767?text=Hi%2C%20I%20want%20to%20order%20HoneyMax%20Royal%20Honey%20For%20Him%20%E2%80%94%2010%20Box%20carton%20(%24580%2C%20free%20delivery)" class="btn-wa" target="_blank">
       <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
       Order via WhatsApp
     </a>
@@ -498,6 +516,25 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
       <div class="tm"><span class="tm-icon">&#x1F504;</span><span class="tm-text">30-day guarantee</span></div>
       <div class="tm"><span class="tm-icon">&#x2708;&#xFE0F;</span><span class="tm-text">US &middot; CA &middot; EU</span></div>
     </div>
+
+    <div class="sub-offer" data-discounted="35">
+      <div class="sub-head">
+        <span class="sub-badge">Subscribe &amp; Save 10% More</span>
+        <span class="sub-freq">Delivered every 3 weeks</span>
+      </div>
+      <div class="sub-body">
+        <div class="sub-price"><s>$325</s> <b>$292</b><span>/ delivery</span></div>
+        <div class="sub-detail">5 boxes every 3 weeks &middot; just $58.40 per box &middot; free delivery every time</div>
+        <ul class="sub-list">
+          <li>✓ An extra <b>10% off</b> on top of the 35% sale price</li>
+          <li>✓ Never run out &mdash; it arrives before you finish the last one</li>
+          <li>✓ <b>Pause, skip or cancel anytime</b>, no lock-in, no fee</li>
+        </ul>
+        <a class="sub-btn" href="https://wa.me/60177809767?text=Hi%2C%20I%20want%20to%20set%20up%20the%20Subscribe%20%26%20Save%20plan%20%E2%80%94%205%20boxes%20every%203%20weeks%20at%20%24292%20per%20delivery." target="_blank" rel="noopener">💬 Start My Subscription on WhatsApp →</a>
+        <div class="sub-note">We set your plan up personally over WhatsApp and confirm every delivery before it ships.</div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -634,10 +671,10 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
   <div class="sec-label">You might also like</div>
   <h2 class="sec-h2">Related <span>Products</span></h2>
   <div class="related-grid">
-    <a href="/product-royal-honey-gold.html" class="rel-card"><div class="rel-img" style="background:linear-gradient(145deg,#FFF0E8,#FFE0CC)">&#x1F36F;</div><div class="rel-body"><div class="rel-cat">For Him</div><div class="rel-name">Royal Honey VIP Pack</div><div class="rel-price">From $890</div></div></a>
-    <a href="/product-queens-honey.html" class="rel-card"><div class="rel-img" style="background:linear-gradient(145deg,#FFF0F8,#FFD6EE)">&#x1F451;</div><div class="rel-body"><div class="rel-cat">For Her</div><div class="rel-name">Lux Honey For Her</div><div class="rel-price">From $890</div></div></a>
-    <a href="/product-couples-bundle.html" class="rel-card"><div class="rel-img" style="background:linear-gradient(145deg,#FFF0F8,#FFE8F0)">&#x1F491;</div><div class="rel-body"><div class="rel-cat">Bundle</div><div class="rel-name">Couples Bundle</div><div class="rel-price">From $1,780</div></div></a>
-    <a href="/wholesale.html" class="rel-card"><div class="rel-img" style="background:linear-gradient(145deg,#FFF8E0,#FFE8A0)">&#x1F4E6;</div><div class="rel-body"><div class="rel-cat">Wholesale</div><div class="rel-name">Wholesale Carton</div><div class="rel-price">From $2,370</div></div></a>
+    <a href="/product-royal-honey-gold.html" class="rel-card"><div class="rel-img" style="background:linear-gradient(145deg,#FFF0E8,#FFE0CC)">&#x1F36F;</div><div class="rel-body"><div class="rel-cat">For Him</div><div class="rel-name">Royal Honey VIP Pack</div><div class="rel-price">From $325</div></div></a>
+    <a href="/product-queens-honey.html" class="rel-card"><div class="rel-img" style="background:linear-gradient(145deg,#FFF0F8,#FFD6EE)">&#x1F451;</div><div class="rel-body"><div class="rel-cat">For Her</div><div class="rel-name">Lux Honey For Her</div><div class="rel-price">From $325</div></div></a>
+    <a href="/product-couples-bundle.html" class="rel-card"><div class="rel-img" style="background:linear-gradient(145deg,#FFF0F8,#FFE8F0)">&#x1F491;</div><div class="rel-body"><div class="rel-cat">Bundle</div><div class="rel-name">Couples Bundle</div><div class="rel-price">From $645</div></div></a>
+    <a href="/wholesale.html" class="rel-card"><div class="rel-img" style="background:linear-gradient(145deg,#FFF8E0,#FFE8A0)">&#x1F4E6;</div><div class="rel-body"><div class="rel-cat">Wholesale</div><div class="rel-name">Wholesale Carton</div><div class="rel-price">From $325</div></div></a>
   </div>
 </div>
 
@@ -682,10 +719,10 @@ body:has(#menu-toggle:checked) .hamburger span:nth-child(3){transform:translateY
 <script>
 var _slug = 'product-tualang-herbal';
 var _v = [
-  {p:495, pb:'99', save:'Starter', l:'5 Boxes'},
-  {p:890, pb:'89', save:'Save $100', l:'10 Boxes'},
-  {p:2370, pb:'79', save:'Save $300', l:'30 Boxes'},
-  {p:4140, pb:'69', save:'Save $1,200', l:'60 Boxes'}
+  {p:325, pb:'65', save:'💰 Save $170', l:'5 Boxes'},
+  {p:580, pb:'58', save:'💰 Save $310', l:'10 Boxes'},
+  {p:1530, pb:'51', save:'💰 Save $840', l:'30 Boxes'},
+  {p:2700, pb:'45', save:'💰 Save $1,440', l:'60 Boxes'}
 ];
 
 // Sticky bar
@@ -950,5 +987,17 @@ document.addEventListener('DOMContentLoaded', function() { getCartCount(); });
 })();
 </script>
 
+
+<script>
+// Preselect a tier from ?tier=5|10|30|60 (used by ad landing pages)
+(function(){
+  var t=(new URLSearchParams(location.search)).get("tier");
+  if(!t) return;
+  var want={"5":0,"10":1,"30":2,"60":3}[t];
+  if(want===undefined) return;
+  function apply(){var c=document.querySelectorAll(".v-card"); if(c[want]) c[want].click();}
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",apply); else apply();
+})();
+</script>
 </body>
 </html>
