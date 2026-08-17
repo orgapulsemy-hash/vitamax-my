@@ -14,7 +14,7 @@ new sale prices on the page but be charged the OLD prices at checkout.**
 | 10 Boxes — Most Popular | $890 | **$580** | $58 | $310 |
 | 30 Boxes — Best Value | $2,370 | **$1,530** | $51 | $840 |
 | 60 Boxes — Max Savings | $4,140 | **$2,700** | $45 | $1,440 |
-| Couples 5 / 10 / 30 / 60 sets | $990 / $1,160 / $3,090 / $5,400 | **$645 / $1,160 / $3,090 / $5,400** | $129 / $116 / $103 / $90 per set | $345 / $620 / $1,650 / $2,880 |
+| Couples 5 / 10 / 30 / 60 sets | $990 / $1,780 / $4,740 / $8,280 | **$645 / $1,160 / $3,090 / $5,400** | $129 / $116 / $103 / $90 per set | $345 / $620 / $1,650 / $2,880 |
 
 The struck-through "was" prices shown on the site are the prices you genuinely charged
 until this change — keep it that way. If the sale ends, put the old prices back rather
@@ -92,22 +92,24 @@ To deliver it, pick one:
 - **Better:** open it, Print → Save as PDF, and attach the PDF to the confirmation email.
 - Either way it must actually reach buyers — it's advertised as part of the offer.
 
-## 4c. Subscribe & Save — every 3 weeks (manual for now)
+## 4c. Subscribe & Save — every 8 weeks (manual for now)
 
-Each product page now shows a **Subscribe & Save** block: an extra **10% off** the sale price
-for a recurring 5-box delivery every 3 weeks (**$292 per delivery**, $58.40/box; couples
+Each product page shows a **Subscribe & Save** block: an extra **10% off** the sale price
+for a recurring 5-box delivery **every 8 weeks** (**$292 per delivery**, $58.40/box; couples
 **$580**, $116/set). You confirmed there is **no WooCommerce Subscriptions plugin**, so the
 button routes to **WhatsApp** with a pre-filled message rather than pretending to bill
 automatically. Nothing silently fails.
 
 To run it manually: take the customer's details on WhatsApp, then either send a payment link
-every 3 weeks or take payment upfront for a fixed number of cycles. If volume grows, install
+every 8 weeks or take payment upfront for a fixed number of cycles. If volume grows, install
 **WooCommerce Subscriptions** and I'll wire the button to real recurring checkout.
 
-> ⚠️ **Worth reconsidering:** 5 boxes every 3 weeks is roughly double what one person consumes
-> (5 boxes ≈ 60–120 sachets ≈ 2–4 months at one a day). Customers will over-accumulate and
-> cancel. A 5-box cycle every **8–10 weeks**, or a **2-box** cycle every 3 weeks, matches real
-> consumption far better and will retain much longer. Say the word and I'll change it.
+**Why 8 weeks:** 5 boxes is roughly 60–120 sachets — about two months at one a day. An 8-week
+cycle lands just as a customer runs low, which is exactly when a refill feels welcome rather
+than wasteful. A shorter cycle would over-ship and drive cancellations.
+
+**Effective per-box maths worth quoting to customers:** subscription $58.40/box vs $99/box at
+the old single-carton price — and they still get free delivery on every cycle.
 
 ## 5. Stripe backend
 
