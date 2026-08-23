@@ -260,6 +260,52 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
   html{scroll-behavior:auto}
   .mc:hover,.win:hover{transform:none}
 }
+
+/* express-checkout secondary link */
+.see-tiers{display:inline-block;margin-top:14px;color:#E9DCC9;font-size:13px;font-weight:600;
+  text-decoration:none;border-bottom:1px solid rgba(233,220,201,.35);padding-bottom:2px}
+.see-tiers:hover{color:#fff;border-bottom-color:#fff}
+
+/* lead capture band */
+.vmx-lead{background:linear-gradient(135deg,#241a10,#150F08);border-radius:20px;padding:34px 30px;
+  margin:0 auto;max-width:760px;text-align:center;position:relative;overflow:hidden;
+  border:1px solid rgba(232,205,138,.26)}
+.vmx-lead::before{content:'📘';position:absolute;left:-18px;top:-22px;font-size:120px;opacity:.08;transform:rotate(-14deg)}
+.vmx-lead-in{position:relative;z-index:1}
+.vmx-lead .kick{font-size:11.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#E8B23A;margin-bottom:12px}
+.vmx-lead h3{font-family:'Playfair Display',serif;font-size:clamp(23px,3.2vw,30px);font-weight:900;color:#fff;
+  line-height:1.14;margin:0 0 12px}
+.vmx-lead h3 em{font-style:italic;color:#E8B23A}
+.vmx-lead p{font-size:15px;color:rgba(255,255,255,.7);max-width:460px;margin:0 auto 20px}
+.vmx-form{display:flex;gap:9px;max-width:440px;margin:0 auto;flex-wrap:wrap}
+.vmx-form input{flex:1;min-width:200px;border:1.5px solid rgba(255,255,255,.22);background:rgba(255,255,255,.07);
+  border-radius:11px;padding:15px 17px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;color:#fff;outline:none}
+.vmx-form input::placeholder{color:rgba(255,255,255,.42)}
+.vmx-form input:focus{border-color:#E8B23A;background:rgba(255,255,255,.11)}
+.vmx-form button{background:linear-gradient(135deg,#F15A22,#D44818);color:#fff;border:none;border-radius:11px;
+  padding:15px 26px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:800;cursor:pointer;
+  white-space:nowrap;transition:transform .18s}
+.vmx-form button:hover{transform:translateY(-2px)}
+.vmx-form button:disabled{opacity:.6;cursor:default;transform:none}
+.vmx-fine{font-size:12px;color:rgba(255,255,255,.42);margin-top:12px}
+.vmx-done{display:none;color:#7BD9A0;font-size:15.5px;font-weight:700;line-height:1.6}
+.vmx-done a{color:#E8B23A;font-weight:800}
+.vmx-lead.done .vmx-form,.vmx-lead.done .vmx-fine,.vmx-lead.done p{display:none}
+.vmx-lead.done .vmx-done{display:block}
+
+/* exit intent */
+.vmx-exit{position:fixed;inset:0;z-index:900;display:none;align-items:center;justify-content:center;padding:18px}
+.vmx-exit.open{display:flex}
+.vmx-exit-bg{position:absolute;inset:0;background:rgba(15,11,7,.74);backdrop-filter:blur(4px)}
+.vmx-exit-card{position:relative;max-width:470px;width:100%;border-radius:20px;overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.45);animation:vmxPop .4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes vmxPop{from{opacity:0;transform:translateY(22px) scale(.96)}}
+.vmx-exit-card .vmx-lead{border-radius:0;max-width:none;padding:36px 28px}
+.vmx-x{position:absolute;top:12px;right:12px;z-index:3;width:32px;height:32px;border-radius:50%;
+  background:rgba(255,255,255,.16);border:none;color:#fff;font-size:15px;cursor:pointer}
+.vmx-x:hover{background:rgba(255,255,255,.3)}
+@media(max-width:600px){.vmx-form button{width:100%}}
+
 </style>
 </head>
 <body>
@@ -280,7 +326,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
           <span class="chip">📦 Discreet Shipping</span>
           <span class="chip">🛡️ 30-Day Guarantee</span>
         </div>
-        <a href="/product-black-label.html?tier=5" class="cta" onclick="lpClick('hero')">Claim My 5 Boxes + 1 FREE →</a>
+        <a href="/order-checkout/?add-to-cart=81&variation_id=85&quantity=1" class="cta" onclick="lpClick('hero')">Claim My 5 Boxes + 1 FREE →</a>
         <div class="cta-sub"><s style="color:var(--xsoft)">$495</s> <strong style="color:var(--orange)">$325</strong> for 6 boxes · Free worldwide delivery · 30-day guarantee</div>
       </div>
       <div class="hero-portrait">
@@ -387,7 +433,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
       </div>
     </div>
     <div class="cta-block">
-      <a href="/product-black-label.html?tier=5" class="cta" onclick="lpClick('timeline')">Start My First Box →</a>
+      <a href="/order-checkout/?add-to-cart=81&variation_id=85&quantity=1" class="cta" onclick="lpClick('timeline')">Start My First Box →</a>
       <div class="cta-sub">5 boxes + 1 FREE · <s>$495</s> <strong>$325</strong> · free delivery included</div>
     </div>
   </div>
@@ -426,7 +472,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
       <div class="lc"><span class="li">🙂</span><div><b>Feeling like yourself again</b><span>The hardest one to put in a bullet point, and the one men mention most: "I feel like me again."</span></div></div>
     </div>
     <div class="cta-block">
-      <a href="/product-black-label.html?tier=5" class="cta" onclick="lpClick('life')">I Want That Back — 5 Boxes + 1 FREE →</a>
+      <a href="/order-checkout/?add-to-cart=81&variation_id=85&quantity=1" class="cta" onclick="lpClick('life')">I Want That Back — 5 Boxes + 1 FREE →</a>
       <div class="cta-sub"><s>$495</s> <strong>$325</strong> · free worldwide delivery · 30-day guarantee</div>
     </div>
   </div>
@@ -486,7 +532,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
 
     </div>
     <div class="cta-block">
-      <a href="/product-black-label.html?tier=5" class="cta" onclick="lpClick('reviews')">Join Them — 5 Boxes + 1 FREE →</a>
+      <a href="/order-checkout/?add-to-cart=81&variation_id=85&quantity=1" class="cta" onclick="lpClick('reviews')">Join Them — 5 Boxes + 1 FREE →</a>
       <div class="cta-sub"><s>$495</s> <strong>$325</strong> · free delivery · free PDF guide · 30-day guarantee</div>
     </div>
   </div>
@@ -522,8 +568,9 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
         </div>
 
         <p class="note">That's <strong>45% less per box</strong> than the regular $99 — because you're taking the carton and the 6th box is on us.</p>
-        <a href="/product-black-label.html?tier=5" class="cta" onclick="lpClick('offer')">Yes — Send My 6 Boxes →</a>
+        <a href="/order-checkout/?add-to-cart=81&variation_id=85&quantity=1" class="cta" onclick="lpClick('offer')">Yes — Send My 6 Boxes →</a>
         <div class="only">⚡ 35% off applies to your first order — this is our welcome offer</div>
+        <a href="/product-black-label.html?tier=5" class="see-tiers" onclick="lpClick('compare-tiers')">Want 10, 30 or 60 boxes? Compare carton sizes →</a>
         <div class="fineprint">🔒 Secure checkout · Stripe &amp; PayPal · 💳 Card, PayPal or WhatsApp order</div>
       </div>
     </div>
@@ -577,6 +624,24 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
   </div>
 </section>
 
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="vmx-lead" id="vmxLeadA">
+      <div class="vmx-lead-in">
+        <div class="kick">Free · No purchase needed</div>
+        <h3>Not Ready to Order?<br><em>Take the Guide Instead.</em></h3>
+        <p>The Royal Honey Handbook — how to take it, what's actually in it, and <strong style="color:#fff">how to spot the fakes flooding this market</strong>. Written by us, free, no strings.</p>
+        <form class="vmx-form" data-vmx-form>
+          <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+          <button type="submit">Send It To Me</button>
+        </form>
+        <div class="vmx-fine">No spam, unsubscribe anytime. We'll also send the occasional offer.</div>
+        <div class="vmx-done">✓ Done — <a href="/royal-honey-handbook.html" target="_blank" rel="noopener">open your Handbook here</a>.<br><span style="color:rgba(255,255,255,.6);font-weight:500;font-size:14px">Check your inbox for the link too.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ FAQ ═══ -->
 <section class="faq">
   <div class="wrap">
@@ -621,7 +686,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
   <div class="wrap">
     <h2>You've Read This Far for <em>a Reason</em></h2>
     <p class="lead">Something on this page sounded like your evenings. Give it one month — the guarantee means the only thing you're risking is finding out it works.</p>
-    <a href="/product-black-label.html?tier=5" class="cta" onclick="lpClick('final')">Claim My 5 Boxes + 1 FREE →</a>
+    <a href="/order-checkout/?add-to-cart=81&variation_id=85&quantity=1" class="cta" onclick="lpClick('final')">Claim My 5 Boxes + 1 FREE →</a>
     <div class="cta-sub"><s>$495</s> $325 · 6 boxes delivered free · free PDF guide · 30-day guarantee<br>🔒 Secure checkout · 📦 Discreet packaging on every order</div>
   </div>
 </section>
@@ -642,7 +707,7 @@ footer a{color:rgba(255,255,255,.75);text-decoration:none;margin:0 7px}
     <b>🎁 35% OFF · 5 Boxes + 1 FREE</b>
     <span><s>$495</s> $325 · free delivery · free guide</span>
   </div>
-  <a href="/product-black-label.html?tier=5" onclick="lpClick('sticky')">Claim Offer →</a>
+  <a href="/order-checkout/?add-to-cart=81&variation_id=85&quantity=1" onclick="lpClick('sticky')">Claim Offer →</a>
 </div>
 
 <script>
@@ -662,5 +727,93 @@ function lpClick(where){
   },{passive:true});
 })();
 </script>
+
+<!-- EXIT INTENT — Handbook lead magnet -->
+<div class="vmx-exit" id="vmxExit" role="dialog" aria-modal="true" aria-label="Free Royal Honey Handbook">
+  <div class="vmx-exit-bg"></div>
+  <div class="vmx-exit-card">
+    <button class="vmx-x" aria-label="Close">✕</button>
+
+    <div class="vmx-lead" id="vmxLeadB">
+      <div class="vmx-lead-in">
+        <div class="kick">Free · No purchase needed</div>
+        <h3>Not Ready to Order?<br><em>Take the Guide Instead.</em></h3>
+        <p>The Royal Honey Handbook — how to take it, what's actually in it, and <strong style="color:#fff">how to spot the fakes flooding this market</strong>. Written by us, free, no strings.</p>
+        <form class="vmx-form" data-vmx-form>
+          <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+          <button type="submit">Send It To Me</button>
+        </form>
+        <div class="vmx-fine">No spam, unsubscribe anytime. We'll also send the occasional offer.</div>
+        <div class="vmx-done">✓ Done — <a href="/royal-honey-handbook.html" target="_blank" rel="noopener">open your Handbook here</a>.<br><span style="color:rgba(255,255,255,.6);font-weight:500;font-size:14px">Check your inbox for the link too.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Handbook lead capture ────────────────────────────────────────────────
+// Posts to WordPress (admin-ajax action: vitamax_lead). If that endpoint isn't
+// installed yet the visitor STILL gets the Handbook — we never take an email
+// and give nothing back.
+document.querySelectorAll('[data-vmx-form]').forEach(function(form){
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var input = form.querySelector('input[name="email"]');
+    var btn = form.querySelector('button');
+    var email = (input.value || '').trim();
+    if (!email || email.indexOf('@') < 1) { input.focus(); return; }
+    btn.disabled = true; btn.textContent = 'Sending…';
+
+    function finish(){
+      var card = form.closest('.vmx-lead');
+      if (card) card.classList.add('done');
+      try { fbq('track','Lead',{content_name:'royal-honey-handbook'}); } catch(err){}
+      try { gtag('event','generate_lead',{method:'handbook'}); } catch(err){}
+      try { sessionStorage.setItem('vmxLead','1'); } catch(err){}
+    }
+
+    fetch('/wp-admin/admin-ajax.php', {
+      method:'POST', credentials:'include',
+      headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:'action=vitamax_lead&email=' + encodeURIComponent(email) + '&source=lp-royal-honey'
+    }).then(finish).catch(finish);
+  });
+});
+
+// ── Exit intent (desktop) + scroll-back intent (mobile) ──────────────────
+(function(){
+  var modal = document.getElementById('vmxExit');
+  if (!modal) return;
+  var shown = false, armed = false;
+  try { shown = sessionStorage.getItem('vmxExit') === '1' || sessionStorage.getItem('vmxLead') === '1'; } catch(e){}
+  setTimeout(function(){ armed = true; }, 12000);
+
+  function open(){
+    if (shown || !armed) return;
+    shown = true;
+    try { sessionStorage.setItem('vmxExit','1'); } catch(e){}
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close(){ modal.classList.remove('open'); document.body.style.overflow = ''; }
+
+  document.addEventListener('mouseout', function(e){ if (!e.relatedTarget && e.clientY <= 8) open(); });
+  modal.querySelector('.vmx-exit-bg').addEventListener('click', close);
+  modal.querySelector('.vmx-x').addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+
+  // mobile: fast upward scroll near the top reads as leaving
+  var lastY = window.scrollY, lastT = Date.now();
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY, t = Date.now(), dt = t - lastT;
+    if (dt > 0) {
+      var v = (lastY - y) / dt;
+      if (v > 1.6 && y < 900) open();
+    }
+    lastY = y; lastT = t;
+  }, {passive:true});
+})();
+</script>
+
 </body>
 </html>
